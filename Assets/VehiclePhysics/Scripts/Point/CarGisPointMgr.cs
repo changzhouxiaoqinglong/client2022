@@ -38,7 +38,8 @@ public class CarGisPointMgr
     {
         GetGisAndTerrainRadio();
         Vector3 tempVector3;
-        tempVector3 = new Vector3((gisPos.x - topLeftGis.x) * radio.x, 50, topLeftPos.z + ((gisPos.y - topLeftGis.y) * radio.y));
+        // tempVector3 = new Vector3((gisPos.x - topLeftGis.x) * radio.x, 50, topLeftPos.z + ((gisPos.y - topLeftGis.y) * radio.y));
+        tempVector3 = new Vector3((gisPos.y - topLeftGis.y) * radio.x, 50, topLeftPos.z + ((gisPos.x - topLeftGis.x) * radio.y));
         return tempVector3;
     }
 
@@ -50,7 +51,8 @@ public class CarGisPointMgr
     {
         GetGisAndTerrainRadio();
         Vector2 tempVector2;
-        tempVector2 = new Vector2(topLeftGis.x+(terrainPos.x - topLeftPos.x) / radio.x, topLeftGis.y + (terrainPos.z - topLeftPos.z) / radio.y);
+        //  tempVector2 = new Vector2(topLeftGis.x+(terrainPos.x - topLeftPos.x) / radio.x, topLeftGis.y + (terrainPos.z - topLeftPos.z) / radio.y);
+        tempVector2 = new Vector2(topLeftGis.x + (terrainPos.z - topLeftPos.z) / radio.y, topLeftGis.y + (terrainPos.x - topLeftPos.x) / radio.x);
         return tempVector2;
     }
 
@@ -74,8 +76,8 @@ public class CarGisPointMgr
         float gisyDistance = bottomRightGis.y - topLeftGis.y;
         float terrainxDistance = bottomRightPos.x - topLeftPos.x;
         float terrainyDistance = bottomRightPos.z - topLeftPos.z;
-        radio = new Vector2(terrainxDistance/gisxDistance, terrainyDistance/gisyDistance);
-
+       // radio = new Vector2(terrainxDistance/gisxDistance, terrainyDistance/gisyDistance);
+        radio = new Vector2(Mathf.Abs(terrainxDistance / gisyDistance), Mathf.Abs(terrainyDistance / gisxDistance));
 
 
     }

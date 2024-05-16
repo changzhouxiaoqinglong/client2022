@@ -108,7 +108,7 @@ public class MiniMap : MonoBehaviour
             carAngle = scene3D.miniMapMgr.MiniMapCamera.GetAngle();
             Vector3 lation = scene3D.terrainChangeMgr.gisPointMgr.GetGisPos(scene3D.miniMapMgr.MiniMapCamera.GetPoint());
             if (lation != null)
-                jingWeiText.text = "经度：" + lation.x + "，纬度：" + lation.y;
+                jingWeiText.text = "经度：" + lation.y + "，纬度：" + lation.x;
             //if (GameObject.Find("RigidBodyFPSController") == true)
             //{
             //    miniPlayerIcon.eulerAngles = new Vector3(0, 0, -carAngle.y);
