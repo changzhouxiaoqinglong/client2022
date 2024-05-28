@@ -19,6 +19,30 @@ public class UniStormSunShaftsPass : ScriptableRenderPass
 
     string m_ProfilerTag;
 
+    private Transform sunTransform;
+
+    public Transform SunTransform
+    {
+        get
+        {
+            if (sunTransform == null)
+            {
+                //Light[] lights = Object.FindObjectsByType<Light>(FindObjectsSortMode.None);
+                Light[] lights = Light.GetLights(LightType.Directional, ~0);
+                if (lights.Length > 0)
+                {
+                    Light sunLight = lights.FirstOrDefault(x => x.name.Equals(settings.celestialName));
+                    if (sunLight != null)
+                    {
+                        sunTransform = sunLight.transform.GetChild(0);
+                    }
+                }
+            }
+            
+            return sunTransform;
+        }
+    }
+
     public UniStormSunShaftsPass(string tag)
     {
         m_ProfilerTag = tag;
@@ -89,30 +113,11 @@ public class UniStormSunShaftsPass : ScriptableRenderPass
             leftEye = Camera.MonoOrStereoscopicEye.Mono;
         }
 
-        if (settings.sunTransform)
+        if (SunTransform)
         {
-            vl = camera.WorldToViewportPoint(settings.sunTransform.position, leftEye);
-            vr = camera.WorldToViewportPoint(settings.sunTransform.position, Camera.MonoOrStereoscopicEye.Right);
-        }
-        else if (settings.sunTransform == null)
-        {
-            Light[] suns = Light.GetLights(LightType.Directional, 0);
-            Light sunLight = null;
-            if (suns.Length > 0)
-            {
-                sunLight = suns.FirstOrDefault(x => x.name.Contains("sun"));
-                if (sunLight != null)
-                {
-                    Transform sunTransform = sunLight.transform.GetChild(0).transform;
-                    vl = camera.WorldToViewportPoint(sunTransform.transform.position, leftEye);
-                    vr = camera.WorldToViewportPoint(sunTransform.transform.position, Camera.MonoOrStereoscopicEye.Right);
-                }
-            }
-            else
-            {
-                vl = new Vector3(0.5f, 0.5f, 0.0f);
-                vr = new Vector3(0.5f, 0.5f, 0.0f);
-            }
+            var sunPosition = SunTransform.position;
+            vl = camera.WorldToViewportPoint(sunPosition, leftEye);
+            vr = camera.WorldToViewportPoint(sunPosition, Camera.MonoOrStereoscopicEye.Right);
         }
         else
         {
