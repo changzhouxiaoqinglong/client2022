@@ -149,6 +149,11 @@ public class DrugVarData
     public CustVect3 Pos;
 
     /// <summary>
+    /// 释放速度
+    /// </summary>
+    public int Speed;
+
+    /// <summary>
     /// 范围
     /// </summary>
     public int Range;//没用
@@ -163,10 +168,7 @@ public class DrugVarData
     /// </summary>
     public int AttackType;//没用
 
-    /// <summary>
-    /// 释放速度
-    /// </summary>
-    public int Speed;
+    
 }
 
 /// <summary>
@@ -182,24 +184,26 @@ public class RadiatVarData
     public CustVect3 Pos;
 
     /// <summary>
+    /// 当量
+    /// </summary>
+    public int DangLiang;
+
+    /// <summary>
     /// 范围
     /// </summary>
-    public int Range;
+    public int Range;//没用
 
     /// <summary>
     /// 剂量率
     /// </summary>
-    public int DoseRate;
+    public int DoseRate;//没用
 
     /// <summary>
     /// 比高
     /// </summary>
-    public float BiGao;
+    public float BiGao;//没用
 
-    /// <summary>
-    /// 当量
-    /// </summary>
-    public int DangLiang;
+   
 }
 
 /// <summary>
