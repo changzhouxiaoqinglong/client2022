@@ -90,7 +90,7 @@ public class TaskEnvWaitView : ViewBase<TaskEvWaitViewModel>
             //tempData.Id = 1;
             //tempData.Pos = new CustVect3(2834.29f, 24.816f, 206.8f);
             //data.CraterDatas.Add(tempData);
-
+            
             NetVarDataMgr.GetInstance()._NetVarData._TaskEnvVarData = data;
             ViewModel.taskEnvVarData.Value = data;
 

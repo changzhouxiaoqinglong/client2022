@@ -94,6 +94,7 @@ public class MessageView : MonoBehaviour
     private void InitProcessUI()
     {
         print("初始化训练流程_CheckType"+ NetVarDataMgr.GetInstance()._NetVarData._TaskEnvVarData.CheckType);
+        print("初始化训练流程_TaskType" + NetVarDataMgr.GetInstance()._NetVarData._TaskEnvVarData.TaskType);
         //单击和考核没有基础训练
         if (NetVarDataMgr.GetInstance()._NetVarData._TaskEnvVarData.CheckType != CheckTypeConst.PRACTICE)
         {
@@ -101,7 +102,15 @@ public class MessageView : MonoBehaviour
             //processTitle.SetText("当前为考核模式不显示具体操作信息");
             return;
         }
-        int taskId = TaskMgr.GetInstance().curTaskData.Id;
+
+        if (NetVarDataMgr.GetInstance()._NetVarData._TaskEnvVarData.TaskType == 3)
+		{
+            processTitle.transform.parent.gameObject.SetActive(false);
+            //processTitle.SetText("当前为考核模式不显示具体操作信息");
+            return;
+        }
+
+            int taskId = TaskMgr.GetInstance().curTaskData.Id;
         //本次训练流程数据
         List<ExPracticeProcess> processList = ExPracticeProcessMgr.GetInstance().GetProcessByTaskId(taskId);
         if (processList.Count > 0)

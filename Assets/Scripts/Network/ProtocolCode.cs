@@ -161,6 +161,16 @@ public class NetProtocolCode
     public const int CloseDoor = 42;//新版修改
 
     /// <summary>
+    /// 打开地图
+    /// </summary>
+    public const int OpenMap = 43;//新版修改
+
+    /// <summary>
+    /// 关闭地图
+    /// </summary>
+    public const int CloseMap = 44;//新版修改
+
+    /// <summary>
     /// 插旗子 通知驾驶位 3D场景内插旗
     /// </summary>
     public const int FLAG_TO_DRIVER = 24;

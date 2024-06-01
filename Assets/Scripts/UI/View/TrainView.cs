@@ -125,6 +125,11 @@ public class TrainView : ViewBase<TrainViewModel>
     private ButtonBase carDoorBtn;
 
     /// <summary>
+    /// 打开/关闭地图
+    /// </summary>
+    private ButtonBase MapBtn;
+
+    /// <summary>
     /// 消洗按钮
     /// </summary>
    // private ButtonBase cleanBtn;//新版修改 去掉
@@ -219,8 +224,12 @@ public class TrainView : ViewBase<TrainViewModel>
 
         carDoorBtn = transform.Find("右侧按钮框/VerticalLayout/OpenCarDoorBtn").GetComponent<ButtonBase>();
         carDoorBtn.RegistClick(OnClickOpenCarDoorBtn);
-       // cleanBtn = transform.Find("CleanBtn/Btn").GetComponent<ButtonBase>();
-       // cleanBtn.RegistClick(OnClickCleanPoisonBtn);
+
+        MapBtn = transform.Find("右侧按钮框/VerticalLayout/OpenMapBtn").GetComponent<ButtonBase>();
+        MapBtn.RegistClick(OnClickMapBtn);
+
+        // cleanBtn = transform.Find("CleanBtn/Btn").GetComponent<ButtonBase>();
+        // cleanBtn.RegistClick(OnClickCleanPoisonBtn);
         samplingBtn = transform.Find("右侧按钮框/VerticalLayout/SamplingBtn").GetComponent<ButtonBase>();
         samplingBtn.RegistClick(OnClickSamplingPoisonBtn);
         measureBtn = transform.Find("右侧按钮框/VerticalLayout/measureBtn").GetComponent<ButtonBase>();
@@ -228,6 +237,8 @@ public class TrainView : ViewBase<TrainViewModel>
         NetManager.GetInstance().AddNetMsgEventListener(ServerType.GuideServer, NetProtocolCode.OUT_CAR_RES, OutCarWalkRes);
         NetManager.GetInstance().AddNetMsgEventListener(ServerType.GuideServer, NetProtocolCode.IN_CAR_RES, InCarRes);
         NetManager.GetInstance().AddNetMsgEventListener(ServerType.GuideServer, NetProtocolCode.RESULT_QUESTION, OnGetQstResult);
+        NetManager.GetInstance().AddNetMsgEventListener(ServerType.GuideServer, NetProtocolCode.OpenMap, OnGetOpenMap);
+
         EventDispatcher.GetInstance().AddEventListener(EventNameList.HIDE_OUT_RADIOM_RATE, HideOutRadiomRate);
         EventDispatcher.GetInstance().AddEventListener(EventNameList.OUTCAR_RADIOMRATE, OutCarRadiomRate);
         EventDispatcher.GetInstance().AddEventListener(EventNameList.SYN_BASECAMERA_RENDER, SynBaseCameraRender);
@@ -585,6 +596,38 @@ public class TrainView : ViewBase<TrainViewModel>
         UIMgr.GetInstance().OpenView(ViewType.InstructView);
     }
 
+
+    /// <summary>
+    /// 打开/关闭地图事件
+    /// </summary>
+    /// <param name="obj"></param>
+     private void OnClickMapBtn(GameObject obj)
+	{
+        Text text = obj.transform.Find("Text").GetComponent<Text>();
+        if (text.text == "打开地图")
+        {
+            //发给驾驶员
+            List<ForwardModel> forwardModels = new ForwardModelsBuilder()
+                .Append(AppConfig.MACHINE_ID, SeatType.DRIVE)
+                .Build();
+            //开门指令
+            NetManager.GetInstance().SendMsg(ServerType.GuideServer, "", NetProtocolCode.OpenMap, forwardModels);
+
+            text.text = "关闭地图";
+        }
+        else
+        {
+            //发给驾驶员
+            List<ForwardModel> forwardModels = new ForwardModelsBuilder()
+                .Append(AppConfig.MACHINE_ID, SeatType.DRIVE)
+                .Build();
+            //开门指令
+            NetManager.GetInstance().SendMsg(ServerType.GuideServer, "", NetProtocolCode.CloseMap, forwardModels);
+
+            text.text = "打开地图";
+        }
+    }
+
     /// <summary>
     /// 开关门事件
     /// </summary>
@@ -783,6 +826,25 @@ public class TrainView : ViewBase<TrainViewModel>
         NetManager.GetInstance().SendMsg(ServerType.GuideServer, JsonTool.ToJson(model), NetProtocolCode.REQUEST_QUESTION, forwardModels);
     }
 
+
+    /// <summary>
+    ///打开地图
+    /// </summary>
+    private void OnGetOpenMap(IEventParam param)
+    {
+        print("OnGetOpenMap");
+        UIMgr.GetInstance().OpenView(ViewType.MapView);
+    }
+
+    /// <summary>
+    ///打开地图
+    /// </summary>
+    private void OnGetCloseMap(IEventParam param)
+    {
+        print("OnGetCloseMap");
+       
+    }
+
     /// <summary>
     /// 显示答题面板
     /// </summary>
@@ -830,6 +892,7 @@ public class TrainView : ViewBase<TrainViewModel>
         NetManager.GetInstance().RemoveNetMsgEventListener(ServerType.GuideServer, NetProtocolCode.OUT_CAR_RES, OutCarWalkRes);
         NetManager.GetInstance().RemoveNetMsgEventListener(ServerType.GuideServer, NetProtocolCode.IN_CAR_RES, InCarRes);
         NetManager.GetInstance().RemoveNetMsgEventListener(ServerType.GuideServer, NetProtocolCode.RESULT_QUESTION, OnGetQstResult);
+        NetManager.GetInstance().RemoveNetMsgEventListener(ServerType.GuideServer, NetProtocolCode.OpenMap, OnGetOpenMap);
         EventDispatcher.GetInstance().RemoveEventListener(EventNameList.HIDE_OUT_RADIOM_RATE, HideOutRadiomRate);
         EventDispatcher.GetInstance().RemoveEventListener(EventNameList.OUTCAR_RADIOMRATE, OutCarRadiomRate);
         EventDispatcher.GetInstance().RemoveEventListener(EventNameList.SYN_BASECAMERA_RENDER, SynBaseCameraRender);

@@ -35,6 +35,7 @@ public class Radiometer : DeviceBase
                 checkTimer = 0;
                 //剂量率
                 float radiomRate = HarmAreaMgr.GetPosRadiomRate(car.GetPosition());
+                Debug.Log("当前辐射剂量率为："+ radiomRate);
                 //发送剂量率
                 EventDispatcher.GetInstance().DispatchEvent(EventNameList.SEND_RADIOM_RATE, new FloatEvParam(radiomRate));
             }

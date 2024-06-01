@@ -43,8 +43,8 @@ public class ChoiceReportDetect : ViewBase<ChoiceConfirmViewModel>
         reportYesBtn.RegistClick(OnReportYesBtn);
         reportNoBtn.RegistClick(OnReportNoBtn);
 
-        choiceTypeView.gameObject.SetActive(true);
-        reportView.gameObject.SetActive(false);
+        //choiceTypeView.gameObject.SetActive(true);
+       // reportView.gameObject.SetActive(false);
     }
 
     protected override void Start()
@@ -53,7 +53,16 @@ public class ChoiceReportDetect : ViewBase<ChoiceConfirmViewModel>
         this.DelayInvoke(0, () =>
         {
             NetManager.GetInstance().AddNetMsgEventListener(ServerType.GuideServer, NetProtocolCode.SEND_DRUG_DATA, OnGetDrugDataMsg);
+
+            
         });
+        //this.DelayInvoke(1f, () =>
+        //{
+
+        //    reportInput.text = GetReportStr("qianjie");
+          
+        //});
+        
     }
 
     private void OnGetDrugDataMsg(IEventParam param)
@@ -276,5 +285,20 @@ public class ChoiceReportDetect : ViewBase<ChoiceConfirmViewModel>
     {
         UIMgr.GetInstance().CloseView(ViewType.ChoiceReportDetect);
         
+    }
+
+    bool init = false;
+	private void Update()
+	{
+		if(!init)
+		{
+            if(model!=null)
+			{
+                reportInput.text = GetReportStr("qianjie");
+                init = true;
+            }
+          
+        }
+           
     }
 }

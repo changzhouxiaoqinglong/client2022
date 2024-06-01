@@ -162,6 +162,13 @@ public class MaxMapControl : MonoBehaviour
             LineControl.Instance.CreateAllLine(carPos.localPosition);
             TextControl.Instance.CreateText(terrainSize,uiSize);
         }
+
+        if (SceneMgr.GetInstance().curScene is Train3DSceneCtrBase scene3D)
+        {
+            Vector3 car = scene3D.miniMapMgr.MiniMapCamera.GetPoint();
+            transform.GetComponent<MaxMapControl>().SetCarPos(car);
+            carPos.localEulerAngles = new Vector3(0, 0, -scene3D.miniMapMgr.MiniMapCamera.GetAngle().y);
+        }
     }
 
     /// <summary>

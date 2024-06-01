@@ -151,17 +151,17 @@ public class DrugVarData
     /// <summary>
     /// 范围
     /// </summary>
-    public int Range;
+    public int Range;//没用
 
     /// <summary>
     /// 浓度
     /// </summary>
-    public float Dentity;
+    public float Dentity;//没用
 
     /// <summary>
     /// 袭击方式
     /// </summary>
-    public int AttackType;
+    public int AttackType;//没用
 
     /// <summary>
     /// 释放速度
