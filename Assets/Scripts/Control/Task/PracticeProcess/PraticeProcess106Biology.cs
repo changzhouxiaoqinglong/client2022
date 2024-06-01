@@ -33,7 +33,7 @@ public class PraticeProcess106Biology : PracticeProcessBase
             BiologyOp106Model model = JsonTool.ToObject<BiologyOp106Model>(tcpReceiveEvParam.netData.Msg);
             switch (model.Type)
             {
-                case BiologyOp106Type.kaiguanji:
+                case BiologyOp106Type.OpenClose:
                     DoProcess(model.Operate == OperateDevice.OPEN ? BiologyId106.Biology_OPEN_106 : BiologyId106.Biology_CLOSE_106);
                     break;
                 case BiologyOp106Type.alarm:

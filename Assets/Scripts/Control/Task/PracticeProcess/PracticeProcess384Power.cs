@@ -7,7 +7,7 @@ public class PracticeProcess384Power : PracticeProcessBase
     public override void Init(int taskId)
     {
         base.Init(taskId);
-        NetManager.GetInstance().AddNetMsgEventListener(ServerType.GuideServer, NetProtocolCode.POISON_ALARM_OP_384, OnGetPowerOpMsg);
+        NetManager.GetInstance().AddNetMsgEventListener(ServerType.GuideServer, NetProtocolCode.POWER_OP_384, OnGetPowerOpMsg);
 
 
     }
@@ -35,7 +35,7 @@ public class PracticeProcess384Power : PracticeProcessBase
     public override void End()
     {
         base.End();
-        NetManager.GetInstance().RemoveNetMsgEventListener(ServerType.GuideServer, NetProtocolCode.POISON_ALARM_OP_384, OnGetPowerOpMsg);
+        NetManager.GetInstance().RemoveNetMsgEventListener(ServerType.GuideServer, NetProtocolCode.POWER_OP_384, OnGetPowerOpMsg);
 
     }
 }

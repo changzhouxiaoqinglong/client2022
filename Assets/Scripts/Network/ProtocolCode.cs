@@ -384,9 +384,13 @@ public class NetProtocolCode
     /// 设置辐射 累计剂量率阈值
     /// </summary>
     public const int SET_TT_RADIOM_RATE_THRESHOLD_106 = 10623;
-
+    /// <summary>
+    /// 操作毒剂报警器模拟器
+    /// </summary>
     public const int POISON_ALARM_OP_106 = 10611;
-
+    /// <summary>
+    /// 操作生物模拟器
+    /// </summary>
     public const int Biology_OP_106 = 10631;
 
     /// <summary>
@@ -407,7 +411,7 @@ public class NetProtocolCode
     /// <summary>
     /// 设置减压阀数据
     /// </summary>
-    public const int SET_SetReliefThreshold = 10681;
+    public const int SET_SetReliefThreshold = 10613;
     #endregion
 
     #endregion

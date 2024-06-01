@@ -127,10 +127,16 @@ public class MessageView : MonoBehaviour
     ///  初始化基本信息
     /// </summary>
     private void InitBasicInformation()
-	{   
-     float WindDirOff = 5;
-     float WindSpOff = 0.3f;
-     var weather = NetVarDataMgr.GetInstance()._NetVarData._TaskEnvVarData.Wearth;
+	{
+        basicInfo.Find("tasktype/value").GetComponent<Text>().text = TaskMgr.GetInstance().curTaskData.Desc;
+        //基本操作不下显示风向风速温度湿度
+        if ((int)TaskMgr.GetInstance().curTaskData.Type == 1)
+        {
+            return;
+        }
+        float WindDirOff = 5;
+        float WindSpOff = 0.3f;
+        var weather = NetVarDataMgr.GetInstance()._NetVarData._TaskEnvVarData.Wearth;
         //风向浮动
         float windDir = weather.GetWindDir();
         windDir += WindDirOff * Random.Range(-1f, 1f);
@@ -146,10 +152,6 @@ public class MessageView : MonoBehaviour
 		
 
         basicInfo.Find("weather/value").GetComponent<Text>().text = weather.GetDes()+ "温度" +weather.Temperate+","+ "湿度" + weather.Humidity + ","+ GetWindDir();
-
-        basicInfo.Find("tasktype/value").GetComponent<Text>().text = TaskMgr.GetInstance().curTaskData.Desc;
-
-
 
     }
 

@@ -1493,20 +1493,20 @@ public class RadiomeOp102Model : ITaskLogModel
 /// </summary>
 public class PoisAlarmOpType102
 {
-    /// <summary>
-    /// 上电
-    /// </summary>
-    public const int Elec = 1;
+    ///// <summary>
+    ///// 上电
+    ///// </summary>
+    //public const int Elec = 1;
 
     /// <summary>
     /// 开关机
     /// </summary>
-    public const int OpenClose = 2;
+    public const int OpenClose = 1;
 
     /// <summary>
     /// 报警
     /// </summary>
-    public const int Alarm = 3;
+    public const int Alarm = 2;
 }
 
 /// <summary>
@@ -1528,8 +1528,8 @@ public class PoisAlarm102Model : ITaskLogModel
     {
         switch (Type)
         {
-            case PoisAlarmOpType102.Elec:
-                return "三防毒报装置：" + (Operate == OperateDevice.OPEN ? "上电" : "离线");
+           // case PoisAlarmOpType102.Elec:
+            //    return "三防毒报装置：" + (Operate == OperateDevice.OPEN ? "上电" : "离线");
             case PoisAlarmOpType102.OpenClose:
                 switch (Operate)
                 {
@@ -1611,20 +1611,20 @@ public class DiffPressureOp102Model : ITaskLogModel
 /// </summary>
 public class Prre3RadiomOpType102
 {
-    /// <summary>
-    /// 上电
-    /// </summary>
-    public const int Elec = 1;
+    ///// <summary>
+    ///// 上电
+    ///// </summary>
+    //public const int Elec = 1;
 
     /// <summary>
     /// 开关机
     /// </summary>
-    public const int OpenClose = 2;
+    public const int OpenClose = 1;
 
     /// <summary>
     /// 报警
     /// </summary>
-    public const int Alarm = 3;
+    public const int Alarm = 2;
 }
 
 /// <summary>
@@ -1645,9 +1645,9 @@ public class PreRadiomOp102Model : ITaskLogModel
     public string GetTaskLog(int seatId)
     {
         switch (Type)
-        {
-            case Prre3RadiomOpType102.Elec:
-                return "三防辐射仪器：" + (Operate == OperateDevice.OPEN ? "上电" : "离线");
+        {   //王聪取消上电状态
+            //case Prre3RadiomOpType102.Elec:
+            //    return "三防辐射仪器：" + (Operate == OperateDevice.OPEN ? "上电" : "离线");
             case Prre3RadiomOpType102.OpenClose:
                 return "三防辐射仪器：" + (Operate == OperateDevice.OPEN ? "开机" : "关机");
             case Prre3RadiomOpType102.Alarm:
@@ -1666,35 +1666,35 @@ public class PreRadiomOp102Model : ITaskLogModel
 /// </summary>
 public class CarMasssSpectOpType102
 {
-    /// <summary>
-    /// 上电
-    /// </summary>
-    public const int Elec = 1;
+    ///// <summary>
+    ///// 上电
+    ///// </summary>
+    //public const int Elec = 1;
 
     /// <summary>
     /// 氮气瓶总阀
     /// </summary>
-    public const int NitrogenTap = 2;
+    public const int NitrogenTap = 1;
 
     /// <summary>
     /// 电源
     /// </summary>
-    public const int Power = 3;
+    public const int Power = 2;
 
     /// <summary>
     /// ZPY软件
     /// </summary>
-    public const int ZPY = 4;
+    public const int ZPY = 3;
 
     /// <summary>
     /// 进样探杆密封盖
     /// </summary>
-    public const int SampPoleCap = 5;
+    public const int SampPoleCap = 4;
 
     /// <summary>
     /// 报警
     /// </summary>
-    public const int Alarm = 6;
+    public const int Alarm = 5;
 
     /// <summary>
     /// 错误类型1
@@ -1730,9 +1730,9 @@ public class CarMassSpectOp102Model : ITaskLogModel
     public string GetTaskLog(int seatId)
     {
         switch (Type)
-        {
-            case CarMasssSpectOpType102.Elec:
-                return "车载质谱仪：" + (Operate == OperateDevice.OPEN ? "上电" : "离线");
+        {  //王聪取消上电
+          //  case CarMasssSpectOpType102.Elec:
+           //     return "车载质谱仪：" + (Operate == OperateDevice.OPEN ? "上电" : "离线");
             case CarMasssSpectOpType102.NitrogenTap:
                 return "车载质谱仪：" + (Operate == OperateDevice.OPEN ? "氮气瓶总阀打开" : "氮气瓶总阀关闭");
             case CarMasssSpectOpType102.Power:
@@ -1756,27 +1756,27 @@ public class CarMassSpectOp102Model : ITaskLogModel
 /// 操作类型
 /// </summary>
 public class InfaredTelemetryOpType102
-{
-    /// <summary>
-    /// 上电
-    /// </summary>
-    public const int Elec = 1;
+{//王聪
+    ///// <summary>
+    ///// 上电
+    ///// </summary>
+    //public const int Elec = 1;
 
     /// <summary>
     /// 升
     /// </summary>
-    public const int Rise = 2;
+    public const int Rise = 1;
 
     /// <summary>
     /// 降
     /// </summary>
-    public const int Drop = 3;
+    public const int Drop = 2;
 
 
     /// <summary>
     /// 开关机
     /// </summary>
-    public const int OpenClose = 4;
+    public const int OpenClose = 3;
 
     /// <summary>
     /// 自检
@@ -1786,7 +1786,7 @@ public class InfaredTelemetryOpType102
     /// <summary>
     /// 报警
     /// </summary>
-    public const int Alarm = 6;
+    public const int Alarm = 4;
 
     /// <summary>
     /// 错误类型1
@@ -1813,8 +1813,9 @@ public class InfaredTelemetryOp102Model : ITaskLogModel
     {
         switch (Type)
         {
-            case InfaredTelemetryOpType102.Elec:
-                return "红外遥测：" + (Operate == OperateDevice.OPEN ? "上电" : "离线");
+            //王聪
+            //case InfaredTelemetryOpType102.Elec:
+            //    return "红外遥测：" + (Operate == OperateDevice.OPEN ? "上电" : "离线");
             case InfaredTelemetryOpType102.Rise:
                 return "红外遥测：" + (Operate == OperateDevice.OPEN ? "升到位" : "开始下降");
             case InfaredTelemetryOpType102.Drop:
@@ -2712,10 +2713,14 @@ public class SetTotalRadiomThreHold106 : ITaskLogModel
 #region 操作生物报警器106
 public class BiologyOp106Type
 {
+    /// <summary>
+    /// 开关王聪
+    /// </summary>
+    public const int OpenClose = 1;
 
-    public const int kaiguanji = 1;
-
-
+    /// <summary>
+    /// 报警王聪
+    /// </summary>
     public const int alarm = 2;
 
 }
@@ -2739,7 +2744,7 @@ public class BiologyOp106Model
     {
         switch (Type)
         {
-            case BiologyOp106Type.kaiguanji:
+            case BiologyOp106Type.OpenClose:
                 return "106生物模拟器：" + (Operate == OperateDevice.OPEN ? "开机" : "关机");
             case BiologyOp106Type.alarm:
                 return "106生物模拟器：" + (Operate == OperateDevice.OPEN ? "生物报警" : "停止生物报警");
