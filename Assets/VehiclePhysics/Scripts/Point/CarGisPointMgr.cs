@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CarGisPointMgr 
-{    
+public class CarGisPointMgr
+{
 
     /// <summary>
     /// 左上角经纬度
@@ -76,7 +76,7 @@ public class CarGisPointMgr
         float gisyDistance = bottomRightGis.y - topLeftGis.y;
         float terrainxDistance = bottomRightPos.x - topLeftPos.x;
         float terrainyDistance = bottomRightPos.z - topLeftPos.z;
-       // radio = new Vector2(terrainxDistance/gisxDistance, terrainyDistance/gisyDistance);
+        // radio = new Vector2(terrainxDistance/gisxDistance, terrainyDistance/gisyDistance);
         radio = new Vector2(Mathf.Abs(terrainxDistance / gisyDistance), Mathf.Abs(terrainyDistance / gisxDistance));
 
 

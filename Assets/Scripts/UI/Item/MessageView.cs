@@ -95,6 +95,13 @@ public class MessageView : MonoBehaviour
     {
         print("初始化训练流程_CheckType"+ NetVarDataMgr.GetInstance()._NetVarData._TaskEnvVarData.CheckType);
         print("初始化训练流程_TaskType" + NetVarDataMgr.GetInstance()._NetVarData._TaskEnvVarData.TaskType);
+        if(TaskMgr.GetInstance().curTaskData.Type == TaskType.Tactic)
+		{
+            processTitle.transform.parent.gameObject.SetActive(false);
+            //processTitle.SetText("当前为考核模式不显示具体操作信息");
+            return;
+        }
+
         //单击和考核没有基础训练
         if (NetVarDataMgr.GetInstance()._NetVarData._TaskEnvVarData.CheckType != CheckTypeConst.PRACTICE)
         {
@@ -130,7 +137,7 @@ public class MessageView : MonoBehaviour
 	{
         basicInfo.Find("tasktype/value").GetComponent<Text>().text = TaskMgr.GetInstance().curTaskData.Desc;
         //基本操作不下显示风向风速温度湿度
-        if ((int)TaskMgr.GetInstance().curTaskData.Type == 1)
+        if (TaskMgr.GetInstance().curTaskData.Type == TaskType.Base)
         {
             return;
         }

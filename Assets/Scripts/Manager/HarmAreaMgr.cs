@@ -10,6 +10,9 @@ public class HarmAreaMgr
     //辐射区域 资源地址
     private const string RADIATE_AREA_RES = "Prefabs/HarmAreas/RadiomArea";
 
+    //辐射区域 资源地址
+    private const string Biology_AREA_RES = "Prefabs/HarmAreas/BiologyArea";
+
     /// <summary>
     /// 有害区域
     /// </summary>
@@ -107,9 +110,16 @@ public class HarmAreaMgr
             area.RadiatVarData = radiate;
             areaList.Add(area);
         }//生物
-        else
+        else if (harmData.HarmType == HarmAreaType.BIOLOGY)
         {
-
+            BiologyData bio = JsonTool.ToObject<BiologyData>(harmData.Content);
+            GameObject res = Resources.Load<GameObject>(Biology_AREA_RES);
+            GameObject drugInst = Object.Instantiate(res, HarmAreaRoot);
+            //区域
+            BiologyArea area = drugInst.GetComponent<BiologyArea>();
+            //设置数据
+            area.biologydata = bio;
+            areaList.Add(area);
         }
     }
 
@@ -133,6 +143,7 @@ public class HarmAreaMgr
             }
         }
         //要加上随机剂量率
+        if(res!=0)
         res += curRandomRadiom;
         return res;
     }

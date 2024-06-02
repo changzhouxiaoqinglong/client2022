@@ -12,6 +12,8 @@ public class MathTool
     /// <returns></returns>
     public static bool IsPointInPolygon(Vector3 p, List<Vector3> vertexs)
     {
+        return ContainsPoint(vertexs.ToArray(), p);
+
         int crossNum = 0;
         int vertexCount = vertexs.Count;
         List<Vector3> tempList = new List<Vector3>();
@@ -47,5 +49,20 @@ public class MathTool
         {
             return true;
         }
+    }
+
+    public static bool ContainsPoint(Vector3[] polyPoints, Vector3 p)
+    {
+        var j = polyPoints.Length - 1;
+        var inside = false;
+        for (int i = 0; i < polyPoints.Length; j = i++)
+        {
+            var pi = polyPoints[i];
+            var pj = polyPoints[j];
+            if (((pi.z <= p.z && p.z < pj.z) || (pj.z <= p.z && p.z < pi.z)) &&
+                (p.x < (pj.x - pi.x) * (p.z - pi.z) / (pj.z - pi.z) + pi.x))
+                inside = !inside;
+        }
+        return inside;
     }
 }

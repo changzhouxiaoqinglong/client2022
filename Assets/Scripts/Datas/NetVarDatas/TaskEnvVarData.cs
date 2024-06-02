@@ -172,6 +172,33 @@ public class DrugVarData
 }
 
 /// <summary>
+/// 下发生物区域数据
+/// </summary>
+public class BiologyData
+{
+    public int Id;
+
+    /// <summary>
+    /// 生物类型
+    /// </summary>
+    public int Type;
+
+    /// <summary>
+    /// 位置
+    /// </summary>
+    public CustVect3 Pos;
+
+    /// <summary>
+    /// 释放速度
+    /// </summary>
+    public int BiologySpeed;
+
+    
+
+
+}
+
+/// <summary>
 /// 下发辐射区域数据
 /// </summary>
 public class RadiatVarData

@@ -21,6 +21,11 @@ public class AppConstant
     public const float DRUG_CHECK_OFFTIME = 0.5f;
 
     /// <summary>
+    /// 生物信息 检测间隔
+    /// </summary>
+    public const float Biology_CHECK_OFFTIME = 0.5f;
+
+    /// <summary>
     /// 北斗数据上报间隔 s
     /// </summary>
     public const float BEIDOU_SEND_OFFTIME = 1;

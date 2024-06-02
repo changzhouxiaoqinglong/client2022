@@ -1,46 +1,36 @@
-ï»¿
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.InputSystem;
-/// <summary>
-/// æ¯’å‰‚æŠ¥è­¦å™¨
-/// </summary>
-public class PoisonAlarm : DeviceBase
+
+public class BiologicalMonitoring : DeviceBase
 {
     /// <summary>
-    /// è®¡æ—¶å™¨
+    /// ¼ÆÊ±Æ÷
     /// </summary>
     private float checkTimer = 0;
 
     protected override void OnUpdate()
     {
         base.OnUpdate();
-        //åŒ–å­¦è®­ç»ƒæ‰èµ·ä½œç”¨
+        //»¯Ñ§ÑµÁ·²ÅÆğ×÷ÓÃ
         if (TaskMgr.GetInstance().curTaskData.CheckType != HarmAreaType.DRUG)
         {
             return;
         }
-        if (!UIMgr.GetInstance().IsOpenView(ViewType.DrugDgreeTest))
-        {
-            CountDrugData();
-        }
-        //if (Keyboard.current.ctrlKey.isPressed)
-        //{
-        //    if (Keyboard.current.tKey.isPressed)
-        //    {
-        //        UIMgr.GetInstance().OpenView(ViewType.DrugDgreeTest);
-        //    }
-        //}
+        CountBiologyData();
+
+
     }
 
     /// <summary>
-    /// è®¡ç®—ä¸ŠæŠ¥åŒ–å­¦åŒºåŸŸä¿¡æ¯
+    /// ¼ÆËãÉÏ±¨ÉúÎïÇøÓòĞÅÏ¢
     /// </summary>
-    private void CountDrugData()
+    private void CountBiologyData()
     {
         if (car.IsSelfCar())
         {
             checkTimer += Time.deltaTime;
-            if (checkTimer >= AppConstant.DRUG_CHECK_OFFTIME)
+            if (checkTimer >= AppConstant.Biology_CHECK_OFFTIME)
             {
                 checkTimer = 0;
                 ReportCurDrugData();
@@ -49,21 +39,21 @@ public class PoisonAlarm : DeviceBase
     }
 
     /// <summary>
-    /// ä¸ŠæŠ¥å½“å‰åŒ–å­¦ä¿¡æ¯
+    /// ÉÏ±¨µ±Ç°»¯Ñ§ĞÅÏ¢
     /// </summary>
     protected virtual void ReportCurDrugData()
     {
-        //print("ä¸ŠæŠ¥å½“å‰åŒ–å­¦ä¿¡æ¯");
-        //æµ“åº¦
+        //print("ÉÏ±¨µ±Ç°»¯Ñ§ĞÅÏ¢");
+        //Å¨¶È
         float dentity = HarmAreaMgr.GetPosDrugDentity(car.GetPosition());
         DrugVarData drugVarData = HarmAreaMgr.GetPosDrugData(car.GetPosition());
 
         //if (drugVarData != null)
-        //    print("getæ¯’æ•°æ®æµ“åº¦ä¸º:  "+ dentity);
+        //    print("get¶¾Êı¾İÅ¨¶ÈÎª:  "+ dentity);
         //else
-        //    print("æ²¡æœ‰æ¯’æ•°æ®");
+        //    print("Ã»ÓĞ¶¾Êı¾İ");
 
-        //æ¯’æ•°æ®
+        //¶¾Êı¾İ
         ExPoisonData exPoisonData = null;
         if (drugVarData != null)
         {
@@ -77,7 +67,7 @@ public class PoisonAlarm : DeviceBase
             Degree = exPoisonData != null ? exPoisonData.GetdDegreeByDentity(dentity) : DrugDegree.NONE,
             DType = exPoisonData != null ? exPoisonData.DType : DrugDType.NONE,
         };
-        //å‘ç»™è®¾å¤‡ç®¡ç†è½¯ä»¶
+        //·¢¸øÉè±¸¹ÜÀíÈí¼ş
         NetManager.GetInstance().SendMsg(ServerType.GuideServer, JsonTool.ToJson(model), NetProtocolCode.SEND_DRUG_DATA, NetManager.GetInstance().SameMachineAllSeats);
     }
 }

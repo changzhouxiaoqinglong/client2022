@@ -1,5 +1,6 @@
 ﻿
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 /// <summary>
 /// 毒区
@@ -26,7 +27,8 @@ public class DrugArea : HarmAreaBase
         //初始化大小 范围要*2
         //transform.localScale = Vector3.one * DrugVarData.Range * 2;
         //位置
-        transform.position = (SceneMgr.GetInstance().curScene as Train3DSceneCtrBase).terrainChangeMgr.GetTerrainPosByGis(DrugVarData.Pos.ToVector2());
+        Vector3 pos = (SceneMgr.GetInstance().curScene as Train3DSceneCtrBase).terrainChangeMgr.GetTerrainPosByGis(DrugVarData.Pos.ToVector2());
+        transform.position = new Vector3(pos.x, transform.position.y,pos.z);
         windDir = taskEnvVarData.Wearth.GetWindDir();
         windSp = taskEnvVarData.Wearth.WindSp;
         CreatePointRange(transform.position, windDir);
@@ -62,26 +64,45 @@ public class DrugArea : HarmAreaBase
     /// <summary>
     /// 获得对应位置的浓度
     /// </summary>
+    //public float GetDrugDentity(Vector3 pos)
+    //{
+    //    if (MathTool.IsPointInPolygon(pos, pointList))
+    //    {
+    //        float dentity = DrugAreaConstanst.DRUG_DENTITY * GetHarmRange();//12000*500/1000
+    //        float dis = Vector3.Distance(transform.position, pos);
+    //        print(dis);
+    //        float drugSize;
+    //       // if (NetVarDataMgr.GetInstance()._NetVarData._TaskEnvVarData.Scene == SceneConstant.HILLS)
+    //            drugSize = DrugAreaConstanst.DRUG_SIZE * GetHarmRange();
+    //       // else
+    //       //     drugSize = DrugAreaConstanst.DRUG_SIZE * GetHarmRange() / TempRadio;
+    //        if (dis <= drugSize * 0.1)
+    //        {
+    //            return ((drugSize - dis) / drugSize) * dentity;
+    //        }
+    //        if(dis <= drugSize * 0.8)
+    //        {
+    //            return ((drugSize - dis) / drugSize) * 0.03f * dentity; 
+    //        }
+    //        return ((drugSize - dis) / drugSize) * 0.000001f * dentity;
+    //    }
+    //    return 0;
+    //}
+
+    /// <summary>
+    /// 获得对应位置的浓度
+    /// </summary>
     public float GetDrugDentity(Vector3 pos)
     {
         if (MathTool.IsPointInPolygon(pos, pointList))
-        {
-            float dentity = DrugAreaConstanst.DRUG_DENTITY * GetHarmRange();
-            float dis = Vector3.Distance(transform.position, pos);
-            float drugSize;
-            if (NetVarDataMgr.GetInstance()._NetVarData._TaskEnvVarData.Scene == SceneConstant.HILLS)
-                drugSize = DrugAreaConstanst.DRUG_SIZE * GetHarmRange();
-            else
-                drugSize = DrugAreaConstanst.DRUG_SIZE * GetHarmRange() / TempRadio;
-            if (dis <= drugSize * 0.1)
-            {
-                return ((drugSize - dis) / drugSize) * dentity;
-            }
-            if(dis <= drugSize * 0.8)
-            {
-                return ((drugSize - dis) / drugSize) * 0.03f * dentity; 
-            }
-            return ((drugSize - dis) / drugSize) * 0.000001f * dentity;
+        {                     
+            Vector2 p1 = new Vector2(center.position.x, center.position.z);
+            Vector2 p2 = new Vector2(pos.x, pos.z);
+            Vector2 p3 = new Vector2(cubelist[3].position.x, cubelist[3].position.z);
+            float maxdis = Vector2.Distance(p3,p1);
+            float dis = Vector2.Distance(p1, p2);
+            //print("maxdis: "+ maxdis+ "dis: " + dis);
+            return DrugAreaConstanst.DRUG_DENTITY * (1- Mathf.Clamp01(dis / maxdis));
         }
         return 0;
     }
@@ -105,11 +126,11 @@ public class DrugArea : HarmAreaBase
 
 
     /// <summary>
-    /// 返回毒区的直径范围
+    /// 返回毒区的直径范围 释放速度越大 范围越大 
     /// </summary>
-    public override float GetHarmRange()
+    public override float GetHarmRange() 
     {
-        return (DrugVarData.Speed / (float)DrugAreaConstanst.DRUG_SIZE) * HarmAreaBaseConstant.SIZE_RADIO / 2;
+        return (DrugVarData.Speed / (float)DrugAreaConstanst.DRUG_SIZE) * HarmAreaBaseConstant.SIZE_RADIO / 2;//DrugVarData.Speed/1000
     }
 
     /// <summary>
@@ -118,7 +139,11 @@ public class DrugArea : HarmAreaBase
     public override void SetPosition()
     {
         //transform.position = MathsMgr.PointDistance(windDir, 0,  transform.position);
-        transform.position = MathsMgr.PointDistance(windDir, windSp * HarmAreaBaseConstant.SPEED_RADIO ,  transform.position);
+
+
+        Vector3 pos = MathsMgr.PointDistance(windDir, windSp * HarmAreaBaseConstant.SPEED_RADIO ,  transform.position);        
+        transform.position = new Vector3(pos.x, transform.position.y, pos.z);
+
         CreatePointRange(transform.position, windDir);
     }
 
@@ -140,29 +165,67 @@ public class DrugArea : HarmAreaBase
 
     }
 
+
+    [SerializeField]
+    List<Transform> cubelist;
+    public Transform center;
     /// <summary>
     /// 找到扇形所有区域点
     /// </summary>
     private void CreatePointRange(Vector3 startPos, float angle)
     {
-        if (NetVarDataMgr.GetInstance()._NetVarData._TaskEnvVarData.Scene == SceneConstant.HILLS)
+        //print(DrugAreaConstanst.DRUG_SIZE * GetHarmRange());
+        // if (NetVarDataMgr.GetInstance()._NetVarData._TaskEnvVarData.Scene == SceneConstant.HILLS)
         {
             pointList.Clear();
-            pointList.Add(MathsMgr.PointDistance(angle - 90, DrugAreaConstanst.DRUG_SIZE * GetHarmRange() * DrugAreaConstanst.MIN_DISTANCE, startPos));
-            pointList.Add(MathsMgr.PointDistance(angle + 90, DrugAreaConstanst.DRUG_SIZE * GetHarmRange() * DrugAreaConstanst.MIN_DISTANCE, startPos));
+
+            Vector3 pos1 = MathsMgr.PointDistance(angle - 90, DrugAreaConstanst.DRUG_SIZE * GetHarmRange() * DrugAreaConstanst.MIN_DISTANCE, startPos);
+            Vector3 pos2 = MathsMgr.PointDistance(angle + 90, DrugAreaConstanst.DRUG_SIZE * GetHarmRange() * DrugAreaConstanst.MIN_DISTANCE, startPos);
+            pointList.Add(pos1);
+            pointList.Add(pos2);
             Vector3 endPos = MathsMgr.PointDistance(angle, (DrugAreaConstanst.DRUG_SIZE * GetHarmRange()) * 0.91f, startPos);
-            pointList.Add(MathsMgr.PointDistance(angle - 90, DrugAreaConstanst.DRUG_SIZE * GetHarmRange() * DrugAreaConstanst.MAX_DISTANCE, endPos));
-            pointList.Add(MathsMgr.PointDistance(angle + 90, DrugAreaConstanst.DRUG_SIZE * GetHarmRange() * DrugAreaConstanst.MAX_DISTANCE, endPos));
+
+            Vector3 pos3 = MathsMgr.PointDistance(angle - 90, DrugAreaConstanst.DRUG_SIZE * GetHarmRange() * DrugAreaConstanst.MAX_DISTANCE, endPos);
+            Vector3 pos4 = MathsMgr.PointDistance(angle + 90, DrugAreaConstanst.DRUG_SIZE * GetHarmRange() * DrugAreaConstanst.MAX_DISTANCE, endPos);
+            pointList.Add(pos4);//point要顺时针 不然有问题
+            pointList.Add(pos3);
+
+            if (cubelist.Count == 0)
+            {
+                cubelist = new List<Transform>();
+                for (int i = 0; i < 5; i++)
+                {
+                    GameObject go = GameObject.CreatePrimitive(PrimitiveType.Cube);
+                    go.name = "毒区扇形区域点" + i;
+                    go.transform.parent = transform;
+                    cubelist.Add(go.transform);
+                }
+                GameObject centerobj = GameObject.CreatePrimitive(PrimitiveType.Cube);
+                center = centerobj.transform;
+            }
+            else
+            {
+                cubelist[0].transform.position = pos1;
+                cubelist[1].transform.position = pos2;
+                cubelist[2].transform.position = pos4;
+                cubelist[3].transform.position = pos3;
+                cubelist[4].transform.position = endPos;
+                Debug.DrawLine(pos1, pos2, Color.red, DrugAreaConstanst.DRUGAREA_UPDATEPOS_TIME);
+                Debug.DrawLine(pos2, pos4, Color.red, DrugAreaConstanst.DRUGAREA_UPDATEPOS_TIME);
+                Debug.DrawLine(pos4, pos3, Color.red, DrugAreaConstanst.DRUGAREA_UPDATEPOS_TIME);
+                Debug.DrawLine(pos3, pos1, Color.red, DrugAreaConstanst.DRUGAREA_UPDATEPOS_TIME);
+                center.position=(pos1 + pos2 + pos3 + pos4 ) / 4;
+            }
         }
-        else
-        {
-            pointList.Clear();
-            pointList.Add(MathsMgr.PointDistance(angle - 90, DrugAreaConstanst.DRUG_SIZE * GetHarmRange() * DrugAreaConstanst.MIN_DISTANCE / TempRadio, startPos));
-            pointList.Add(MathsMgr.PointDistance(angle + 90, DrugAreaConstanst.DRUG_SIZE * GetHarmRange() * DrugAreaConstanst.MIN_DISTANCE / TempRadio, startPos));
-            Vector3 endPos = MathsMgr.PointDistance(angle, (DrugAreaConstanst.DRUG_SIZE * GetHarmRange()) * 0.91f / TempRadio, startPos);
-            pointList.Add(MathsMgr.PointDistance(angle - 90, DrugAreaConstanst.DRUG_SIZE * GetHarmRange() * DrugAreaConstanst.MAX_DISTANCE / TempRadio, endPos));
-            pointList.Add(MathsMgr.PointDistance(angle + 90, DrugAreaConstanst.DRUG_SIZE * GetHarmRange() * DrugAreaConstanst.MAX_DISTANCE / TempRadio, endPos));
-        }
+        //else
+        //{
+        //    pointList.Clear();
+        //    pointList.Add(MathsMgr.PointDistance(angle - 90, DrugAreaConstanst.DRUG_SIZE * GetHarmRange() * DrugAreaConstanst.MIN_DISTANCE / TempRadio, startPos));
+        //    pointList.Add(MathsMgr.PointDistance(angle + 90, DrugAreaConstanst.DRUG_SIZE * GetHarmRange() * DrugAreaConstanst.MIN_DISTANCE / TempRadio, startPos));
+        //    Vector3 endPos = MathsMgr.PointDistance(angle, (DrugAreaConstanst.DRUG_SIZE * GetHarmRange()) * 0.91f / TempRadio, startPos);
+        //    pointList.Add(MathsMgr.PointDistance(angle - 90, DrugAreaConstanst.DRUG_SIZE * GetHarmRange() * DrugAreaConstanst.MAX_DISTANCE / TempRadio, endPos));
+        //    pointList.Add(MathsMgr.PointDistance(angle + 90, DrugAreaConstanst.DRUG_SIZE * GetHarmRange() * DrugAreaConstanst.MAX_DISTANCE / TempRadio, endPos));
+        //}
         
     
     
@@ -176,7 +239,7 @@ public class DrugAreaConstanst
    /// <summary>
    /// 毒区中心浓度
    /// </summary>
-    public const float DRUG_DENTITY = 12000;
+    public const float DRUG_DENTITY = 1000;
 
     /// <summary>
     /// 毒区大小 默认500位基数1

@@ -249,10 +249,10 @@ public class MaxMapControl : MonoBehaviour
                 Vector3 pos = harmArea.transform.position;
                 initPos = harmArea.transform.position;
                 harmObj.transform.GetComponent<RectTransform>().anchoredPosition = new Vector2(uiRadio.x * pos.x, uiRadio.y * pos.z);
-                if(NetVarDataMgr.GetInstance()._NetVarData._TaskEnvVarData.Scene == SceneConstant.HILLS)
+                //if(NetVarDataMgr.GetInstance()._NetVarData._TaskEnvVarData.Scene == SceneConstant.HILLS)
                     harmObj.transform.GetComponent<RectTransform>().sizeDelta = new Vector2(uiRadio.x * 1000 , uiRadio.y * 1000 );
-                else
-                    harmObj.transform.GetComponent<RectTransform>().sizeDelta = new Vector2(uiRadio.x * 1000 / TempRadio, uiRadio.y * 1000 / TempRadio);
+                //else
+                //    harmObj.transform.GetComponent<RectTransform>().sizeDelta = new Vector2(uiRadio.x * 1000 / TempRadio, uiRadio.y * 1000 / TempRadio);
                 harmObj.transform.GetComponent<RectTransform>().localScale = new Vector3(range, range, 1);
                 harmObj.transform.GetComponent<RectTransform>().localEulerAngles = new Vector3(0,0,taskEnvVarData.Wearth.GetWindDir());
                 curHarmObj = harmObj;

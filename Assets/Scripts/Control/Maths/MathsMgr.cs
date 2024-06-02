@@ -66,7 +66,8 @@ public class MathsMgr
         float radians = AngleOrRadians(angle);
         float x = Mathf.Cos(radians) * distance;
         float z = Mathf.Sin(radians) * distance;
-        endPos = new Vector3(startPos.x + x, 0, startPos.z + z);
+        //endPos = new Vector3(startPos.x + x, 0, startPos.z + z);
+        endPos = new Vector3(startPos.x + x, startPos.y, startPos.z + z);
         return endPos;
     }
 

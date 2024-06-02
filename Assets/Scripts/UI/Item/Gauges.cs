@@ -32,8 +32,8 @@ public class Gauges : MonoBehaviour
         vehicleController = VehicleInputMgr.GetInstance().VehicleController;
         if (vehicleController != null)
         {           
-            if (analogRpmGauge != null) RpmGauge.text = vehicleController.engine.RPM.ToString();
-            if (analogSpeedGauge != null) SpeedGauge.text = vehicleController.GetCurSpeed().ToString();
+            if (analogRpmGauge != null) RpmGauge.text = vehicleController.engine.RPM.ToString("F2");
+            if (analogSpeedGauge != null) SpeedGauge.text = vehicleController.GetCurSpeed().ToString("F2");
 
 
             if (analogRpmGauge != null) analogRpmGauge.Value = vehicleController.engine.RPM;
