@@ -174,6 +174,8 @@ public class TrainView : ViewBase<TrainViewModel>
     /// </summary>
     private Dropdown dropdown ;
 
+    
+
     protected override void Awake()
     {
         base.Awake();
@@ -227,6 +229,7 @@ public class TrainView : ViewBase<TrainViewModel>
 
         MapBtn = transform.Find("右侧按钮框/VerticalLayout/OpenMapBtn").GetComponent<ButtonBase>();
         MapBtn.RegistClick(OnClickMapBtn);
+        
 
         // cleanBtn = transform.Find("CleanBtn/Btn").GetComponent<ButtonBase>();
         // cleanBtn.RegistClick(OnClickCleanPoisonBtn);
@@ -242,6 +245,8 @@ public class TrainView : ViewBase<TrainViewModel>
         EventDispatcher.GetInstance().AddEventListener(EventNameList.HIDE_OUT_RADIOM_RATE, HideOutRadiomRate);
         EventDispatcher.GetInstance().AddEventListener(EventNameList.OUTCAR_RADIOMRATE, OutCarRadiomRate);
         EventDispatcher.GetInstance().AddEventListener(EventNameList.SYN_BASECAMERA_RENDER, SynBaseCameraRender);
+
+
     }
 
     protected override void Start()

@@ -38,9 +38,11 @@ public class MessageView : MonoBehaviour
     /// 底部信息框min
     /// </summary>
     private ButtonBase MinInfoBtn;
+    private Text tasktype;
     private void Awake()
     {
         titles = GetComponentsInChildren<MessageTitle>();
+     //   tasktype= transform.Find("tasktype").GetComponent<Text>();
         processTitle = transform.Find("提示信息框/Scroll View").GetComponent<MessageTitle>();
         basicInfo = transform.Find("底部信息框/BasicInformation/Viewport/Content");
         // EventDispatcher.GetInstance().AddEventListener(EventNameList.CLICK_MSG_TITLE, OnClickTitle);
@@ -137,7 +139,7 @@ public class MessageView : MonoBehaviour
 	{
         basicInfo.Find("tasktype/value").GetComponent<Text>().text = TaskMgr.GetInstance().curTaskData.Desc;
         //基本操作不下显示风向风速温度湿度
-        if (TaskMgr.GetInstance().curTaskData.Type == TaskType.Base)
+        if (TaskMgr.GetInstance().curTaskData.Type != TaskType.Tactic)
         {
             return;
         }
@@ -153,21 +155,40 @@ public class MessageView : MonoBehaviour
         float windSp = weather.GetWindSp();
         windSp += WindSpOff * Random.Range(-1f, 1f);
         windSp = windSp < 0 ? 0 : windSp;
-		// basicInfo.Find("tasktype/value")?.GetComponent<Text>().text=;
-		// basicInfo.Find("currentpos")?;
+        // basicInfo.Find("tasktype/value")?.GetComponent<Text>().text=;
+        tasktype.gameObject.SetActive(true);
+        tasktype = transform.Find("tasktype").GetComponent<Text>();
+        if (NetVarDataMgr.GetInstance()._NetVarData._TaskEnvVarData.CheckType == CheckTypeConst.EXAMINE)
+		{
+            tasktype.text = "考核模式";
+        }
+        else if (NetVarDataMgr.GetInstance()._NetVarData._TaskEnvVarData.CheckType == CheckTypeConst.PRACTICE)
+        {
+            tasktype.text = "训练模式";
+        }
 
-		
 
         basicInfo.Find("weather/value").GetComponent<Text>().text = weather.GetDes()+ "温度" +weather.Temperate+","+ "湿度" + weather.Humidity + ","+ GetWindDir();
 
     }
 
+	private void Update()
+	{
+        if (SceneMgr.GetInstance().curScene is Train3DSceneCtrBase scene3D)
+        {
+            Vector3 lation = scene3D.terrainChangeMgr.gisPointMgr.GetGisPos(scene3D.miniMapMgr.MiniMapCamera.GetPoint());
+            if (lation != null)
+            {
+                basicInfo.Find("currentpos/value").GetComponent<Text>().text = "经度：" + lation.y + "，纬度：" + lation.x;
+            }
+        }
+    }
 
-    /// <summary>
-    /// 获取当前风向
-    /// </summary>
-    /// <returns></returns>
-    private string GetWindDir() {
+	/// <summary>
+	/// 获取当前风向
+	/// </summary>
+	/// <returns></returns>
+	private string GetWindDir() {
         string windDir = "";
         Wearth curWearth = NetVarDataMgr.GetInstance()._NetVarData._TaskEnvVarData.Wearth;
         switch (curWearth.WindDir) {
