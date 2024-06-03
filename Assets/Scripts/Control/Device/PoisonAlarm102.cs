@@ -7,7 +7,13 @@ public class PoisonAlarm102 : PoisonAlarm
         //浓度
         float dentity = HarmAreaMgr.GetPosDrugDentity(car.GetPosition());
         DrugVarData drugVarData = HarmAreaMgr.GetPosDrugData(car.GetPosition());
-        print("毒区域数据:   "+(drugVarData == null));
+        if(drugVarData != null)
+         {
+            UnityEngine.Debug.LogError("get毒数据浓度为:  " + dentity);         
+        }
+        else
+            UnityEngine.Debug.LogError("没有毒数据");
+
         DefenseReportDrugDataModel model = new DefenseReportDrugDataModel()
         {
             Type = drugVarData != null ? drugVarData.Type : PoisonType.NO_POISON,

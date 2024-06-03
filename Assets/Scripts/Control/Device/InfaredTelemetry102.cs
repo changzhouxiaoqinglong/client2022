@@ -183,12 +183,12 @@ public class InfaredTelemetry102 : DeviceBase
             InfaredTelemetryOp102Model infaredTelemetry = JsonTool.ToObject<InfaredTelemetryOp102Model>(tcpReceiveEvParam.netData.Msg);
             string str = infaredTelemetry.Type.ToString() + infaredTelemetry.Operate.ToString();
             Logger.Log("监听到遥测信息,type为" + str);
-            if (str == "30")
+            if (str == "11")
             {
                 Debug.Log("开始上升");
                 StartUP();
             }
-            else if (str == "20")
+            else if (str == "21")
             {
                 Debug.Log("开始下降");
                 StartDown();

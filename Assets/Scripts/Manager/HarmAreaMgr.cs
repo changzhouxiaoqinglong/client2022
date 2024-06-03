@@ -197,4 +197,22 @@ public class HarmAreaMgr
         }
         return null;
     }
+
+
+    /// <summary>
+    /// 获得对应位置的 生物数据
+    /// </summary>
+    public float GetPosBiologyDentity(Vector3 pos)
+    {
+        float res = 0;
+        //遍历辐射区域 计算
+        foreach (var item in areaList)
+        {
+            if (item is BiologyArea biologyArea && biologyArea.IsInRange(pos))
+            {
+                res += biologyArea.GetBiologyDentity(pos);
+            }
+        }
+        return res;
+    }
 }

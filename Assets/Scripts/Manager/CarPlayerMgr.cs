@@ -114,6 +114,7 @@ public class CarPlayerMgr : MonoBehaviour
     /// </summary>
     public bool OutCar(int seatId)
     {
+        print(seatId);
         PlayerCtr player = GetPlayerCtrBySeatId(seatId);
         if (player != null)
         {

@@ -651,6 +651,17 @@ public class SetDoseRateModel
 }
 
 /// <summary>
+/// 设置生物数据
+/// </summary>
+public class SetBIOLOGYModel
+{
+    /// <summary>
+    /// 剂量率
+    /// </summary>
+    public float Biomass;
+}
+
+/// <summary>
 /// 通知驾驶员插旗
 /// </summary>
 public class FlagToDriveModel

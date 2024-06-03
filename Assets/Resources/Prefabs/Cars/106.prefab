@@ -352,7 +352,7 @@ Rigidbody:
   m_Mass: 2500
   m_Drag: 0.02
   m_AngularDrag: 0.01
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_CenterOfMass: {x: 0.031522572, y: 0.57500005, z: 0.23073567}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
   m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
   m_IncludeLayers:
@@ -361,7 +361,7 @@ Rigidbody:
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_ImplicitCom: 1
+  m_ImplicitCom: 0
   m_ImplicitTensor: 1
   m_UseGravity: 1
   m_IsKinematic: 0
@@ -11494,6 +11494,7 @@ GameObject:
   - component: {fileID: 6674339023545919593}
   - component: {fileID: 8213822494306142219}
   - component: {fileID: 6887517245675951398}
+  - component: {fileID: 2051309356677883318}
   m_Layer: 0
   m_Name: Devices
   m_TagString: Untagged
@@ -11562,6 +11563,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bca2ad0a541f99a479c9996e69ec8f4c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2051309356677883318
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4967226411078097717}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad1701fdd8778d24c993a7f52816764c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &5047479679221311424

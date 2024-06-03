@@ -324,6 +324,7 @@ public class PlayerCtr : InputCtrBase
 
     public void OutCarState()
     {
+        print("OutCarState");
         curCollider.enabled = true;
         //下车 如果是同步人物 就不受力影响  否则就设置为受力影响
         rb.isKinematic = receiveSyncMsg != null;

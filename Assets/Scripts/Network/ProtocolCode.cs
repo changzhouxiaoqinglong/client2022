@@ -81,6 +81,11 @@ public class NetProtocolCode
     public const int SEND_RADIOM_RATE = 101;
 
     /// <summary>
+    /// 发送生物气溶胶浓度信息
+    /// </summary>
+    public const int SEND_BIOLOGY_BIOMASS = 106;
+
+    /// <summary>
     /// 发送化学信息
     /// </summary>
     public const int SEND_DRUG_DATA = 102;

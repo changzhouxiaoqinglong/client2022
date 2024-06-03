@@ -136,11 +136,12 @@ public class VehicleInputMgr : InputCtrBase
             {
                 try
                 {
+                    /*
                     if (AppConfig.CAR_ID == CarIdConstant.ID_102)
                     {
                         //换挡
                         vehicleController.transmission.ShiftInto(CustomInput.ShiftLevel);
-                       // print("102换挡");
+                       // print("102换挡"+ CustomInput.ShiftLevel);
                     }
                     else
                     {
@@ -151,8 +152,9 @@ public class VehicleInputMgr : InputCtrBase
                             //换挡
                             vehicleController.transmission.ShiftInto(CustomInput.ShiftLevel);
                         }
+                      //  print("102以外的车 并且踩下离合换挡" + CustomInput.ShiftLevel);
                     }
-
+                    */
                     //#if DEBUG
                     //挂挡 键盘调试
                     if (Keyboard.current.digit1Key.wasPressedThisFrame)

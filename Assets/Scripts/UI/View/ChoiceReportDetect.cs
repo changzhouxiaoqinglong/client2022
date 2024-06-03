@@ -292,12 +292,22 @@ public class ChoiceReportDetect : ViewBase<ChoiceConfirmViewModel>
 	{
 		if(!init)
 		{
-            if(model!=null)
+            if (TaskMgr.GetInstance().curTaskData.CheckType == HarmAreaType.NUCLEAR)
 			{
                 reportInput.text = GetReportStr("qianjie");
                 init = true;
             }
-          
+            else if (TaskMgr.GetInstance().curTaskData.CheckType == HarmAreaType.DRUG)
+			{
+                if (model != null)
+                {
+                    reportInput.text = GetReportStr("qianjie");
+                    init = true;
+                }
+            }
+
+
+
         }
            
     }

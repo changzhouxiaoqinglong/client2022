@@ -58,13 +58,13 @@ public class PoisonAlarm : DeviceBase
         float dentity = HarmAreaMgr.GetPosDrugDentity(car.GetPosition());
         DrugVarData drugVarData = HarmAreaMgr.GetPosDrugData(car.GetPosition());
 
-        //if (drugVarData != null)
-        //    print("get毒数据浓度为:  "+ dentity);
-        //else
-        //    print("没有毒数据");
+		if (drugVarData != null)
+            Debug.LogError("get毒数据浓度为:  " + dentity);
+		else
+            Debug.LogError("没有毒数据");
 
-        //毒数据
-        ExPoisonData exPoisonData = null;
+		//毒数据
+		ExPoisonData exPoisonData = null;
         if (drugVarData != null)
         {
             exPoisonData = ExPoisonDataMgr.GetInstance().GetDataById(drugVarData.Type);

@@ -99,7 +99,7 @@ public class MessageView : MonoBehaviour
         print("初始化训练流程_TaskType" + NetVarDataMgr.GetInstance()._NetVarData._TaskEnvVarData.TaskType);
         if(TaskMgr.GetInstance().curTaskData.Type == TaskType.Tactic)
 		{
-            processTitle.transform.parent.gameObject.SetActive(false);
+            processTitle.transform.parent.gameObject.SetActive(false);      
             //processTitle.SetText("当前为考核模式不显示具体操作信息");
             return;
         }
@@ -112,12 +112,12 @@ public class MessageView : MonoBehaviour
             return;
         }
 
-        if (NetVarDataMgr.GetInstance()._NetVarData._TaskEnvVarData.TaskType == 3)
-		{
-            processTitle.transform.parent.gameObject.SetActive(false);
-            //processTitle.SetText("当前为考核模式不显示具体操作信息");
-            return;
-        }
+  //      if (NetVarDataMgr.GetInstance()._NetVarData._TaskEnvVarData.TaskType == 3)
+		//{
+  //          processTitle.transform.parent.gameObject.SetActive(false);         
+  //          //processTitle.SetText("当前为考核模式不显示具体操作信息");
+  //          return;
+  //      }
 
             int taskId = TaskMgr.GetInstance().curTaskData.Id;
         //本次训练流程数据
@@ -156,8 +156,9 @@ public class MessageView : MonoBehaviour
         windSp += WindSpOff * Random.Range(-1f, 1f);
         windSp = windSp < 0 ? 0 : windSp;
         // basicInfo.Find("tasktype/value")?.GetComponent<Text>().text=;
-        tasktype.gameObject.SetActive(true);
+        
         tasktype = transform.Find("tasktype").GetComponent<Text>();
+        tasktype.gameObject.SetActive(true);
         if (NetVarDataMgr.GetInstance()._NetVarData._TaskEnvVarData.CheckType == CheckTypeConst.EXAMINE)
 		{
             tasktype.text = "考核模式";
