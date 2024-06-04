@@ -156,16 +156,30 @@ public class MessageView : MonoBehaviour
         windSp += WindSpOff * Random.Range(-1f, 1f);
         windSp = windSp < 0 ? 0 : windSp;
         // basicInfo.Find("tasktype/value")?.GetComponent<Text>().text=;
+
+        //      tasktype = transform.Find("tasktype").GetComponent<Text>();
+        //      tasktype.gameObject.SetActive(true);
+        //      if (NetVarDataMgr.GetInstance()._NetVarData._TaskEnvVarData.CheckType == CheckTypeConst.EXAMINE)
+        //{
+        //          tasktype.text = "考核模式";
+        //      }
+        //      else if (NetVarDataMgr.GetInstance()._NetVarData._TaskEnvVarData.CheckType == CheckTypeConst.PRACTICE)
+        //      {
+        //          tasktype.text = "训练模式";
+        //      }
+
         
-        tasktype = transform.Find("tasktype").GetComponent<Text>();
-        tasktype.gameObject.SetActive(true);
         if (NetVarDataMgr.GetInstance()._NetVarData._TaskEnvVarData.CheckType == CheckTypeConst.EXAMINE)
-		{
-            tasktype.text = "考核模式";
+        {
+            transform.Find("kaohe").gameObject.SetActive(true);
         }
         else if (NetVarDataMgr.GetInstance()._NetVarData._TaskEnvVarData.CheckType == CheckTypeConst.PRACTICE)
         {
-            tasktype.text = "训练模式";
+            transform.Find("xunlian").gameObject.SetActive(true);
+        }
+        else if (NetVarDataMgr.GetInstance()._NetVarData._TaskEnvVarData.CheckType == CheckTypeConst.PK)
+        {
+            transform.Find("biwu").gameObject.SetActive(true);
         }
 
 

@@ -2057,14 +2057,14 @@ public class SetRadiomThreShold102Model : ITaskLogModel
 /// </summary>
 public class SetTTRadiomThreShold102Model : ITaskLogModel
 {
-    public float TotalDoseTreshold;
+    public float TotalDoseThreshold;
 
     /// <summary>
     /// 获得日志
     /// </summary>
     public string GetTaskLog(int seatId)
     {
-        return "辐射仪：当前累积剂量阈值为 " + TotalDoseTreshold + " " + AppConstant.RADIOM_UNIT;
+        return "辐射仪：当前累积剂量阈值为 " + TotalDoseThreshold + " " + AppConstant.RADIOM_UNIT;
     }
 }
 

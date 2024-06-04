@@ -7,7 +7,7 @@ public class BiologyArea : HarmAreaBase
     /// <summary>
     /// ¶¾ÇøÂ·¾¶
     /// </summary>
-    private const string CREATE_Biology_PATH = "Prefabs/Sprite/MaxMapIcon/DrugArea";
+    private const string CREATE_Biology_PATH = "Prefabs/Sprite/MaxMapIcon/DrugAreaNew";
 
     private const int TempRadio = 2;
     /// <summary>

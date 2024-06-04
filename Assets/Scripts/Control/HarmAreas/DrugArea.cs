@@ -10,7 +10,7 @@ public class DrugArea : HarmAreaBase
     /// <summary>
     /// 毒区路径
     /// </summary>
-    private const string CREATE_DRUG_PATH = "Prefabs/Sprite/MaxMapIcon/DrugArea";
+    private const string CREATE_DRUG_PATH = "Prefabs/Sprite/MaxMapIcon/DrugAreaNew";
 
     private const int TempRadio = 2;
     /// <summary>

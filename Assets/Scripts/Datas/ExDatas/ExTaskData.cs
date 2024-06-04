@@ -145,6 +145,11 @@ public class CheckTypeConst
     /// 训练
     /// </summary>
     public const int PRACTICE = 2;
+
+    /// <summary>
+    /// 比武
+    /// </summary>
+    public const int PK = 3;
 }
 
 /// <summary>

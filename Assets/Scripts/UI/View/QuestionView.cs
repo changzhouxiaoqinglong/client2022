@@ -95,7 +95,7 @@ public class QuestionView : ViewBase<QuestionViewModel>
     {
         int checkType = NetVarDataMgr.GetInstance()._NetVarData._TaskEnvVarData.CheckType;
         //考试模式
-        if (checkType == CheckTypeConst.EXAMINE)
+        if (checkType == CheckTypeConst.EXAMINE|| checkType == CheckTypeConst.PK)
         {
             ExamModeQuestion();
         }
