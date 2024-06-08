@@ -285,7 +285,7 @@ public class TrainView : ViewBase<TrainViewModel>
 
         drugPoisonBtn.gameObject.SetActive(IsQstAnswer());
         measureBtn.transform.gameObject.SetActive(IsNuclearMeasure());
-        BiologyBtn.transform.gameObject.SetActive(IsBiologyMeasure());
+        //BiologyBtn.transform.gameObject.SetActive(IsBiologyMeasure());
         if (TaskMgr.GetInstance().curTaskData.CheckType == HarmAreaType.DRUG)//毒
 		{
             dropdown.options = new List<Dropdown.OptionData>() { new Dropdown.OptionData("化学侦察") };

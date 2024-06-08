@@ -115,14 +115,14 @@ public class QuestionView : ViewBase<QuestionViewModel>
         {
             if (qstList[curIndex].QuestionJudge())//如果换管检测 index就跳到真毒管选择，否则就关掉答题
             {
-                PlayAudio(QuestionConstant.CORRECTAUDIO);
+              //  PlayAudio(QuestionConstant.CORRECTAUDIO);
                 qstList[curIndex].gameObject.SetActive(false);
                 QstJump();
                 NextQueBtn();
             }
             else
             {
-                PlayAudio(QuestionConstant.ERRORAUDIO);
+              //  PlayAudio(QuestionConstant.ERRORAUDIO);
                 UIMgr.GetInstance().ShowToast("答案选择错误");
             }
         }

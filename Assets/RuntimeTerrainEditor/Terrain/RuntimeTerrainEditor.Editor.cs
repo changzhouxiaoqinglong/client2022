@@ -152,6 +152,17 @@ namespace XFramework.TerrainMoudule
         }
 
         /// <summary>
+        /// 根据高度图计算凹陷最深处
+        /// </summary>
+        /// <returns></returns>
+        public Vector3 GetPOS()
+        {
+            return pos;
+        }
+
+        Vector3 pos;
+
+        /// <summary>
         /// 设置单块地图的高度图
         /// </summary>
         /// <param name="immediate">是否立即刷新LOD</param>
@@ -159,6 +170,11 @@ namespace XFramework.TerrainMoudule
         {
             if (terrain == null)
                 return;
+
+            pos = terrain.transform.TransformPoint(terrain.terrainData.size.x * (xBase * 1.0f / 2048), 0, terrain.terrainData.size.z * (yBase * 1.0f / 2048));
+           
+            
+
 
             if (immediate)
                 terrain.terrainData.SetHeights(xBase, yBase, heights);      // 会立即刷新整个地形LOD,不适合实时编辑
@@ -297,8 +313,12 @@ namespace XFramework.TerrainMoudule
                     arg.heightMap[i, j] += differ * deltaHeight * opacity;
                 }
             }
+
+            float[,] h = new float[1, 1];
+            h[0, 0] = arg.heightMap[1, 1];
             // 重新设置高度图
-            SetHeightMap(arg.terrain, arg.heightMap, arg.startMapIndex.x, arg.startMapIndex.y, immediate);
+            //SetHeightMap(arg.terrain, arg.heightMap, arg.startMapIndex.x, arg.startMapIndex.y, immediate);
+            SetHeightMap(arg.terrain, h, arg.startMapIndex.x, arg.startMapIndex.y, immediate);
         }
 
         /// <summary>

@@ -9,7 +9,7 @@ using UnityEngine;
 /// </summary>
 public class RadiomArea : HarmAreaBase
 {
-    private const string CREATE_RADIOM_PATH = "Prefabs/Sprite/MaxMapIcon/RadiomArea";
+    private const string CREATE_RADIOM_PATH = "Prefabs/Sprite/MaxMapIcon/DrugAreaNew";
 
     private List<Vector3> radiomList = new List<Vector3>();
 

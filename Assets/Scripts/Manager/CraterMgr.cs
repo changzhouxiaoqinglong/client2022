@@ -69,7 +69,7 @@ public class CraterMgr
         CraterBase crater = craterObj.GetComponent<CraterBase>();
         crater.VarData = craterData;
         Vector3 vector3 = CurScene.terrainChangeMgr.GetTerrainPosByGis(craterData.Pos.ToVector2());
-        vector3 += new Vector3(0,0.1f,0);
+        vector3 += new Vector3(0,0.3f,0);
         crater.SetPosition(vector3);
         crater.SetRotation(craterData.GetRotation());
         craterList.Add(crater);

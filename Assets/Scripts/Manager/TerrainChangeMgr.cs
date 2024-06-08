@@ -51,10 +51,19 @@ public class TerrainChangeMgr
         foreach (CraterBase crater in craters)
         {
             TerrainChange.TerrainModule.ChangeHeight(crater.transform.position, radius, opacity, false, true);
+
+            Vector3 p = TerrainChange.TerrainModule.GetPOS(); ;
+
+            crater.transform.position = new Vector3(p.x, crater.transform.position.y, p.z);
+
+
             Debug.Log("弹坑下陷位置：" + crater.transform.position);
             TerrainChange.downCount++;
         }
     }
+
+    
+
 
     /// <summary>
     /// 获取当前terrain大小

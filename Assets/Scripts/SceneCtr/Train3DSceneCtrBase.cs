@@ -72,7 +72,7 @@ public class Train3DSceneCtrBase : TrainSceneCtrBase
         craterMgr.InitCraters();
         //弹坑位置下陷
         print(craterMgr.craterList.Count);
-        terrainChangeMgr.TerrainHeightDown(craterMgr.craterList, 2f, 3f);
+        terrainChangeMgr.TerrainHeightDown(craterMgr.craterList, 1f, 2.5f);
         //调整天气
         this.DelayInvoke(0, () =>
         {
