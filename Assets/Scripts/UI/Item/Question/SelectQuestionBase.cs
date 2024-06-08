@@ -28,6 +28,7 @@ public class SelectQuestionBase : QuestionBase
         titleText = transform.Find("QstTitle").GetComponent<Text>();
         topicText = transform.Find("QstTopic").GetComponent<Text>();
         toggles = transform.Find("Options").GetComponentsInChildren<Toggle>();
+        print(toggles.Length);
     }
 
     // Start is called before the first frame update
@@ -116,6 +117,8 @@ public class SelectQuestionBase : QuestionBase
             if(toggles[i].isOn)
             {
                 answers.Add(i + 1);
+                print("GetSelectAnswer");
+                print(i + 1);
             }
         }
         return answers;

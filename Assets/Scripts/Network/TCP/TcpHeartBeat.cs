@@ -106,6 +106,7 @@ public class TcpHeartBeat
                 break;
             }
             revTimer += 1;
+            
             if (revTimer >= NetConfig.HEART_BEAT_TIME_OUT)
             {
                 //断开连接

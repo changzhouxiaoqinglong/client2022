@@ -68,7 +68,7 @@ public class Record : MonoSingleTon<Record>
         isUpLoading = true;
 
         //获取导控的ip地址
-        FTPHost = "ftp://" + NetConfig.GUIDE_IP + "/";
+        FTPHost = "ftp://" + NetConfig.SERVER_IP + "/";
         //上传到服务端的名称 训练id+席位号AppConfig.SeatId
         string saveName = NetVarDataMgr.GetInstance()._NetVarData._TrainStartModel.TrainID + "-" + AppConfig.SEAT_ID + ".mp4";
         UploadFile(saveName);

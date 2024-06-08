@@ -26,7 +26,7 @@ public class QstExamineMeathed : SelectQuestionBase
             if (qstpoisonParam.DrugType == QstPoisonDrugType.OUT_CAR_DRUG)
             {
                 List<int> list = new List<int>();
-                if(qstConfig.TargetId == PoisonType.VX_POISON)
+                if(qstConfig.TargetId == PoisonType.VX_POISON)//正确答案和配置不一样 特殊处理了
                     list.Add(3);
                 else
                     list.Add(4);

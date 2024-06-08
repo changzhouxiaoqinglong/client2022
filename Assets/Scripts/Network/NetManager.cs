@@ -87,7 +87,7 @@ public class NetManager : MonoSingleTon<NetManager>
                 }
                 else
                 {
-                    client = new GuideTcpClient(NetConfig.GUIDE_IP, NetConfig.GUIDE_PORT, ServerType.GuideServer);
+                    client = new GuideTcpClient(NetConfig.SERVER_IP, NetConfig.SERVER_PORT, ServerType.GuideServer);
                     AddClient(type, client);
                 }
                 break;
