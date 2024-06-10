@@ -246,7 +246,7 @@ public class RadiomArea : HarmAreaBase
     private void CreatePointRange(Vector3 startPos, float angle)
     {
         float radiomDis = RadiomAreaConstanst.RADIOM_SIZE * GetHarmRange();
-        radiomDis = 250;
+        
         print(radiomDis);
        // if (NetVarDataMgr.GetInstance()._NetVarData._TaskEnvVarData.Scene == SceneConstant.HILLS)
         {
@@ -271,12 +271,13 @@ public class RadiomArea : HarmAreaBase
                 cubelist = new List<Transform>();
                 for (int i = 0; i < 5; i++)
                 {
-                    GameObject go = GameObject.CreatePrimitive(PrimitiveType.Cube);
+                    //GameObject go = GameObject.CreatePrimitive(PrimitiveType.Cube);
+                    GameObject go = new GameObject();
                     go.name = "辐射区扇形区域点" + i;
                     go.transform.parent = transform;
                     cubelist.Add(go.transform);
                 }
-                GameObject centerobj = GameObject.CreatePrimitive(PrimitiveType.Cube);
+                GameObject centerobj = new GameObject(); 
                 center = centerobj.transform;
             }
           //  else
@@ -342,7 +343,7 @@ public class RadiomArea : HarmAreaBase
         /// <summary>
         /// 辐射最大浓度
         /// </summary>
-        public const int RADIOM_MAX_DENTITY = 20000;
+       // public const int RADIOM_MAX_DENTITY = 20000;
 
         public const float MIN_DISTANCE = 0.12f;
 

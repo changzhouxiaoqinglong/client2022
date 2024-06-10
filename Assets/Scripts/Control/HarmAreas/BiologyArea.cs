@@ -123,12 +123,12 @@ public class BiologyArea : HarmAreaBase
                 cubelist = new List<Transform>();
                 for (int i = 0; i < 5; i++)
                 {
-                    GameObject go = GameObject.CreatePrimitive(PrimitiveType.Cube);
+                    GameObject go = new GameObject();
                     go.name = "毒区扇形区域点" + i;
                     go.transform.parent = transform;
                     cubelist.Add(go.transform);
                 }
-                GameObject centerobj = GameObject.CreatePrimitive(PrimitiveType.Cube);
+                GameObject centerobj = new GameObject();
                 center = centerobj.transform;
             }
             else

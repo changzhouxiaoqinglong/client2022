@@ -1,5 +1,8 @@
 ﻿
 using UnityEngine;
+using System;
+using System.Threading.Tasks;
+using System.Threading;
 /// <summary>
 /// 02b毒剂报警器 训练流程
 /// </summary>
@@ -44,10 +47,10 @@ public class PracticeProcess02BPoison : PracticeProcessBase
                     Debug.LogWarning("OpenClose");
                     DoProcess(model.Operate == OperateDevice.OPEN ? ProcessId.POISON_ALARM_OPEN_02B : ProcessId.POISON_ALARM_CLOSE_02B);
                     break;
-                case PoisonAlarmOpType.Check:
-                    Debug.LogWarning("Check");
-                    DoProcess(model.Operate == OperateDevice.OPEN ? ProcessId.POISON_ALARM_CHECK_02B : ProcessId.POISON_ALARM_CHECK_END_02B);
-                    break;
+                //case PoisonAlarmOpType.Check:
+                //    Debug.LogWarning("Check");
+                //    DoProcess(model.Operate == OperateDevice.OPEN ? ProcessId.POISON_ALARM_CHECK_02B : ProcessId.POISON_ALARM_CHECK_END_02B);
+                //    break;
                 case PoisonAlarmOpType.JinYang:
                     Debug.LogWarning("JinYang");
                     //开始进样
@@ -55,40 +58,59 @@ public class PracticeProcess02BPoison : PracticeProcessBase
                     {
                         //记下进样时间
                         startJinYangTime = Time.realtimeSinceStartup;
+                        
                         DoProcess(ProcessId.POISON_ALARM_JINYANG_02B);
+                        WaitAlarm();
                     }
-                    else
-                    {
-                        //结束进样
-                        int jinIndex = GetProcessIndex(ProcessId.POISON_ALARM_JINYANG_02B);
-                        //当前步骤在开始进样之后，才判断
-                        if (curIndex >= jinIndex)
-                        {
-                            //计算进样时间
-                            float time = Time.realtimeSinceStartup - startJinYangTime;
-                            //时间充足
-                            if (time > jinYangMinTime)
-                            {
-                                //进样结束
-                                DoProcess(ProcessId.POISON_ALARM_END_JINYANG);
-                            }
-                            else
-                            {
-                                //提示进样不足
-                                EventDispatcher.GetInstance().DispatchEvent(EventNameList.PRACTICE_PROCESS_ERROR_TIP, new StringEvParam("进样时间不足！"));
-                            }
-                        }
-                    }
+                    //else
+                    //{
+                    //    //结束进样
+                    //    int jinIndex = GetProcessIndex(ProcessId.POISON_ALARM_JINYANG_02B);
+                    //    //当前步骤在开始进样之后，才判断
+                    //    if (curIndex >= jinIndex)
+                    //    {
+                    //        //计算进样时间
+                    //        float time = Time.realtimeSinceStartup - startJinYangTime;
+                    //        //时间充足
+                    //        if (time > jinYangMinTime)
+                    //        {
+                    //            //进样结束
+                    //            DoProcess(ProcessId.POISON_ALARM_END_JINYANG);
+                    //        }
+                    //        else
+                    //        {
+                    //            //提示进样不足
+                    //            EventDispatcher.GetInstance().DispatchEvent(EventNameList.PRACTICE_PROCESS_ERROR_TIP, new StringEvParam("进样时间不足！"));
+                    //        }
+                    //    }
+                    //}
                     break;
-                case PoisonAlarmOpType.Alarm:
-                    Debug.LogWarning("Alarm");
-                    if (model.Operate == OperateDevice.OPEN)
-                    {
-                        DoProcess(ProcessId.POISON_ALARM_02B);
-                    }
+                //case PoisonAlarmOpType.Alarm:   //报警不是硬件主动触发的，应该是咱们给他发的
+                //    Debug.LogWarning("Alarm");
+                //    if (model.Operate == OperateDevice.OPEN)
+                //    {
+                //        DoProcess(ProcessId.POISON_ALARM_02B);
+                //    }
+                //    break;
+                case PoisonAlarmOpType.JinYangEnd://进样结束 type改成5
+                    Debug.LogWarning("JinYangEnd");
+                    DoProcess(ProcessId.POISON_ALARM_END_JINYANG);
                     break;
             }
         }
+    }
+
+    async void WaitAlarm()
+	{
+        await Task.Delay(3000);//进样结束 3秒后通知硬件报警
+        DoProcess(ProcessId.POISON_ALARM_02B);
+
+        PoisonAlarmOpModel model = new PoisonAlarmOpModel {
+            Type = PoisonAlarmOpType.Alarm,
+            Operate = 1
+        };
+
+         NetManager.GetInstance().SendMsg(ServerType.GuideServer, JsonTool.ToJson(model), NetProtocolCode.POISON_ALARM_STAT_CTR, NetManager.GetInstance().CurDeviceForward);
     }
 
     protected override void JumpToNext()

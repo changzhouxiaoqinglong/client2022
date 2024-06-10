@@ -162,14 +162,19 @@ public class PoisonAlarmOpType
     public const int Alarm = 4;
 
     /// <summary>
-    /// 上电
+    /// 进样结束
     /// </summary>
-    public const int EleOn = 5;
+    public const int JinYangEnd = 5;
 
-    /// <summary>
-    /// 自检
-    /// </summary>
-    public const int Check = 6;
+	///// <summary>
+	///// 上电
+	///// </summary>
+	//public const int EleOn = 5;
+
+	///// <summary>
+	///// 自检
+	///// </summary>
+	//public const int Check = 6;
 }
 
 /// <summary>
@@ -199,13 +204,15 @@ public class PoisonAlarmOpModel : ITaskLogModel
             case PoisonAlarmOpType.OpenClose:
                 return "毒剂报警器：" + (Operate == OperateDevice.OPEN ? "开机" : "关机");
             case PoisonAlarmOpType.JinYang:
-                return "毒剂报警器：" + (Operate == OperateDevice.OPEN ? "开始进样" : "停止进样");
+                return "毒剂报警器：" + "开始进样";
             case PoisonAlarmOpType.Alarm:
                 return "毒剂报警器：" + (Operate == OperateDevice.OPEN ? "开始报警" : "停止报警");
-            case PoisonAlarmOpType.EleOn:
-                return "毒剂报警器：" + (Operate == OperateDevice.OPEN ? "上电" : "离线");
-            case PoisonAlarmOpType.Check:
-                return "毒剂报警器：" + (Operate == OperateDevice.OPEN ? "自检开始" : "自检结束");
+            case PoisonAlarmOpType.JinYangEnd:
+                return "毒剂报警器：" + "结束进样";
+            //case PoisonAlarmOpType.EleOn:
+            //    return "毒剂报警器：" + (Operate == OperateDevice.OPEN ? "上电" : "离线");
+            //case PoisonAlarmOpType.Check:
+            //    return "毒剂报警器：" + (Operate == OperateDevice.OPEN ? "自检开始" : "自检结束");
             default:
                 return "";
         }

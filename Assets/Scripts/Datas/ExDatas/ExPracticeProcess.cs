@@ -53,17 +53,17 @@ public class DrugId
     /// <summary>
     /// 02b车载侦毒器设置抽气时间
     /// </summary>
-    public const int DRUG_DET_BLEED_TIME = 10;
+    public const int DRUG_DET_BLEED_TIME = 12;
 
     /// <summary>
     /// 02b车载侦毒器打开加热开关
     /// </summary>
-    public const int DRUG_HEAT_OPEN = 11;
+    public const int DRUG_HEAT_OPEN = 10;
 
     /// <summary>
     /// 02b车载侦毒器打开泵开关
     /// </summary>
-    public const int DRUG_PUMP_OPEN = 12;
+    public const int DRUG_PUMP_OPEN = 11;
 
     /// <summary>
     /// 02b车载侦毒器关闭加热开关
