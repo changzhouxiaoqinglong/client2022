@@ -62,6 +62,7 @@ public class TrainSceneCtrBase : SceneCtrBase
             SetDoseRateModel model = new SetDoseRateModel()
             {
                 DoseRate = floatParam.value,
+                Unit= AppConstant.RADIOM_UNIT
             };
             //发给设备
             NetManager.GetInstance().SendMsg(ServerType.GuideServer, JsonTool.ToJson(model), NetProtocolCode.SEND_RADIOM_RATE, NetManager.GetInstance().CurDeviceForward);

@@ -23,8 +23,12 @@ public class AppMain : MonoBehaviour
     private void InitConfigs()
     {
         NetConfig.InitConfig();
-        AppConfig.InitConfig();
-        LogConfig.InitConfig();
+        AppConfig.MACHINE_ID = NetConfig.Client_ID;
+        AppConfig.SEAT_ID = NetConfig.Person_ID;
+        AppConfig.CAR_ID = NetConfig.Device_ID;
+
+        // AppConfig.InitConfig();
+        // LogConfig.InitConfig();
     }
 
     /// <summary>

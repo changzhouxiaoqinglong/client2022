@@ -36,48 +36,64 @@ public class NetConfig : ConfigBase<NetConfig>
     /// <summary>
     /// 同步驾驶画面Server端监听端口
     /// </summary>
-    public static int FM_SERVER_PORT;
+    public static int FM_SERVER_PORT=3333;
 
     /// <summary>
     /// 同步驾驶画面Client端监听端口
     /// </summary>
-    public static int FM_CLIENT_PORT;
+    public static int FM_CLIENT_PORT=3334;
 
     /// <summary>
     /// 同步102遥测画面Server端监听端口
     /// </summary>
-    public static int FM_102yaoce_SERVER_PORT;
+    public static int FM_102yaoce_SERVER_PORT= 3337;
 
     /// <summary>
     /// 同步102遥测画面Client端监听端口
     /// </summary>
-    public static int FM_102yaoce_CLIENT_PORT;
+    public static int FM_102yaoce_CLIENT_PORT=3338;
 
 
     /// <summary>
     /// 同步全屏画面Server端监听端口
     /// </summary>
-    public static int FM_SERVER_FULL_PORT;
+    public static int FM_SERVER_FULL_PORT= 3335;
 
     /// <summary>
     /// 同步全屏画面Client端监听端口
     /// </summary>
-    public static int FM_CLIENT_FULL_PORT;
+    public static int FM_CLIENT_FULL_PORT=3336;
 
     /// <summary>
     /// 状态同步每秒次数
     /// </summary>
-    public static int SYNC_SECOND_TIMES;
+    public static int SYNC_SECOND_TIMES=10;
 
     /// <summary>
     /// 位置态势同步上报间隔s
     /// </summary>
-    public static int SITUATION_SYNC_POS_OFF_TIME;
+    public static int SITUATION_SYNC_POS_OFF_TIME=2;
 
     /// <summary>
     /// FTP文件保留时间
     /// </summary>
-    public static int FTP_SAVE_TIME;
+    public static int FTP_SAVE_TIME=7;
+
+
+    /// <summary>
+    /// 机号
+    /// </summary>
+    public static int Client_ID;
+
+    /// <summary>
+    /// 席位号
+    /// </summary>
+    public static int Person_ID;
+
+    /// <summary>
+    /// 车型
+    /// </summary>
+    public static int Device_ID;
 
     public static void InitConfig()
     {

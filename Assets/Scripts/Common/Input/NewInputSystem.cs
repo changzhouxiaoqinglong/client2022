@@ -23,7 +23,7 @@ public class NewInputSystem : MonoSingleTon<NewInputSystem>
     {      
         var v = context.ReadValue<Vector2>();
         //print(v.y);
-        //if (context.started) { Debug.Log(string.Format("方向 Started " + v.x.ToString() + " " + v.y.ToString())); }
+        if (context.started) { Debug.Log(string.Format("方向 Started " + v.x.ToString() + " " + v.y.ToString())); }
         //if (context.performed) { Debug.Log(string.Format("performed " + v.x.ToString() + " " + v.y.ToString())); }
         //if (context.canceled) { Debug.Log(string.Format("方向 canceled " + v.x.ToString() + " " + v.y.ToString())); }
         CustomInput.Horizontal = v.x;
@@ -44,14 +44,16 @@ public class NewInputSystem : MonoSingleTon<NewInputSystem>
         //if (context.started) { Debug.Log(string.Format("启动 Started:{0}", v)); }
         //if (context.performed) { Debug.Log(string.Format("启动 Performed:{0}", v)); }
         //if (context.canceled) { Debug.Log(string.Format("启动 Canceled:{0}", v)); }
-
+        Debug.Log(v);
         if (v > 0.5f)
         {
             CustomInput.QiDongValue = true;
+            Debug.Log("开");
         }
         else
         {
             CustomInput.QiDongValue = false;
+            Debug.Log("关");
         }
     }
 
@@ -73,15 +75,17 @@ public class NewInputSystem : MonoSingleTon<NewInputSystem>
     public void Dang1(InputAction.CallbackContext context)
     {
         var v = context.ReadValue<float>();
-        //if (context.started) { Debug.Log(string.Format(" Started:{0}", v)); }
-        //if (context.performed) { Debug.Log(string.Format(" Performed:{0}", v)); }
-        //if (context.canceled) { Debug.Log(string.Format(" Canceled:{0}", v)); }
-        if (context.canceled)
+		if (context.started) { Debug.Log(string.Format(" Started:{0}", v)); }
+		if (context.performed) { Debug.Log(string.Format(" Performed:{0}", v)); }
+		if (context.canceled) { Debug.Log(string.Format(" Canceled:{0}", v)); }
+		if (context.canceled)
         {
+            Debug.Log("一档off");
             CustomInput.ShiftLevel = 0;
         }
         else
         {
+            Debug.Log("一档open");
             CustomInput.ShiftLevel = 1;
         }
     }

@@ -76,6 +76,7 @@ public class PoisonAlarm : DeviceBase
             Dentity = dentity,
             Degree = exPoisonData != null ? exPoisonData.GetdDegreeByDentity(dentity) : DrugDegree.NONE,
             DType = exPoisonData != null ? exPoisonData.DType : DrugDType.NONE,
+           
         };
         //发给设备管理软件
         NetManager.GetInstance().SendMsg(ServerType.GuideServer, JsonTool.ToJson(model), NetProtocolCode.SEND_DRUG_DATA, NetManager.GetInstance().SameMachineAllSeats);

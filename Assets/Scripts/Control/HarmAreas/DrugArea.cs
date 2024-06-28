@@ -102,7 +102,7 @@ public class DrugArea : HarmAreaBase
             float maxdis = Vector2.Distance(p3,p1);
             float dis = Vector2.Distance(p1, p2);
             //print("maxdis: "+ maxdis+ "dis: " + dis);
-            return DrugAreaConstanst.DRUG_DENTITY * (1- Mathf.Clamp01(dis / maxdis));
+            return DrugAreaConstanst.DRUG_DENTITY * (1- Mathf.Clamp01(dis / maxdis))+100000;
         }
         return 0;
     }

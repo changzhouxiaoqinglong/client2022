@@ -18,6 +18,7 @@ public class PoisonAlarm102 : PoisonAlarm
         {
             Type = drugVarData != null ? drugVarData.Type : PoisonType.NO_POISON,
             Dentity = dentity,
+            Unit= AppConstant.DRUG_UNIT
         };
         //发给设备管理软件
         NetManager.GetInstance().SendMsg(ServerType.GuideServer, JsonTool.ToJson(model), NetProtocolCode.DEFENSE_SEND_DRUG_DATA, NetManager.GetInstance().CurDeviceForward);

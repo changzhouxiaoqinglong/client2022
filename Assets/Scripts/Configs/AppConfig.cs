@@ -41,8 +41,8 @@ public class AppConfig : ConfigBase<AppConfig>
         SEAT_ID = Person_ID;
         CAR_ID = Device_ID;
         
-        //UnityEngine.Debug.Log(MACHINE_ID);
-        //UnityEngine.Debug.Log(SEAT_ID);
-        //UnityEngine.Debug.Log(CAR_ID);
+       // UnityEngine.Debug.Log(MACHINE_ID);
+       // UnityEngine.Debug.Log(SEAT_ID);
+       // UnityEngine.Debug.Log(CAR_ID);
     }
 }

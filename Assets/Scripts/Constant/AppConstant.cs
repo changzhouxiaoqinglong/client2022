@@ -41,6 +41,11 @@ public class AppConstant
     public const string RADIOM_UNIT = "uGy/h";
 
     /// <summary>
+    /// 毒浓度单位
+    /// </summary>
+    public const string DRUG_UNIT = "mg/m3";
+
+    /// <summary>
     /// 接近测量点 上报速度 延时时间
     /// </summary>
     public const float CHECK_SPEED_DELAY = 1.5f;

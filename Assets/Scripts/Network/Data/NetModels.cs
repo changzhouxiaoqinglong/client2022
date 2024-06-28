@@ -655,6 +655,8 @@ public class SetDoseRateModel
     /// 剂量率
     /// </summary>
     public float DoseRate;
+
+    public string Unit;
 }
 
 /// <summary>
@@ -1153,6 +1155,8 @@ public class ReportDrugDataModel
     /// 毒类  一类 二类
     /// </summary>
     public int DType = DrugDType.NONE;
+
+    public string Unit = AppConstant.DRUG_UNIT;
 }
 
 /// <summary>
@@ -1169,6 +1173,8 @@ public class DefenseReportDrugDataModel
     /// 浓度
     /// </summary>
     public float Dentity;
+
+    public string Unit=AppConstant.DRUG_UNIT;
 }
 
 /// <summary>
