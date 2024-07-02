@@ -15,6 +15,7 @@ public class Record : MonoSingleTon<Record>
     CaptureBase _movieCapture;
 
     string FTPHost = "ftp://127.0.0.1/";
+    
 
     //ftp服务器的账户密码
     string FTPUserName = "admin";
@@ -64,13 +65,20 @@ public class Record : MonoSingleTon<Record>
         //等待录制文件生成
         yield return new WaitForSeconds(0.5f);
 
-        //Debug.Log("--------------- 开始上传文件");
+        //File.Delete(FilePath);
+       // yield break;
+
+        Debug.Log("--------------- 开始上传文件");
         isUpLoading = true;
 
         //获取导控的ip地址
-        FTPHost = "ftp://" + NetConfig.SERVER_IP + "/";
+        // FTPHost = "ftp://" + NetConfig.SERVER_IP + "/";
+        FTPHost = "http://" + "47.120.64.155/api/upload/";
         //上传到服务端的名称 训练id+席位号AppConfig.SeatId
-        string saveName = NetVarDataMgr.GetInstance()._NetVarData._TrainStartModel.TrainID + "-" + AppConfig.SEAT_ID + ".mp4";
+        // string saveName = NetVarDataMgr.GetInstance()._NetVarData._TrainStartModel.TrainID + "-" + AppConfig.SEAT_ID + ".mp4";
+
+        string saveName = NetVarDataMgr.GetInstance()._NetVarData._TrainStartModel.TrainID+ "/" + AppConfig.SEAT_ID + ".mp4";
+        // print(saveName);
         UploadFile(saveName);
     }
 
@@ -78,13 +86,13 @@ public class Record : MonoSingleTon<Record>
     {
         WebClient client = new System.Net.WebClient();
 
-        Uri uri = new Uri(FTPHost + saveName);
-
+        Uri uri = new Uri(FTPHost + saveName);    
+        print(uri.ToString());
         client.UploadProgressChanged += new UploadProgressChangedEventHandler(OnFileUploadProgressChanged);
         client.UploadFileCompleted += new UploadFileCompletedEventHandler(OnFileUploadCompleted);
         client.Credentials = new System.Net.NetworkCredential(FTPUserName, FTPPassword);
 
-        client.UploadFileAsync(uri, "STOR", FilePath);
+        client.UploadFileAsync(uri, "POST", FilePath);
     }
 
     void OnFileUploadProgressChanged(object sender, UploadProgressChangedEventArgs e)
@@ -94,7 +102,7 @@ public class Record : MonoSingleTon<Record>
 
     void OnFileUploadCompleted(object sender, UploadFileCompletedEventArgs e)
     {
-        Logger.LogDebug(TAG + "File Uploaded");
+        Logger.LogDebug(TAG + "File UploadCompleted");
         Logger.LogDebug(TAG + "------------- " + e.Error);
         try
         {
@@ -108,7 +116,7 @@ public class Record : MonoSingleTon<Record>
 
 
         isUpLoading = false;
-        Loom.GetInstance().RunAsync(CheckDelete);
+      //  Loom.GetInstance().RunAsync(CheckDelete);
     }
 
     /// <summary>

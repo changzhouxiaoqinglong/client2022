@@ -668,6 +668,7 @@ public class SetBIOLOGYModel
     /// 剂量率
     /// </summary>
     public float Biomass;
+    public string Unit = AppConstant.Biology_UNIT;
 }
 
 /// <summary>

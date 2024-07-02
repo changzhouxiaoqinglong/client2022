@@ -486,18 +486,7 @@
                 },
                 {
                     "name": "",
-                    "id": "4f3e52d3-7591-4f63-9151-14910d4ec183",
-                    "path": "<HID::Ethan  Ethan  HID>/button9",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "启动",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "c27da3a2-41f1-4107-9dbc-cd576fbe4c34",
+                    "id": "c00129c1-e08f-46ff-8123-811627ae22bf",
                     "path": "<HID::YOYO USB Force Feedback Wheel>/button9",
                     "interactions": "",
                     "processors": "",
