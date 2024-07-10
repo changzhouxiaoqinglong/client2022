@@ -609,7 +609,7 @@ public class TrainView : ViewBase<TrainViewModel>
      private void OnClickMapBtn(GameObject obj)
 	{
         Text text = obj.transform.Find("Text").GetComponent<Text>();
-        if (text.text == "打开地图")
+        if (text.text == "路径规划")
         {
             //发给驾驶员
             List<ForwardModel> forwardModels = new ForwardModelsBuilder()
@@ -618,7 +618,7 @@ public class TrainView : ViewBase<TrainViewModel>
             //开门指令
             NetManager.GetInstance().SendMsg(ServerType.GuideServer, "", NetProtocolCode.OpenMap, forwardModels);
 
-            text.text = "关闭地图";
+            text.text = "路径规划";
         }
         else
         {
