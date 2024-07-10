@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
-
+using UnityEngine.EventSystems;
 public class MaxMapControl : MonoBehaviour
 {
     /// <summary>
@@ -139,29 +139,54 @@ public class MaxMapControl : MonoBehaviour
         CreateItem();
     }
 
+    GameObject deletepoint;
+
+    public void Delete()
+	{
+        if(deletepoint)
+		{
+            PointControl.Instance.DeletePoint(deletepoint);
+            LineControl.Instance.CreateAllLine(carPos.localPosition);
+            TextControl.Instance.CreateText(terrainSize, uiSize);
+        }
+       
+    }
+
     void Update()
     {
+        
 
-        UpdateMapSizeAndPos();
+
+        //  UpdateMapSizeAndPos();
         UpdateMouseDistance();
         UpdateDrugAreaPos();
         Vector2 mousePos = Mouse.current.position.ReadValue();
-        if (Mouse.current.rightButton.wasPressedThisFrame) //鼠标右键按下
-        {
-            PointControl.Instance.SetCubeUiPos(rect, mousePos);
-            Debug.Log("鼠标按下");
-            GameObject pointObj = PointControl.Instance.IsDeletePoint();
-            if(pointObj == null)
+
+        if (!transform.parent.Find("Delete").gameObject.activeInHierarchy)
+		{
+            if (Mouse.current.rightButton.wasPressedThisFrame) //鼠标右键按下
             {
-                PointControl.Instance.CreatePoint();
+                PointControl.Instance.SetCubeUiPos(rect, mousePos);
+                Debug.Log("鼠标按下");
+                GameObject pointObj = PointControl.Instance.IsDeletePoint();
+                if (pointObj == null)
+                {
+                    PointControl.Instance.CreatePoint();
+                    LineControl.Instance.CreateAllLine(carPos.localPosition);
+                    TextControl.Instance.CreateText(terrainSize, uiSize);
+                }
+                else
+                {
+                    deletepoint = pointObj;
+                    transform.parent.Find("Delete").gameObject.SetActive(true);
+                    //  PointControl.Instance.DeletePoint(pointObj);
+                }
+                // LineControl.Instance.CreateAllLine(carPos.localPosition);
+                //  TextControl.Instance.CreateText(terrainSize,uiSize);
             }
-            else
-            {
-                PointControl.Instance.DeletePoint(pointObj);
-            }
-            LineControl.Instance.CreateAllLine(carPos.localPosition);
-            TextControl.Instance.CreateText(terrainSize,uiSize);
         }
+
+        
 
         if (SceneMgr.GetInstance().curScene is Train3DSceneCtrBase scene3D)
         {

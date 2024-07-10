@@ -46,7 +46,7 @@ public class TextControl : MonoBehaviour
             obj.transform.localPosition = point[i].transform.localPosition;
             Debug.Log(obj.transform.localEulerAngles);
             Text objText = obj.GetComponent<Text>();
-            objText.text = ((int)lines[i].GetComponent<RectTransform>().sizeDelta.x * MathsMgr.UiTerrainRadio(terrainSize,uiSize).x).ToString() + "米";
+            objText.text = i.ToString()+"._ "+((int)lines[i].GetComponent<RectTransform>().sizeDelta.x * MathsMgr.UiTerrainRadio(terrainSize,uiSize).x).ToString() + "米";
         }
     }
 

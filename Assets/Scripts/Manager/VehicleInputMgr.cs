@@ -219,6 +219,7 @@ public class VehicleInputMgr : InputCtrBase
                 }
             }
             vehicleController.input.Vertical = CustomInput.DriveVertical;
+           // print(vehicleController.input.Vertical);
             //vehicleController.input.Vertical = 111;
            // print(CustomInput.DriveVertical);
             // Engine start/stop发动机启动/熄火
@@ -230,7 +231,7 @@ public class VehicleInputMgr : InputCtrBase
 
             // Handbrake 手刹
             vehicleController.input.Handbrake = CustomInput.HandBrakeValue;
-
+            print(vehicleController.input.Handbrake);
             //try
             //{
             //    vehicleController.input.Handbrake = Input.GetAxis("Handbrake");

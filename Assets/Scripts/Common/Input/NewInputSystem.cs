@@ -30,7 +30,7 @@ public class NewInputSystem : MonoSingleTon<NewInputSystem>
         CustomInput.Vertical = v.y;
 //#if DEBUG
         CustomInput.DriveHorizontal = v.x;
-        CustomInput.DriveVertical = v.y;
+        CustomInput.DriveVertical = v.y;      
 //#endif
     }
 
@@ -48,12 +48,12 @@ public class NewInputSystem : MonoSingleTon<NewInputSystem>
         if (v > 0.5f)
         {
             CustomInput.QiDongValue = true;
-            Debug.Log("开");
+         //   Debug.Log("开");
         }
         else
         {
             CustomInput.QiDongValue = false;
-            Debug.Log("关");
+         //   Debug.Log("关");
         }
     }
 
@@ -80,12 +80,12 @@ public class NewInputSystem : MonoSingleTon<NewInputSystem>
 		if (context.canceled) { Debug.Log(string.Format(" Canceled:{0}", v)); }
 		if (context.canceled)
         {
-            Debug.Log("一档off");
+          //  Debug.Log("一档off");
             CustomInput.ShiftLevel = 0;
         }
         else
         {
-            Debug.Log("一档open");
+           // Debug.Log("一档open");
             CustomInput.ShiftLevel = 1;
         }
     }
