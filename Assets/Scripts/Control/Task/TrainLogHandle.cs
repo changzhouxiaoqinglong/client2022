@@ -131,6 +131,11 @@ public class TrainLogHandle
         {NetProtocolCode.RadioStation_OP_106,  typeof(RadioStationOp106Model)},
          //操作106毒剂报警器
         {NetProtocolCode.POISON_ALARM_OP_106, typeof(PoisonAlarmOp106Model)},
+
+        {NetProtocolCode.IT_OP,  typeof(InformationTerminalOpModel)},
+        {NetProtocolCode.IT_OP_102,  typeof(InformationTerminalOpModel102)},
+        {NetProtocolCode.IT_OP_384,  typeof(InformationTerminalOpModel384)},
+        {NetProtocolCode.IT_OP_106,  typeof(InformationTerminalOpModel106)},
     };
 
     public TrainLogHandle()

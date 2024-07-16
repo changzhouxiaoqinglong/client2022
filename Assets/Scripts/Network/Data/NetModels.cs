@@ -589,6 +589,48 @@ public class RadioStationOpModel : ITaskLogModel
 }
 #endregion
 
+#region 02b信息终端
+public class InformationTerminalOpType
+{
+    /// <summary>
+    /// 开关
+    /// </summary>
+    public const int OpenClose = 1;
+}
+
+
+/// <summary>
+/// 操作信息终端
+/// </summary>
+public class InformationTerminalOpModel: ITaskLogModel
+{
+    /// <summary>
+    /// 操作 0关  1开
+    /// </summary>
+    public int Operate;
+
+    /// <summary>
+    /// 操作类型
+    /// </summary>
+    public int Type;
+
+    /// <summary>
+    /// 获得日志
+    /// </summary>
+    public string GetTaskLog(int seatId)
+    {
+        switch (Type)
+        {
+            case InformationTerminalOpType.OpenClose:
+                return "防化信息终端模拟器：" + (Operate == OperateDevice.OPEN ? "开" : "关");
+
+            default:
+                return "";
+        }
+    }
+}
+#endregion
+
 public class PoinsonInStatus
 {
     /// <summary>
@@ -2050,6 +2092,48 @@ public class RadioStationOp102Model : ITaskLogModel
 }
 #endregion
 
+#region 102信息终端
+public class InformationTerminalOpType102
+{
+    /// <summary>
+    /// 开关
+    /// </summary>
+    public const int OpenClose = 1;
+}
+
+
+/// <summary>
+/// 操作信息终端
+/// </summary>
+public class InformationTerminalOpModel102 : ITaskLogModel
+{
+    /// <summary>
+    /// 操作 0关  1开
+    /// </summary>
+    public int Operate;
+
+    /// <summary>
+    /// 操作类型
+    /// </summary>
+    public int Type;
+
+    /// <summary>
+    /// 获得日志
+    /// </summary>
+    public string GetTaskLog(int seatId)
+    {
+        switch (Type)
+        {
+            case InformationTerminalOpType102.OpenClose:
+                return "102防化信息终端模拟器：" + (Operate == OperateDevice.OPEN ? "开" : "关");
+
+            default:
+                return "";
+        }
+    }
+}
+#endregion
+
 /// <summary>
 /// 设置辐射率阈值102
 /// </summary>
@@ -2494,7 +2578,47 @@ public class RadioStationOp384Model : ITaskLogModel
 }
 #endregion
 
+#region 384信息终端
+public class InformationTerminalOpType384
+{
+    /// <summary>
+    /// 开关
+    /// </summary>
+    public const int OpenClose = 1;
+}
 
+
+/// <summary>
+/// 操作信息终端
+/// </summary>
+public class InformationTerminalOpModel384 : ITaskLogModel
+{
+    /// <summary>
+    /// 操作 0关  1开
+    /// </summary>
+    public int Operate;
+
+    /// <summary>
+    /// 操作类型
+    /// </summary>
+    public int Type;
+
+    /// <summary>
+    /// 获得日志
+    /// </summary>
+    public string GetTaskLog(int seatId)
+    {
+        switch (Type)
+        {
+            case InformationTerminalOpType384.OpenClose:
+                return "384防化信息终端模拟器：" + (Operate == OperateDevice.OPEN ? "开" : "关");
+
+            default:
+                return "";
+        }
+    }
+}
+#endregion
 
 #region 操作电源 106
 
@@ -2830,6 +2954,48 @@ public class RadioStationOp106Model : ITaskLogModel
         {
             case RadioStationOpType106.OpenClose:
                 return "106电台：" + (Operate == OperateDevice.OPEN ? "开" : "关");
+
+            default:
+                return "";
+        }
+    }
+}
+#endregion
+
+#region 106信息终端
+public class InformationTerminalOpType106
+{
+    /// <summary>
+    /// 开关
+    /// </summary>
+    public const int OpenClose = 1;
+}
+
+
+/// <summary>
+/// 操作信息终端
+/// </summary>
+public class InformationTerminalOpModel106 : ITaskLogModel
+{
+    /// <summary>
+    /// 操作 0关  1开
+    /// </summary>
+    public int Operate;
+
+    /// <summary>
+    /// 操作类型
+    /// </summary>
+    public int Type;
+
+    /// <summary>
+    /// 获得日志
+    /// </summary>
+    public string GetTaskLog(int seatId)
+    {
+        switch (Type)
+        {
+            case InformationTerminalOpType106.OpenClose:
+                return "106防化信息终端模拟器：" + (Operate == OperateDevice.OPEN ? "开" : "关");
 
             default:
                 return "";

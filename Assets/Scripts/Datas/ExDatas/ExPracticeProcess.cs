@@ -147,6 +147,23 @@ public class RadioStationId
 
 }
 
+public class InformationTerminalId
+{
+
+
+    /// <summary>
+    /// 02b信息终端开机
+    /// </summary>
+    public const int IT_OPEN_02B = 500;
+
+
+
+    /// <summary>
+    /// 02b信息终端关机
+    /// </summary>
+    public const int IT_CLOSE_02B = 501;
+
+}
 
 public class Power102Id
 {
@@ -619,6 +636,61 @@ public class RadioStation106Id
     /// 106电台关机
     /// </summary>
     public const int RadioStation_CLOSE_106 = 481;
+
+}
+
+public class InformationTerminalId102
+{
+
+
+    /// <summary>
+    /// 102信息终端开机
+    /// </summary>
+    public const int IT_OPEN_102 = 502;
+
+
+
+    /// <summary>
+    /// 102信息终端关机
+    /// </summary>
+    public const int IT_CLOSE_102 = 503;
+
+}
+
+public class InformationTerminalId384
+{
+
+
+    /// <summary>
+    /// 384信息终端开机
+    /// </summary>
+    public const int IT_OPEN_384 = 504;
+
+
+
+    /// <summary>
+    /// 384信息终端关机
+    /// </summary>
+    public const int IT_CLOSE_384 = 505;
+
+}
+
+
+public class InformationTerminalId106
+{
+
+
+    /// <summary>
+    /// 106信息终端开机
+    /// </summary>
+    public const int IT_OPEN_106 = 506;
+
+
+
+    /// <summary>
+    /// 106信息终端关机
+    /// </summary>
+    public const int IT_CLOSE_106 = 507;
 
 }
 

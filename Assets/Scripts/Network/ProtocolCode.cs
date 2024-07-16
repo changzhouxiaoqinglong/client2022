@@ -419,5 +419,26 @@ public class NetProtocolCode
     public const int SET_SetReliefThreshold = 10613;
     #endregion
 
+    /// <summary>
+    /// 02b防化信息终端模拟器
+    /// </summary>
+    public const int IT_OP = 2061;
+
+    /// <summary>
+    /// 防化信息终端模拟器102
+    /// </summary>
+    public const int IT_OP_102 = 10263;
+
+    /// <summary>
+    /// 防化信息终端模拟器384
+    /// </summary>
+    public const int IT_OP_384 = 38461;
+
+    /// <summary>
+    ///防化信息终端模拟器106
+    /// </summary>
+    public const int IT_OP_106 = 10661;
+
+
     #endregion
 }

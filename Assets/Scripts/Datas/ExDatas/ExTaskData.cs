@@ -126,6 +126,26 @@ public class ExTaskId
     /// </summary>
     public const int BASE_RadioStation_106 = 10608;
 
+    /// <summary>
+    /// 02B防化信息终端
+    /// </summary>
+    public const int BASE_IT_02B = 2015;
+
+    /// <summary>
+    /// 102防化信息终端
+    /// </summary>
+    public const int BASE_IT_102 = 10219;
+
+    /// <summary>
+    /// 384防化信息终端
+    /// </summary>
+    public const int BASE_IT_384 = 38415;
+
+    /// <summary>
+    /// 106防化信息终端
+    /// </summary>
+    public const int BASE_IT_106 = 10609;
+
     #endregion
 }
 
