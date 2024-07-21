@@ -154,10 +154,8 @@ public class MaxMapControl : MonoBehaviour
 
     void Update()
     {
-        
 
-
-        //  UpdateMapSizeAndPos();
+        UpdateMapSizeAndPos();
         UpdateMouseDistance();
         UpdateDrugAreaPos();
         Vector2 mousePos = Mouse.current.position.ReadValue();
@@ -278,7 +276,8 @@ public class MaxMapControl : MonoBehaviour
                     harmObj.transform.GetComponent<RectTransform>().sizeDelta = new Vector2(uiRadio.x * 1000 , uiRadio.y * 1000 );
                 //else
                 //    harmObj.transform.GetComponent<RectTransform>().sizeDelta = new Vector2(uiRadio.x * 1000 / TempRadio, uiRadio.y * 1000 / TempRadio);
-                harmObj.transform.GetComponent<RectTransform>().localScale = new Vector3(range, range, 1);
+                harmObj.transform.GetComponent<RectTransform>().localScale = new Vector3(range, range/ taskEnvVarData.Wearth.WindSp, 1);
+                print(taskEnvVarData.Wearth.GetWindDir());
                 harmObj.transform.GetComponent<RectTransform>().localEulerAngles = new Vector3(0,0,taskEnvVarData.Wearth.GetWindDir());
                 curHarmObj = harmObj;
                 IsHarmArea = true;

@@ -338,16 +338,18 @@ public class Infare102Id
 public class Poison384Id
 {
 
-    /// <summary>
-    /// 384车载侦毒器打开探头
-    /// </summary>
-    public const int POISON384_HEAD_OPEN = 279;
+    
 
 
     /// <summary>
     /// 384车载侦毒器开机
     /// </summary>
-    public const int POISON384_OPEN = 284;
+    public const int POISON384_OPEN = 279;
+
+    /// <summary>
+    /// 384车载侦毒器打开进气帽
+    /// </summary>
+    public const int POISON384_Intake_OPEN = 281;
 
     /// <summary>
     /// 384车载侦毒器DFH开启
@@ -357,7 +359,7 @@ public class Poison384Id
     /// <summary>
     /// 384模拟进样
     /// </summary>
-    public const int POISON384_JINYANG = 285;
+    public const int POISON384_JINYANG = 284;
 
     /// <summary>
     /// 384模拟进样结束
@@ -367,22 +369,22 @@ public class Poison384Id
     /// <summary>
     /// 384毒剂报警器报警
     /// </summary>
-    public const int POISON384_ALARM = 287;
+    public const int POISON384_ALARM = 285;
 
     /// <summary>
     /// 384车载侦毒器设置工作模式
     /// </summary>
-    //public const int POISON384_SET_WORK_MODEL = 287;
+    public const int POISON384_SET_WORK_MODEL = 282;
 
     /// <summary>
     /// 384车载侦毒器关机
     /// </summary>
-    public const int POISON384_CLOSE = 288;
+    public const int POISON384_CLOSE = 289;
 
     /// <summary>
-    /// 384车载侦毒器关闭探头
+    /// 384车载侦毒器关闭进气帽
     /// </summary>
-    public const int POISON384_HEAD_CLOSE = 289;
+    public const int POISON384_Intake_CLOSE = 288;
 
     
 }

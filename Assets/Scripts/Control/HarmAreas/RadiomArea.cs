@@ -251,16 +251,16 @@ public class RadiomArea : HarmAreaBase
        // if (NetVarDataMgr.GetInstance()._NetVarData._TaskEnvVarData.Scene == SceneConstant.HILLS)
         {
             pointList.Clear();
-            Vector3 pos1 = MathsMgr.PointDistance(angle - 90, radiomDis * RadiomAreaConstanst.MIN_DISTANCE, startPos);
-            Vector3 pos2 = MathsMgr.PointDistance(angle + 90, radiomDis * RadiomAreaConstanst.MIN_DISTANCE, startPos);
+            Vector3 pos1 = MathsMgr.PointDistance(angle - 90, radiomDis * RadiomAreaConstanst.MIN_DISTANCE / windSp, startPos);
+            Vector3 pos2 = MathsMgr.PointDistance(angle + 90, radiomDis * RadiomAreaConstanst.MIN_DISTANCE / windSp, startPos);
 
             pointList.Add(pos1);
             pointList.Add(pos2);
 
             Vector3 endPos = MathsMgr.PointDistance(angle, radiomDis * 0.91f, startPos);
 
-            Vector3 pos3 = MathsMgr.PointDistance(angle - 90, radiomDis * RadiomAreaConstanst.MAX_DISTANCE, endPos);
-            Vector3 pos4 = MathsMgr.PointDistance(angle + 90, radiomDis * RadiomAreaConstanst.MAX_DISTANCE, endPos);
+            Vector3 pos3 = MathsMgr.PointDistance(angle - 90, radiomDis * RadiomAreaConstanst.MAX_DISTANCE / windSp, endPos);
+            Vector3 pos4 = MathsMgr.PointDistance(angle + 90, radiomDis * RadiomAreaConstanst.MAX_DISTANCE / windSp, endPos);
 
             pointList.Add(pos4);
             pointList.Add(pos3);

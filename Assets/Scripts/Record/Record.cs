@@ -73,11 +73,12 @@ public class Record : MonoSingleTon<Record>
 
         //获取导控的ip地址
         // FTPHost = "ftp://" + NetConfig.SERVER_IP + "/";
-        FTPHost = "http://" + "47.120.64.155/api/upload/";
+       // FTPHost = "http://" + "47.120.64.155/api/upload/";
+        FTPHost = "http://" + NetConfig.SERVER_IP + "/" + "api/upload/";
         //上传到服务端的名称 训练id+席位号AppConfig.SeatId
         // string saveName = NetVarDataMgr.GetInstance()._NetVarData._TrainStartModel.TrainID + "-" + AppConfig.SEAT_ID + ".mp4";
 
-        string saveName = NetVarDataMgr.GetInstance()._NetVarData._TrainStartModel.TrainID+ "/" + AppConfig.SEAT_ID + ".mp4";
+        string saveName = NetVarDataMgr.GetInstance()._NetVarData._TrainStartModel.TrainID+ "/" + AppConfig.SEAT_ID;
         // print(saveName);
         UploadFile(saveName);
     }

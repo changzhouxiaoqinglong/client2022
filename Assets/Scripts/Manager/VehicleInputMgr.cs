@@ -210,6 +210,7 @@ public class VehicleInputMgr : InputCtrBase
             //    //vertical = accelerator - brake;
             //}
             vehicleController.input.Horizontal = CustomInput.DriveHorizontal;
+          
            // print(CustomInput.DriveHorizontal);
             if (vehicleController.tracks.trackedVehicle)
             {
@@ -231,7 +232,7 @@ public class VehicleInputMgr : InputCtrBase
 
             // Handbrake 手刹
             vehicleController.input.Handbrake = CustomInput.HandBrakeValue;
-            print(vehicleController.input.Handbrake);
+           // print(vehicleController.input.Handbrake);
             //try
             //{
             //    vehicleController.input.Handbrake = Input.GetAxis("Handbrake");

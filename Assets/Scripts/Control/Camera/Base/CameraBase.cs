@@ -25,6 +25,16 @@ public enum CameraEnum
     VehicleCameraDriver,
 
     /// <summary>
+    /// 侧视角
+    /// </summary>
+    VehicleCameraSide,
+
+    /// <summary>
+    /// 俯视角
+    /// </summary>
+    VehicleCameraTop,
+
+    /// <summary>
     /// 同步ui相机
     /// </summary>
     SynUiCamera,
@@ -78,7 +88,8 @@ public class CameraBase : UnityMono
     /// <param name="cameraName"></param>
     public static CameraEnum GetCameraEnum(string cameraName)
     {
-        cameraName = cameraName.Replace("(Clone)", string.Empty);
+        
+        cameraName = cameraName.Replace("(Clone)", string.Empty);      
         CameraEnum curEnum;
         if (!System.Enum.TryParse(cameraName, out curEnum))
         {

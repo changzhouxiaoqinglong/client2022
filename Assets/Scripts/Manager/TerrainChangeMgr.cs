@@ -97,6 +97,7 @@ public class TerrainChangeMgr
         else
         {
             Logger.LogWarning("GetWorldPosByGis: no raycast terrian!!!");
+            return GetTerrainPosByGis((TopLeftGis.ToVector2()+ BottomRightGis.ToVector2()) /2);
             return pos;
         }
     }

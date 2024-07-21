@@ -292,7 +292,8 @@ public class Wearth
 
     public float GetWindDir()
     {
-        return WindDir * 45;
+        // return WindDir * 45;
+        return 450 - WindDir;
     }
 
     /// <summary>

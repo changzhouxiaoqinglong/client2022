@@ -22,10 +22,10 @@ public class NewInputSystem : MonoSingleTon<NewInputSystem>
     public void WASD(InputAction.CallbackContext context)
     {      
         var v = context.ReadValue<Vector2>();
-        //print(v.y);
-        if (context.started) { Debug.Log(string.Format("方向 Started " + v.x.ToString() + " " + v.y.ToString())); }
-        //if (context.performed) { Debug.Log(string.Format("performed " + v.x.ToString() + " " + v.y.ToString())); }
-        //if (context.canceled) { Debug.Log(string.Format("方向 canceled " + v.x.ToString() + " " + v.y.ToString())); }
+        
+      //  if (context.started) { Debug.Log(string.Format("方向 Started " + v.x.ToString() + " " + v.y.ToString())); }
+    //    if (context.performed) { Debug.Log(string.Format("performed " + v.x.ToString() + " " + v.y.ToString())); }
+      //  if (context.canceled) { Debug.Log(string.Format("方向 canceled " + v.x.ToString() + " " + v.y.ToString())); }
         CustomInput.Horizontal = v.x;
         CustomInput.Vertical = v.y;
 //#if DEBUG
@@ -221,6 +221,7 @@ public class NewInputSystem : MonoSingleTon<NewInputSystem>
     /// </summary>
     public void FangXiang(InputAction.CallbackContext context)
     {
+        return;
         print("FangXiang");
         var v = context.ReadValue<Vector2>();
         //if (context.started) { Debug.Log(string.Format("方向 Started " + v.x.ToString() + " " + v.y.ToString())); }

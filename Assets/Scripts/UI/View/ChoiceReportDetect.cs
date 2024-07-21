@@ -178,34 +178,68 @@ public class ChoiceReportDetect : ViewBase<ChoiceConfirmViewModel>
     private string GetWindDir() {
         string windDir = "";
         Wearth curWearth = NetVarDataMgr.GetInstance()._NetVarData._TaskEnvVarData.Wearth;
-        switch (curWearth.WindDir) {
-            case 0:
-                windDir = "北风";
-                break;
-            case 1:
-                windDir = "东北风";
-                break;
-            case 2:
-                windDir = "东风";
-                break;
-            case 3:
-                windDir = "东南风";
-                break;
-            case 4:
-                windDir = "南风";
-                break;
-            case 5:
-                windDir = "西南风";
-                break;
-            case 6:
-                windDir = "西风";
-                break;
-            case 7:
-                windDir = "西北风";
-                break;
-            default:
-                break;
+
+        if(curWearth.WindDir==0|| curWearth.WindDir == 360)
+		{
+            windDir = "北风";
         }
+        else if (curWearth.WindDir > 0 && curWearth.WindDir < 90)
+        {
+            windDir = "东北风";
+        }
+        else if (curWearth.WindDir == 90)
+        {
+            windDir = "东风";
+        }
+        else if (curWearth.WindDir > 90 && curWearth.WindDir < 180)
+        {
+            windDir = "东南风";
+        }
+        else if (curWearth.WindDir == 180)
+        {
+            windDir = "南风";
+        }
+        else if (curWearth.WindDir > 180 && curWearth.WindDir < 270)
+        {
+            windDir = "西南风";
+        }
+        else if (curWearth.WindDir == 270)
+        {
+            windDir = "西风";
+        }
+        else if (curWearth.WindDir > 270 && curWearth.WindDir < 360)
+        {
+            windDir = "西北风";
+        }
+
+        //switch (curWearth.WindDir) {
+        //    case 0:
+        //        windDir = "北风";
+        //        break;
+        //    case 1:
+        //        windDir = "东北风";
+        //        break;
+        //    case 2:
+        //        windDir = "东风";
+        //        break;
+        //    case 3:
+        //        windDir = "东南风";
+        //        break;
+        //    case 4:
+        //        windDir = "南风";
+        //        break;
+        //    case 5:
+        //        windDir = "西南风";
+        //        break;
+        //    case 6:
+        //        windDir = "西风";
+        //        break;
+        //    case 7:
+        //        windDir = "西北风";
+        //        break;
+        //    default:
+        //        break;
+        //}
         return windDir;
     }
 

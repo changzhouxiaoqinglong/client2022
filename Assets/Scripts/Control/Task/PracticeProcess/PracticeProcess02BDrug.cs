@@ -8,7 +8,7 @@ public class PracticeProcess02BDrug : PracticeProcessBase
     {
         base.Init(taskId);
         NetManager.GetInstance().AddNetMsgEventListener(ServerType.GuideServer, NetProtocolCode.OP_CAR_DETECT_POISON, OnGetDrugMsg);
-        NetManager.GetInstance().AddNetMsgEventListener(ServerType.GuideServer, NetProtocolCode.SET_CAR_POIS_GAS_TIME,OnGetGasTimeMsg);
+    //    NetManager.GetInstance().AddNetMsgEventListener(ServerType.GuideServer, NetProtocolCode.SET_CAR_POIS_GAS_TIME,OnGetGasTimeMsg);
     }
 
     private void OnGetGasTimeMsg(IEventParam param)
@@ -49,7 +49,7 @@ public class PracticeProcess02BDrug : PracticeProcessBase
     {
         base.End();
         NetManager.GetInstance().RemoveNetMsgEventListener(ServerType.GuideServer, NetProtocolCode.OP_CAR_DETECT_POISON, OnGetDrugMsg);
-        NetManager.GetInstance().RemoveNetMsgEventListener(ServerType.GuideServer, NetProtocolCode.SET_CAR_POIS_GAS_TIME, OnGetGasTimeMsg);
+     //   NetManager.GetInstance().RemoveNetMsgEventListener(ServerType.GuideServer, NetProtocolCode.SET_CAR_POIS_GAS_TIME, OnGetGasTimeMsg);
 
     }
 }

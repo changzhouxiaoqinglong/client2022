@@ -2302,44 +2302,50 @@ public class PoisonAlarmOp384Type
     public const int OpenStatus = 1;
 
     /// <summary>
-    /// 空气进样
+    ///进气帽
     /// </summary>
-    public const int AirJinYang = 2;
+    public const int Intake = 2;
 
     /// <summary>
-    /// 地面进样
+    /// 进样
     /// </summary>
-    public const int GroundJinYang = 3;
+    public const int JinYang = 3;
 
-    /// <summary>
-    /// 空气探头加热
-    /// </summary>
-    public const int AirProbHeat = 4;
+    ///// <summary>
+    ///// 空气探头加热
+    ///// </summary>
+    //public const int AirProbHeat = 4;
 
-    /// <summary>
-    /// 地面探头加热
-    /// </summary>
-    public const int GroundProbHeat = 5;
+    ///// <summary>
+    ///// 地面探头加热
+    ///// </summary>
+    //public const int GroundProbHeat = 5;
 
-    /// <summary>
-    /// 空气探头打开
-    /// </summary>
-    public const int AirProbOpen = 6;
+    ///// <summary>
+    ///// 空气探头打开
+    ///// </summary>
+    //public const int AirProbOpen = 6;
 
-    /// <summary>
-    /// 地面探头打开
-    /// </summary>
-    public const int GroundProbOpen = 7;
+    ///// <summary>
+    ///// 地面探头打开
+    ///// </summary>
+    //public const int GroundProbOpen = 7;
 
-    /// <summary>
-    /// 故障
-    /// </summary>
-    public const int Error = 8;
+    ///// <summary>
+    ///// 故障
+    ///// </summary>
+    //public const int Error = 8;
 
     /// <summary>
     /// 报警
     /// </summary>
-    public const int Alarm = 9;
+    public const int Alarm =4;
+
+    
+    /// <summary>
+    /// 进样结束
+    /// </summary>
+    public const int JinYangEnd = 5;
 
 }
 
@@ -2365,44 +2371,39 @@ public class PoisonAlarmOp384Model : ITaskLogModel
     {
         switch (Type)
         {
-           // case PoisonAlarmOp384Type.EleOn:
-           //     return "毒剂报警器：" + (Operate == OperateDevice.OPEN ? "上电" : "离线");
-            case PoisonAlarmOp384Type.AirJinYang:
-                return "毒剂报警器：" + (Operate == OperateDevice.OPEN ? "空气进样开始" : "空气进样结束");
-            case PoisonAlarmOp384Type.GroundJinYang:
-                return "毒剂报警器：" + (Operate == OperateDevice.OPEN ? "地面进样开始" : "地面进样结束");
-            case PoisonAlarmOp384Type.AirProbHeat:
-                return "毒剂报警器：" + (Operate == OperateDevice.OPEN ? "空气探头开始加热" : "空气探头加热结束");
-            case PoisonAlarmOp384Type.GroundProbHeat:
-                return "毒剂报警器：" + (Operate == OperateDevice.OPEN ? "地面探头开始加热" : "地面探头加热结束");
-            case PoisonAlarmOp384Type.Error:
-                return "毒剂报警器：" + (Operate == OperateDevice.OPEN ? "故障（空气探头没开）" : "故障排除");
+            // case PoisonAlarmOp384Type.EleOn:
+            //     return "毒剂报警器：" + (Operate == OperateDevice.OPEN ? "上电" : "离线");
 
-            case PoisonAlarmOp384Type.AirProbOpen:
-                return "毒剂报警器：" + (Operate == OperateDevice.OPEN ? "空气探头打开" : "空气探头关闭");
-            case PoisonAlarmOp384Type.GroundProbOpen:
-                return "毒剂报警器：" + (Operate == OperateDevice.OPEN ? "地面探头打开" : "地面探头关闭");
-
-            //这个状态要特殊处理
+            case PoisonAlarmOp384Type.Intake:
+                return "毒剂报警器 进气帽：" + (Operate == OperateDevice.OPEN ? "打开" : "关闭");
             case PoisonAlarmOp384Type.OpenStatus:
-                string res = "毒剂报警器：";
-                switch (Operate)
-                {
-                    case 0:
-                        res += "关闭";
-                        break;
-                    case 1:
-                        res += "开始预热";
-                        break;
-                    case 2:
-                        res += "启动";
-                        break;
-                    default:
-                        break;
-                }
-                return res;
+                return "毒剂报警器：" + (Operate == OperateDevice.OPEN ? "开机" : "关机");
+            case PoisonAlarmOp384Type.JinYang:
+                return "毒剂报警器：" + "开始进样";
             case PoisonAlarmOp384Type.Alarm:
                 return "毒剂报警器：" + (Operate == OperateDevice.OPEN ? "开始报警" : "停止报警");
+            case PoisonAlarmOp384Type.JinYangEnd:
+                return "毒剂报警器：" + "结束进样";
+
+            //这个状态要特殊处理
+            //case PoisonAlarmOp384Type.OpenStatus:
+            //    string res = "毒剂报警器：";
+            //    switch (Operate)
+            //    {
+            //        case 0:
+            //            res += "关闭";
+            //            break;
+            //        case 1:
+            //            res += "开始预热";
+            //            break;
+            //        case 2:
+            //            res += "启动";
+            //            break;
+            //        default:
+            //            break;
+            //    }
+            //    return res;
+           
             default:
                 return "";
         }

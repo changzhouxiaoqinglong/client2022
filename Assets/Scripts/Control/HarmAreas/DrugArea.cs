@@ -179,14 +179,14 @@ public class DrugArea : HarmAreaBase
         {
             pointList.Clear();
 
-            Vector3 pos1 = MathsMgr.PointDistance(angle - 90, DrugAreaConstanst.DRUG_SIZE * GetHarmRange() * DrugAreaConstanst.MIN_DISTANCE, startPos);
-            Vector3 pos2 = MathsMgr.PointDistance(angle + 90, DrugAreaConstanst.DRUG_SIZE * GetHarmRange() * DrugAreaConstanst.MIN_DISTANCE, startPos);
+            Vector3 pos1 = MathsMgr.PointDistance(angle - 90, DrugAreaConstanst.DRUG_SIZE * GetHarmRange() * DrugAreaConstanst.MIN_DISTANCE/windSp, startPos);
+            Vector3 pos2 = MathsMgr.PointDistance(angle + 90, DrugAreaConstanst.DRUG_SIZE * GetHarmRange() * DrugAreaConstanst.MIN_DISTANCE/windSp, startPos);
             pointList.Add(pos1);
             pointList.Add(pos2);
             Vector3 endPos = MathsMgr.PointDistance(angle, (DrugAreaConstanst.DRUG_SIZE * GetHarmRange()) * 0.91f, startPos);
 
-            Vector3 pos3 = MathsMgr.PointDistance(angle - 90, DrugAreaConstanst.DRUG_SIZE * GetHarmRange() * DrugAreaConstanst.MAX_DISTANCE, endPos);
-            Vector3 pos4 = MathsMgr.PointDistance(angle + 90, DrugAreaConstanst.DRUG_SIZE * GetHarmRange() * DrugAreaConstanst.MAX_DISTANCE, endPos);
+            Vector3 pos3 = MathsMgr.PointDistance(angle - 90, DrugAreaConstanst.DRUG_SIZE * GetHarmRange() * DrugAreaConstanst.MAX_DISTANCE/windSp, endPos);
+            Vector3 pos4 = MathsMgr.PointDistance(angle + 90, DrugAreaConstanst.DRUG_SIZE * GetHarmRange() * DrugAreaConstanst.MAX_DISTANCE/windSp, endPos);
             pointList.Add(pos4);//point要顺时针 不然有问题
             pointList.Add(pos3);
 

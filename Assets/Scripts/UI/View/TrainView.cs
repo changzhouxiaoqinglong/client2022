@@ -602,35 +602,52 @@ public class TrainView : ViewBase<TrainViewModel>
     }
 
 
+    bool isopenmap = false;
+
     /// <summary>
     /// 打开/关闭地图事件
     /// </summary>
     /// <param name="obj"></param>
      private void OnClickMapBtn(GameObject obj)
 	{
-        Text text = obj.transform.Find("Text").GetComponent<Text>();
-        if (text.text == "路径规划")
-        {
-            //发给驾驶员
-            List<ForwardModel> forwardModels = new ForwardModelsBuilder()
-                .Append(AppConfig.MACHINE_ID, SeatType.DRIVE)
-                .Build();
-            //开门指令
+       // Text text = obj.transform.Find("Text").GetComponent<Text>();
+        //发给驾驶员
+        List<ForwardModel> forwardModels = new ForwardModelsBuilder()
+            .Append(AppConfig.MACHINE_ID, SeatType.DRIVE)
+            .Build();
+       if(!isopenmap)
+		{
             NetManager.GetInstance().SendMsg(ServerType.GuideServer, "", NetProtocolCode.OpenMap, forwardModels);
-
-            text.text = "路径规划";
-        }
-        else
-        {
-            //发给驾驶员
-            List<ForwardModel> forwardModels = new ForwardModelsBuilder()
-                .Append(AppConfig.MACHINE_ID, SeatType.DRIVE)
-                .Build();
-            //开门指令
+            isopenmap = true;
+        }     
+       else
+		{
             NetManager.GetInstance().SendMsg(ServerType.GuideServer, "", NetProtocolCode.CloseMap, forwardModels);
-
-            text.text = "打开地图";
+            isopenmap = false;
         }
+
+        //if (text.text == "路径规划")
+        //{
+        //    //发给驾驶员
+        //    List<ForwardModel> forwardModels = new ForwardModelsBuilder()
+        //        .Append(AppConfig.MACHINE_ID, SeatType.DRIVE)
+        //        .Build();
+        //    //开门指令
+        //    NetManager.GetInstance().SendMsg(ServerType.GuideServer, "", NetProtocolCode.OpenMap, forwardModels);
+
+        //    text.text = "路径规划";
+        //}
+        //else
+        //{
+        //    //发给驾驶员
+        //    List<ForwardModel> forwardModels = new ForwardModelsBuilder()
+        //        .Append(AppConfig.MACHINE_ID, SeatType.DRIVE)
+        //        .Build();
+        //    //开门指令
+        //    NetManager.GetInstance().SendMsg(ServerType.GuideServer, "", NetProtocolCode.CloseMap, forwardModels);
+
+        //    text.text = "打开地图";
+        //}
     }
 
     /// <summary>
@@ -692,16 +709,22 @@ public class TrainView : ViewBase<TrainViewModel>
     private void OnClickChangeBtn(GameObject obj)
     {
         
-        switch (++index % 3)
+        switch (++index % 5)
 		{
             case 0:
                 changeViewBtn.GetComponentInChildren<Text>().text = "第三人称视角";
                 break;
             case 1:
-                changeViewBtn.GetComponentInChildren<Text>().text = "自由视角";
+                changeViewBtn.GetComponentInChildren<Text>().text = "360°环视";
                 break;
             case 2:
                 changeViewBtn.GetComponentInChildren<Text>().text = "驾驶视角";
+                break;
+            case 3:
+                changeViewBtn.GetComponentInChildren<Text>().text = "侧视角";
+                break;
+            case 4:
+                changeViewBtn.GetComponentInChildren<Text>().text = "俯视角";
                 break;
         }
 
