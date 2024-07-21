@@ -130,7 +130,8 @@ public class DrugArea : HarmAreaBase
     /// </summary>
     public override float GetHarmRange() 
     {
-        return (DrugVarData.Speed / (float)DrugAreaConstanst.DRUG_SIZE) * HarmAreaBaseConstant.SIZE_RADIO / 2;//DrugVarData.Speed/1000
+        return 1;
+       // return (DrugVarData.Speed / (float)DrugAreaConstanst.DRUG_SIZE) * HarmAreaBaseConstant.SIZE_RADIO / 2;//DrugVarData.Speed/1000
     }
 
     /// <summary>

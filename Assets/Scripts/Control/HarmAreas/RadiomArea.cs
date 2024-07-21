@@ -208,6 +208,7 @@ public class RadiomArea : HarmAreaBase
 
     public override float GetHarmRange()
     {
+        return 1;
         return RadiatVarData.DangLiang / 1000.0f;
         return (RadiatVarData.DangLiang * RadiomAreaConstanst.RADIOM_RADIO / RadiomAreaConstanst.RADIOM_SIZE) * HarmAreaBaseConstant.SIZE_RADIO;
     }

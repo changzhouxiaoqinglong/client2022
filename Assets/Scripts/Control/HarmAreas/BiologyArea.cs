@@ -63,6 +63,7 @@ public class BiologyArea : HarmAreaBase
 
     public override float GetHarmRange()
     {
+        return 1;
         return (biologydata.BiologySpeed / (float)BiologyAreaConstanst.Biology_SIZE)  / 2;//DrugVarData.Speed/1000
     }
 
