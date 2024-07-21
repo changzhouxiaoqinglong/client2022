@@ -303,6 +303,7 @@ public class Wearth
 
     public float GetWindSp()
     {
+        return WindSp;
         switch (WindSp)
         {
             //无

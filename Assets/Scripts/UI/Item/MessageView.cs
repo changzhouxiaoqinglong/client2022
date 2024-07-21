@@ -186,7 +186,7 @@ public class MessageView : MonoBehaviour
         }
 
 
-        basicInfo.Find("weather/value").GetComponent<Text>().text = weather.GetDes()+ "温度" +weather.Temperate+","+ "湿度" + weather.Humidity + ","+ GetWindDir();
+        basicInfo.Find("weather/value").GetComponent<Text>().text = weather.GetDes() + ","+ "温度" +weather.Temperate+","+ "湿度" + weather.Humidity + ","+ GetWindDir()+",风速"+weather.GetWindSp();
 
     }
 
@@ -238,40 +238,40 @@ public class MessageView : MonoBehaviour
         //        break;
         //}
 
-        if (curWearth.WindDir == 0 || curWearth.WindDir == 360)
-        {
-            windDir = "北风";
-        }
-        else if (curWearth.WindDir > 0 && curWearth.WindDir < 90)
-        {
-            windDir = "东北风";
-        }
-        else if (curWearth.WindDir == 90)
-        {
-            windDir = "东风";
-        }
-        else if (curWearth.WindDir > 90 && curWearth.WindDir < 180)
-        {
-            windDir = "东南风";
-        }
-        else if (curWearth.WindDir == 180)
-        {
-            windDir = "南风";
-        }
-        else if (curWearth.WindDir > 180 && curWearth.WindDir < 270)
-        {
-            windDir = "西南风";
-        }
-        else if (curWearth.WindDir == 270)
-        {
-            windDir = "西风";
-        }
-        else if (curWearth.WindDir > 270 && curWearth.WindDir < 360)
-        {
-            windDir = "西北风";
-        }
+        //if (curWearth.WindDir == 0 || curWearth.WindDir == 360)
+        //{
+        //    windDir = "北风";
+        //}
+        //else if (curWearth.WindDir > 0 && curWearth.WindDir < 90)
+        //{
+        //    windDir = "东北风";
+        //}
+        //else if (curWearth.WindDir == 90)
+        //{
+        //    windDir = "东风";
+        //}
+        //else if (curWearth.WindDir > 90 && curWearth.WindDir < 180)
+        //{
+        //    windDir = "东南风";
+        //}
+        //else if (curWearth.WindDir == 180)
+        //{
+        //    windDir = "南风";
+        //}
+        //else if (curWearth.WindDir > 180 && curWearth.WindDir < 270)
+        //{
+        //    windDir = "西南风";
+        //}
+        //else if (curWearth.WindDir == 270)
+        //{
+        //    windDir = "西风";
+        //}
+        //else if (curWearth.WindDir > 270 && curWearth.WindDir < 360)
+        //{
+        //    wind//}Dir = "西北风";
 
 
+        return " 风向：" + curWearth.WindDir.ToString() + "°";
         return windDir;
     }
 

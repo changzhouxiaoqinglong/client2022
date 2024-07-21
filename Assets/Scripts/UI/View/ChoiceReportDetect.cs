@@ -179,38 +179,38 @@ public class ChoiceReportDetect : ViewBase<ChoiceConfirmViewModel>
         string windDir = "";
         Wearth curWearth = NetVarDataMgr.GetInstance()._NetVarData._TaskEnvVarData.Wearth;
 
-        if(curWearth.WindDir==0|| curWearth.WindDir == 360)
-		{
-            windDir = "北风";
-        }
-        else if (curWearth.WindDir > 0 && curWearth.WindDir < 90)
-        {
-            windDir = "东北风";
-        }
-        else if (curWearth.WindDir == 90)
-        {
-            windDir = "东风";
-        }
-        else if (curWearth.WindDir > 90 && curWearth.WindDir < 180)
-        {
-            windDir = "东南风";
-        }
-        else if (curWearth.WindDir == 180)
-        {
-            windDir = "南风";
-        }
-        else if (curWearth.WindDir > 180 && curWearth.WindDir < 270)
-        {
-            windDir = "西南风";
-        }
-        else if (curWearth.WindDir == 270)
-        {
-            windDir = "西风";
-        }
-        else if (curWearth.WindDir > 270 && curWearth.WindDir < 360)
-        {
-            windDir = "西北风";
-        }
+        //      if(curWearth.WindDir==0|| curWearth.WindDir == 360)
+        //{
+        //          windDir = "北风";
+        //      }
+        //      else if (curWearth.WindDir > 0 && curWearth.WindDir < 90)
+        //      {
+        //          windDir = "东北风";
+        //      }
+        //      else if (curWearth.WindDir == 90)
+        //      {
+        //          windDir = "东风";
+        //      }
+        //      else if (curWearth.WindDir > 90 && curWearth.WindDir < 180)
+        //      {
+        //          windDir = "东南风";
+        //      }
+        //      else if (curWearth.WindDir == 180)
+        //      {
+        //          windDir = "南风";
+        //      }
+        //      else if (curWearth.WindDir > 180 && curWearth.WindDir < 270)
+        //      {
+        //          windDir = "西南风";
+        //      }
+        //      else if (curWearth.WindDir == 270)
+        //      {
+        //          windDir = "西风";
+        //      }
+        //      else if (curWearth.WindDir > 270 && curWearth.WindDir < 360)
+        //      {
+        //          windDir = "西北风";
+        //      }
 
         //switch (curWearth.WindDir) {
         //    case 0:
@@ -240,6 +240,7 @@ public class ChoiceReportDetect : ViewBase<ChoiceConfirmViewModel>
         //    default:
         //        break;
         //}
+        return " 风向："+curWearth.WindDir.ToString()+"°";
         return windDir;
     }
 

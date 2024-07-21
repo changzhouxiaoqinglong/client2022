@@ -13,7 +13,7 @@ public class BiologicalMonitoring : DeviceBase
     {
         base.OnUpdate();
         //化学训练才起作用
-        if (TaskMgr.GetInstance().curTaskData.CheckType != HarmAreaType.DRUG)
+        if (TaskMgr.GetInstance().curTaskData.CheckType != HarmAreaType.BIOLOGY)
         {
             return;
         }

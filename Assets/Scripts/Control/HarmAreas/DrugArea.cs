@@ -30,7 +30,7 @@ public class DrugArea : HarmAreaBase
         Vector3 pos = (SceneMgr.GetInstance().curScene as Train3DSceneCtrBase).terrainChangeMgr.GetTerrainPosByGis(DrugVarData.Pos.ToVector2());
         transform.position = new Vector3(pos.x, transform.position.y,pos.z);
         windDir = taskEnvVarData.Wearth.GetWindDir();
-        windSp = taskEnvVarData.Wearth.WindSp;
+        windSp = taskEnvVarData.Wearth.WindSp+1;
         CreatePointRange(transform.position, windDir);
         StartCoroutine(ISetDrugAreaPoison());
     }

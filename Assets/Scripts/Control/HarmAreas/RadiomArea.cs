@@ -75,7 +75,7 @@ public class RadiomArea : HarmAreaBase
         //位置
         transform.position = (SceneMgr.GetInstance().curScene as Train3DSceneCtrBase).terrainChangeMgr.GetTerrainPosByGis(RadiatVarData.Pos.ToVector3());
         windDir = taskEnvVarData.Wearth.GetWindDir();
-        windSp = taskEnvVarData.Wearth.WindSp;
+        windSp = taskEnvVarData.Wearth.WindSp + 1;
         CreatePointRange(transform.position, windDir);
         //StartCoroutine(ISetRadiomAreaPoison());
     }
