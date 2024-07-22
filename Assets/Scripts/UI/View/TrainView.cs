@@ -272,7 +272,7 @@ public class TrainView : ViewBase<TrainViewModel>
         transform.Find("右侧按钮框").gameObject.SetActive(AppConfig.SEAT_ID == SeatType.INVEST1);
         protectBtn.gameObject.SetActive(AppConfig.SEAT_ID == SeatType.INVEST1);
         //cancelProtectBtn.gameObject.SetActive(AppConfig.SEAT_ID == SeatType.INVEST1);
-        carDoorBtn.gameObject.SetActive(AppConfig.SEAT_ID == SeatType.INVEST1);
+        //carDoorBtn.gameObject.SetActive(AppConfig.SEAT_ID == SeatType.INVEST1);
         endBtn.transform.gameObject.SetActive(AppConfig.SEAT_ID == SeatType.INVEST1);
         //instructBtn.gameObject.SetActive(AppConfig.SEAT_ID == SeatType.INVEST1);
         walkCheckBtn.transform.gameObject.SetActive(AppConfig.SEAT_ID == SeatType.INVEST1);
