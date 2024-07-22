@@ -296,7 +296,7 @@ public class TrainView : ViewBase<TrainViewModel>
         }
         else//生物
 		{
-            dropdown.options = new List<Dropdown.OptionData>() { new Dropdown.OptionData("化学侦察") };
+            dropdown.options = new List<Dropdown.OptionData>() { new Dropdown.OptionData("生物侦察") };
         }
 
             #endregion

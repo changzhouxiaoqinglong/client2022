@@ -24,7 +24,7 @@ public class MapView :  ViewBase<MapViewModel>
         cancelBtn = transform.Find("Delete/Panel/false").GetComponent<ButtonBase>();
         confirmBtn.RegistClick(OnClickConfirm);
         cancelBtn.RegistClick(OnClickCancel);
-        NetManager.GetInstance().AddNetMsgEventListener(ServerType.GuideServer, NetProtocolCode.OpenMap, OnGetCloseMap);
+        NetManager.GetInstance().AddNetMsgEventListener(ServerType.GuideServer, NetProtocolCode.CloseMap, OnGetCloseMap);
 
     }
     private void OnGetCloseMap(IEventParam param)
@@ -56,7 +56,7 @@ public class MapView :  ViewBase<MapViewModel>
     protected override void OnDestroy()
     {
         base.OnDestroy();
-        NetManager.GetInstance().RemoveNetMsgEventListener(ServerType.GuideServer, NetProtocolCode.OpenMap, OnGetCloseMap);
+        NetManager.GetInstance().RemoveNetMsgEventListener(ServerType.GuideServer, NetProtocolCode.CloseMap, OnGetCloseMap);
     }
 
     private void OnClickCloseMapBtn(GameObject obj)
