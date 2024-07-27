@@ -303,6 +303,7 @@ public class Wearth
 
     public float GetWindSp()
     {
+        return Mathf.Clamp(WindSp,1, 10);
         return WindSp;
         switch (WindSp)
         {

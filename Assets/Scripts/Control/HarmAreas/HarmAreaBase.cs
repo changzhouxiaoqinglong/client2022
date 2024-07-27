@@ -59,6 +59,16 @@ public class HarmAreaBase : UnityMono
     {
 
     }
+
+    public AnimationCurve windcurve;
+
+    public virtual float GetCurvePosition(float windsp)
+    {
+
+        //for (float i = 1; i <= 10; i++)
+        //    print(windcurve.Evaluate(i / 10) * 10);
+        return windcurve.Evaluate(windsp/10) * 10;
+    }
 }
 
 public class HarmAreaBaseConstant

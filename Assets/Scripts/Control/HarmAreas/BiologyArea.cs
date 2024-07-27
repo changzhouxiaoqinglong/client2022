@@ -7,7 +7,7 @@ public class BiologyArea : HarmAreaBase
     /// <summary>
     /// 毒区路径
     /// </summary>
-    private const string CREATE_Biology_PATH = "Prefabs/Sprite/MaxMapIcon/DrugAreaNew";
+    private const string CREATE_Biology_PATH = "Prefabs/Sprite/MaxMapIcon/RadiomArea";
 
     private const int TempRadio = 2;
     /// <summary>
@@ -25,7 +25,7 @@ public class BiologyArea : HarmAreaBase
         Vector3 pos = (SceneMgr.GetInstance().curScene as Train3DSceneCtrBase).terrainChangeMgr.GetTerrainPosByGis(biologydata.Pos.ToVector2());
         transform.position = new Vector3(pos.x, transform.position.y, pos.z);
         windDir = taskEnvVarData.Wearth.GetWindDir();
-        windSp = taskEnvVarData.Wearth.WindSp + 1;
+        windSp = taskEnvVarData.Wearth.GetWindSp();
         CreatePointRange(transform.position, windDir);
         StartCoroutine(ISetBiologyAreaPoison());
     }
@@ -63,7 +63,7 @@ public class BiologyArea : HarmAreaBase
 
     public override float GetHarmRange()
     {
-        return 1;
+        return 2;
         return (biologydata.BiologySpeed / (float)BiologyAreaConstanst.Biology_SIZE)  / 2;//DrugVarData.Speed/1000
     }
 
@@ -108,14 +108,14 @@ public class BiologyArea : HarmAreaBase
         {
             pointList.Clear();
 
-            Vector3 pos1 = MathsMgr.PointDistance(angle - 90, BiologyAreaConstanst.Biology_SIZE * GetHarmRange() * BiologyAreaConstanst.MIN_DISTANCE / windSp, startPos);
-            Vector3 pos2 = MathsMgr.PointDistance(angle + 90, BiologyAreaConstanst.Biology_SIZE * GetHarmRange() * BiologyAreaConstanst.MIN_DISTANCE / windSp, startPos);
+            Vector3 pos1 = MathsMgr.PointDistance(angle - 90, BiologyAreaConstanst.Biology_SIZE * GetHarmRange() * BiologyAreaConstanst.MIN_DISTANCE / GetCurvePosition(windSp), startPos);
+            Vector3 pos2 = MathsMgr.PointDistance(angle + 90, BiologyAreaConstanst.Biology_SIZE * GetHarmRange() * BiologyAreaConstanst.MIN_DISTANCE / GetCurvePosition(windSp), startPos);
             pointList.Add(pos1);
             pointList.Add(pos2);
             Vector3 endPos = MathsMgr.PointDistance(angle, (BiologyAreaConstanst.Biology_SIZE * GetHarmRange()) * 0.91f, startPos);
 
-            Vector3 pos3 = MathsMgr.PointDistance(angle - 90, BiologyAreaConstanst.Biology_SIZE * GetHarmRange() * BiologyAreaConstanst.MAX_DISTANCE / windSp, endPos);
-            Vector3 pos4 = MathsMgr.PointDistance(angle + 90, BiologyAreaConstanst.Biology_SIZE * GetHarmRange() * BiologyAreaConstanst.MAX_DISTANCE / windSp, endPos);
+            Vector3 pos3 = MathsMgr.PointDistance(angle - 90, BiologyAreaConstanst.Biology_SIZE * GetHarmRange() * BiologyAreaConstanst.MAX_DISTANCE / GetCurvePosition(windSp), endPos);
+            Vector3 pos4 = MathsMgr.PointDistance(angle + 90, BiologyAreaConstanst.Biology_SIZE * GetHarmRange() * BiologyAreaConstanst.MAX_DISTANCE / GetCurvePosition(windSp), endPos);
             pointList.Add(pos4);//point要顺时针 不然有问题
             pointList.Add(pos3);
 
@@ -170,7 +170,7 @@ public class BiologyAreaConstanst
     /// <summary>
     /// 中心两端的延长距离
     /// </summary>
-    public const float MIN_DISTANCE = 0.12f;
+    public const float MIN_DISTANCE = 0.15f;
 
     /// <summary>
     /// 底部两端的延长距离

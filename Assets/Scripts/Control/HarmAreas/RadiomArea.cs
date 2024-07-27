@@ -9,7 +9,7 @@ using UnityEngine;
 /// </summary>
 public class RadiomArea : HarmAreaBase
 {
-    private const string CREATE_RADIOM_PATH = "Prefabs/Sprite/MaxMapIcon/DrugAreaNew";
+    private const string CREATE_RADIOM_PATH = "Prefabs/Sprite/MaxMapIcon/RadiomArea";
 
     private List<Vector3> radiomList = new List<Vector3>();
 
@@ -75,7 +75,7 @@ public class RadiomArea : HarmAreaBase
         //位置
         transform.position = (SceneMgr.GetInstance().curScene as Train3DSceneCtrBase).terrainChangeMgr.GetTerrainPosByGis(RadiatVarData.Pos.ToVector3());
         windDir = taskEnvVarData.Wearth.GetWindDir();
-        windSp = taskEnvVarData.Wearth.WindSp + 1;
+        windSp = taskEnvVarData.Wearth.GetWindSp();
         CreatePointRange(transform.position, windDir);
         //StartCoroutine(ISetRadiomAreaPoison());
     }
@@ -208,7 +208,7 @@ public class RadiomArea : HarmAreaBase
 
     public override float GetHarmRange()
     {
-        return 1;
+        return 2;
         return RadiatVarData.DangLiang / 1000.0f;
         return (RadiatVarData.DangLiang * RadiomAreaConstanst.RADIOM_RADIO / RadiomAreaConstanst.RADIOM_SIZE) * HarmAreaBaseConstant.SIZE_RADIO;
     }
@@ -252,16 +252,16 @@ public class RadiomArea : HarmAreaBase
        // if (NetVarDataMgr.GetInstance()._NetVarData._TaskEnvVarData.Scene == SceneConstant.HILLS)
         {
             pointList.Clear();
-            Vector3 pos1 = MathsMgr.PointDistance(angle - 90, radiomDis * RadiomAreaConstanst.MIN_DISTANCE / windSp, startPos);
-            Vector3 pos2 = MathsMgr.PointDistance(angle + 90, radiomDis * RadiomAreaConstanst.MIN_DISTANCE / windSp, startPos);
+            Vector3 pos1 = MathsMgr.PointDistance(angle - 90, radiomDis * RadiomAreaConstanst.MIN_DISTANCE / GetCurvePosition(windSp), startPos);
+            Vector3 pos2 = MathsMgr.PointDistance(angle + 90, radiomDis * RadiomAreaConstanst.MIN_DISTANCE / GetCurvePosition(windSp), startPos);
 
             pointList.Add(pos1);
             pointList.Add(pos2);
 
             Vector3 endPos = MathsMgr.PointDistance(angle, radiomDis * 0.91f, startPos);
 
-            Vector3 pos3 = MathsMgr.PointDistance(angle - 90, radiomDis * RadiomAreaConstanst.MAX_DISTANCE / windSp, endPos);
-            Vector3 pos4 = MathsMgr.PointDistance(angle + 90, radiomDis * RadiomAreaConstanst.MAX_DISTANCE / windSp, endPos);
+            Vector3 pos3 = MathsMgr.PointDistance(angle - 90, radiomDis * RadiomAreaConstanst.MAX_DISTANCE / GetCurvePosition(windSp), endPos);
+            Vector3 pos4 = MathsMgr.PointDistance(angle + 90, radiomDis * RadiomAreaConstanst.MAX_DISTANCE / GetCurvePosition(windSp), endPos);
 
             pointList.Add(pos4);
             pointList.Add(pos3);
@@ -346,7 +346,7 @@ public class RadiomArea : HarmAreaBase
         /// </summary>
        // public const int RADIOM_MAX_DENTITY = 20000;
 
-        public const float MIN_DISTANCE = 0.12f;
+        public const float MIN_DISTANCE = 0.15f;
 
         public const float MAX_DISTANCE = 0.44f;
 
