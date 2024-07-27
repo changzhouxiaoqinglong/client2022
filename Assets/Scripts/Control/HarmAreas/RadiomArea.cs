@@ -125,7 +125,7 @@ public class RadiomArea : HarmAreaBase
             float maxdis = Vector2.Distance(p3, p1);
             float dis = Vector2.Distance(p1, p2);
             //print("maxdis: "+ maxdis+ "dis: " + dis);
-            return RadiomAreaConstanst.RADIOM_DENTITY * (1 - Mathf.Clamp01(dis / maxdis))+100000;
+            return RadiomAreaConstanst.RADIOM_DENTITY * (1 - Mathf.Clamp01(dis / maxdis));
         }
         return 0;
     }
@@ -333,7 +333,7 @@ public class RadiomArea : HarmAreaBase
         /// <summary>
         /// 辐射浓度
         /// </summary>
-        public const float RADIOM_DENTITY = 1000;
+        public const float RADIOM_DENTITY = 10000;
 
 
         /// <summary>
