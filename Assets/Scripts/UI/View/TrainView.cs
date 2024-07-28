@@ -480,7 +480,8 @@ public class TrainView : ViewBase<TrainViewModel>
     private void OnClickEnd(GameObject obj)
     {
         //打开二次确认界面
-        UIMgr.GetInstance().OpenView(ViewType.ChoiceConfirmView);
+      //  UIMgr.GetInstance().OpenView(ViewType.ChoiceConfirmView);
+        TaskMgr.GetInstance().ResportEndTask();
         //ViewModel.TrainEnd();
     }
 

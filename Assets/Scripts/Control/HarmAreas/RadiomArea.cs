@@ -125,7 +125,8 @@ public class RadiomArea : HarmAreaBase
             float maxdis = Vector2.Distance(p3, p1);
             float dis = Vector2.Distance(p1, p2);
             //print("maxdis: "+ maxdis+ "dis: " + dis);
-            return RadiomAreaConstanst.RADIOM_DENTITY * (1 - Mathf.Clamp01(dis / maxdis));
+           // return RadiomAreaConstanst.RADIOM_DENTITY * (1 - Mathf.Clamp01(dis / maxdis));
+            return Mathf.Clamp(RadiomAreaConstanst.RADIOM_DENTITY * (1 - Mathf.Clamp01(dis / maxdis)), 100, RadiomAreaConstanst.RADIOM_DENTITY);
         }
         return 0;
     }
@@ -258,7 +259,7 @@ public class RadiomArea : HarmAreaBase
             pointList.Add(pos1);
             pointList.Add(pos2);
 
-            Vector3 endPos = MathsMgr.PointDistance(angle, radiomDis * 0.91f, startPos);
+            Vector3 endPos = MathsMgr.PointDistance(angle, radiomDis * 1f, startPos);
 
             Vector3 pos3 = MathsMgr.PointDistance(angle - 90, radiomDis * RadiomAreaConstanst.MAX_DISTANCE / GetCurvePosition(windSp), endPos);
             Vector3 pos4 = MathsMgr.PointDistance(angle + 90, radiomDis * RadiomAreaConstanst.MAX_DISTANCE / GetCurvePosition(windSp), endPos);

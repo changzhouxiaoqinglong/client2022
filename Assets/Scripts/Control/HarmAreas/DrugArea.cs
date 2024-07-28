@@ -105,7 +105,7 @@ public class DrugArea : HarmAreaBase
             float maxdis = Vector2.Distance(p3,p1);
             float dis = Vector2.Distance(p1, p2);
             //print("maxdis: "+ maxdis+ "dis: " + dis);
-            return DrugAreaConstanst.DRUG_DENTITY * (1- Mathf.Clamp01(dis / maxdis));
+            return Mathf.Clamp(DrugAreaConstanst.DRUG_DENTITY * (1 - Mathf.Clamp01(dis / maxdis)),100, DrugAreaConstanst.DRUG_DENTITY);
         }
         return 0;
     }
@@ -243,7 +243,7 @@ public class DrugAreaConstanst
    /// <summary>
    /// 毒区中心浓度
    /// </summary>
-    public const float DRUG_DENTITY = 1000;
+    public const float DRUG_DENTITY = 10000;
 
     /// <summary>
     /// 毒区大小 默认500位基数1

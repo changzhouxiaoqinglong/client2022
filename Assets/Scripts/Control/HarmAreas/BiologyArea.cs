@@ -48,7 +48,8 @@ public class BiologyArea : HarmAreaBase
             float maxdis = Vector2.Distance(p3, p1);
             float dis = Vector2.Distance(p1, p2);
             //print("maxdis: "+ maxdis+ "dis: " + dis);
-            return BiologyAreaConstanst.Biology_DENTITY * (1 - Mathf.Clamp01(dis / maxdis)) ; ;
+           // return BiologyAreaConstanst.Biology_DENTITY * (1 - Mathf.Clamp01(dis / maxdis)) ;
+            return Mathf.Clamp(BiologyAreaConstanst.Biology_DENTITY * (1 - Mathf.Clamp01(dis / maxdis)), 100, BiologyAreaConstanst.Biology_DENTITY);
         }
         return 0;
     }
@@ -112,7 +113,7 @@ public class BiologyArea : HarmAreaBase
             Vector3 pos2 = MathsMgr.PointDistance(angle + 90, BiologyAreaConstanst.Biology_SIZE * GetHarmRange() * BiologyAreaConstanst.MIN_DISTANCE / GetCurvePosition(windSp), startPos);
             pointList.Add(pos1);
             pointList.Add(pos2);
-            Vector3 endPos = MathsMgr.PointDistance(angle, (BiologyAreaConstanst.Biology_SIZE * GetHarmRange()) * 0.91f, startPos);
+            Vector3 endPos = MathsMgr.PointDistance(angle, (BiologyAreaConstanst.Biology_SIZE * GetHarmRange()) * 1, startPos);
 
             Vector3 pos3 = MathsMgr.PointDistance(angle - 90, BiologyAreaConstanst.Biology_SIZE * GetHarmRange() * BiologyAreaConstanst.MAX_DISTANCE / GetCurvePosition(windSp), endPos);
             Vector3 pos4 = MathsMgr.PointDistance(angle + 90, BiologyAreaConstanst.Biology_SIZE * GetHarmRange() * BiologyAreaConstanst.MAX_DISTANCE / GetCurvePosition(windSp), endPos);
@@ -160,7 +161,7 @@ public class BiologyAreaConstanst
     /// <summary>
     /// 生物区中心浓度
     /// </summary>
-    public const float Biology_DENTITY = 1000;
+    public const float Biology_DENTITY = 10000;
 
     /// <summary>
     ///  生物区大小 默认500位基数1

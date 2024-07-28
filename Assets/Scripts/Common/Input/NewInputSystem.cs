@@ -221,7 +221,7 @@ public class NewInputSystem : MonoSingleTon<NewInputSystem>
     /// </summary>
     public void FangXiang(InputAction.CallbackContext context)
     {
-        return;
+        //return;
         print("FangXiang");
         var v = context.ReadValue<Vector2>();
         //if (context.started) { Debug.Log(string.Format("方向 Started " + v.x.ToString() + " " + v.y.ToString())); }

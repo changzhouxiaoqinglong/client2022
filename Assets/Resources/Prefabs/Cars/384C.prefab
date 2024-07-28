@@ -3131,7 +3131,7 @@ Rigidbody:
   m_Mass: 1380
   m_Drag: 0.02
   m_AngularDrag: 0.01
-  m_CenterOfMass: {x: -0.12648669, y: -0.28438568, z: 0.3668719}
+  m_CenterOfMass: {x: -0.12825781, y: 0.4810124, z: -0.011791378}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
   m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
   m_IncludeLayers:
@@ -12506,7 +12506,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 7844283995131384772}
-  distance: 4
+  distance: 8
   minDistance: 4
   maxDistance: 9
   horizontalMouseSensitivity: 0.2

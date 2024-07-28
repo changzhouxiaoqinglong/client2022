@@ -43,12 +43,12 @@ public class AppConstant
     /// <summary>
     /// 毒浓度单位
     /// </summary>
-    public const string DRUG_UNIT = "mg/m3";
+    public const string DRUG_UNIT = "uGy/h";
 
     /// <summary>
     /// 毒浓度单位
     /// </summary>
-    public const string Biology_UNIT = "mg/m3";
+    public const string Biology_UNIT = "uGy/h";
 
     /// <summary>
     /// 接近测量点 上报速度 延时时间

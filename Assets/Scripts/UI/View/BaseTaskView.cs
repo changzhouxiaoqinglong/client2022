@@ -217,8 +217,8 @@ public class BaseTaskView : ViewBase<BaseTaskViewModel>
     /// </summary>
     private void OnClickEnd(GameObject obj)
     {
-        UIMgr.GetInstance().OpenView(ViewType.ChoiceConfirmView);
-        //ViewModel.ClickEndTrain();
+        //UIMgr.GetInstance().OpenView(ViewType.ChoiceConfirmView);
+        ViewModel.ClickEndTrain();
     }
 
     /// <summary>
