@@ -69,7 +69,7 @@ public class QstExamineMeathed : SelectQuestionBase
             if (temp != null)
             {
                 curTube = temp.tube;
-                Debug.Log(curTube);
+                Debug.Log("curTube: "+curTube);
                 break;
             }
         }

@@ -117,8 +117,7 @@ public class SelectQuestionBase : QuestionBase
             if(toggles[i].isOn)
             {
                 answers.Add(i + 1);
-                print("GetSelectAnswer");
-                print(i + 1);
+                print("GetSelectAnswer  "+ i + 1);             
             }
         }
         return answers;
