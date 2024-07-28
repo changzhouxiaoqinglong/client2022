@@ -77,10 +77,10 @@ public class PoisonAlarm384 : PoisonAlarm
             {
                 exPoisonData = ExPoisonDataMgr.GetInstance().GetDataById(crater.VarData.Type);
                 craterDentity = crater.VarData.Dentity;
-                if (exPoisonData != null)
-                    Debug.LogError("弹坑毒数据浓度为:  " + craterDentity);
-                else
-                    Debug.LogError("没有弹坑毒数据");
+                //if (exPoisonData != null)
+                //    Debug.LogError("弹坑毒数据浓度为:  " + craterDentity);
+                //else
+                //    Debug.LogError("没有弹坑毒数据");
             }
             res = new ReportDrugDataModel()
             {
