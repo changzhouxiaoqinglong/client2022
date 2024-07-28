@@ -48,10 +48,10 @@ public class PoisonAlarm384 : PoisonAlarm
             ExPoisonData exPoisonData = null;
             if (drugVarData != null)
             {
-                if (drugVarData != null)
-                    Debug.LogError("get毒数据浓度为:  " + dentity);
-                else
-                    Debug.LogError("没有毒数据");
+                //if (drugVarData != null)
+                //    Debug.LogError("get毒数据浓度为:  " + dentity);
+                //else
+                //    Debug.LogError("没有毒数据");
 
                 exPoisonData = ExPoisonDataMgr.GetInstance().GetDataById(drugVarData.Type);
             }

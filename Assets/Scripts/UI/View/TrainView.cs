@@ -279,12 +279,13 @@ public class TrainView : ViewBase<TrainViewModel>
         //inCarBtn.transform.gameObject.SetActive(AppConfig.SEAT_ID == SeatType.INVEST1);
         measureBtn.transform.gameObject.SetActive(AppConfig.SEAT_ID == SeatType.INVEST1);
        // cleanBtn.gameObject.SetActive(AppConfig.SEAT_ID == SeatType.INVEST1);
-        samplingBtn.gameObject.SetActive(AppConfig.SEAT_ID == SeatType.INVEST1);
+        //samplingBtn.gameObject.SetActive(AppConfig.SEAT_ID == SeatType.INVEST1);
         flagBtn.transform.gameObject.SetActive(AppConfig.SEAT_ID == SeatType.INVEST1);
         reportDetectBtn.transform.gameObject.SetActive(AppConfig.SEAT_ID == SeatType.INVEST1);
 
         drugPoisonBtn.gameObject.SetActive(IsQstAnswer());
         measureBtn.transform.gameObject.SetActive(IsNuclearMeasure());
+        //print(IsNuclearMeasure());
         //BiologyBtn.transform.gameObject.SetActive(IsBiologyMeasure());
         if (TaskMgr.GetInstance().curTaskData.CheckType == HarmAreaType.DRUG)//毒
 		{
@@ -549,6 +550,7 @@ public class TrainView : ViewBase<TrainViewModel>
                 inCarBtn.gameObject.SetActive(true);
                // measureBtn.gameObject.SetActive(true);
                 measureBtn.gameObject.SetActive(IsNuclearMeasure());
+                samplingBtn.gameObject.SetActive(true);
                 isInCar = false;
             }
         }
@@ -581,6 +583,7 @@ public class TrainView : ViewBase<TrainViewModel>
                 walkCheckBtn.gameObject.SetActive(true);
                 inCarBtn.gameObject.SetActive(false);
                 measureBtn.gameObject.SetActive(false);
+                samplingBtn.gameObject.SetActive(false);
                 isInCar = true;
             }
         }

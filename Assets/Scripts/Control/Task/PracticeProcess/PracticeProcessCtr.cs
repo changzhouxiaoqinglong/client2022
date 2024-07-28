@@ -33,6 +33,8 @@ public class PracticeProcessCtr
          {ExTaskId.BASE_RADIOMETE_106, typeof(PracticeProcess106Radio)},
           {ExTaskId.BASE_Biology_106, typeof(PraticeProcess106Biology)},
            {ExTaskId.BASE_Power_106,typeof(PracticeProcess106Power) },
+            {ExTaskId.BASE_RadioStation_106,typeof(PracticeProcess106RadioStation) },
+
           {ExTaskId.BASE_IT_02B,typeof(PracticeProcess02BZhongDuan) },
           {ExTaskId.BASE_IT_102,typeof(PracticeProcess102ZhongDuan) },
           {ExTaskId.BASE_IT_384,typeof(PracticeProcess384ZhongDuan) },

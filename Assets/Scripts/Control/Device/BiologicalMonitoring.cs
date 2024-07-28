@@ -49,7 +49,7 @@ public class BiologicalMonitoring : DeviceBase
         
         //浓度
         float dentity = HarmAreaMgr.GetPosBiologyDentity(car.GetPosition());
-        Debug.LogError("当前生物信息：" + dentity);
+       // Debug.LogError("当前生物信息：" + dentity);
 
         //发给设备管理软件
 

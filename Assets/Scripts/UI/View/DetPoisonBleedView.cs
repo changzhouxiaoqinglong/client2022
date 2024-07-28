@@ -187,14 +187,15 @@ public class DetPoisonBleedView : ViewBase<DetPoisonBleedViewModel>
             if (model.Operate == OperateDevice.CLOSE && model.Type == CarDetectPoisonOpType.Pump)
             {
                 UIMgr.GetInstance().CloseView(ViewType.DetPoisonBleedView);
-                if (bleedTime <= 0 && timeRange >= BleedTimeConstant.CORRECTMINTIME && timeRange <= BleedTimeConstant.CORRECTMAXTIME)
-                {
-                    drugPoison02B.isOk = true;
-                }
-                else
-                {
-                    drugPoison02B.isOk = false;
-                }
+                //if (bleedTime <= 0 && timeRange >= BleedTimeConstant.CORRECTMINTIME && timeRange <= BleedTimeConstant.CORRECTMAXTIME)
+                //{
+                //    drugPoison02B.isOk = true;
+                //}
+                //else
+                //{
+                //    drugPoison02B.isOk = false;
+                //}
+                drugPoison02B.isOk = true;//直接下一步
                 QuestionView questionView = (UIMgr.GetInstance().OpenView(ViewType.QuestionView) as QuestionView);
                 questionView.tubeType = poisonColorParam.tubeType;
                 questionView.InitJumpId = QuestionConstant.JUDGEID;
