@@ -1,7 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using System.Threading.Tasks;
+using System.Threading;
 public class PracticeProcess106Poison : PracticeProcessBase
 {
 
@@ -91,41 +92,57 @@ public class PracticeProcess106Poison : PracticeProcessBase
                         //记下进样时间
                         startJinYangTime = Time.realtimeSinceStartup;
                         DoProcess(Poison106Id.POISON_ALARM_JINYANG_106);
+                        WaitAlarm();
                     }
-                    else
-                    {
-                        //结束进样
-                        int jinIndex = GetProcessIndex(Poison106Id.POISON_ALARM_JINYANG_106);
-                        //当前步骤在开始进样之后，才判断
-                        if (curIndex >= jinIndex)
-                        {
-                            //计算进样时间
-                            float time = Time.realtimeSinceStartup - startJinYangTime;
-                            //时间充足
-                            if (time > jinYangMinTime)
-                            {
-                                //进样结束
-                                DoProcess(Poison106Id.POISON_ALARM_END_JINYANG_106);
-                            }
-                            else
-                            {
-                                //提示进样不足
-                                EventDispatcher.GetInstance().DispatchEvent(EventNameList.PRACTICE_PROCESS_ERROR_TIP, new StringEvParam("进样超过5秒结束！"));
-                            }
-                        }
-                    }
+                    //else
+                    //{
+                    //    //结束进样
+                    //    int jinIndex = GetProcessIndex(Poison106Id.POISON_ALARM_JINYANG_106);
+                    //    //当前步骤在开始进样之后，才判断
+                    //    if (curIndex >= jinIndex)
+                    //    {
+                    //        //计算进样时间
+                    //        float time = Time.realtimeSinceStartup - startJinYangTime;
+                    //        //时间充足
+                    //        if (time > jinYangMinTime)
+                    //        {
+                    //            //进样结束
+                    //            DoProcess(Poison106Id.POISON_ALARM_END_JINYANG_106);
+                    //        }
+                    //        else
+                    //        {
+                    //            //提示进样不足
+                    //            EventDispatcher.GetInstance().DispatchEvent(EventNameList.PRACTICE_PROCESS_ERROR_TIP, new StringEvParam("进样超过5秒结束！"));
+                    //        }
+                    //    }
+                    //}
 
                     break;
-                case PoisonAlarmOp106Type.alarm:
-                    if (model.Operate == OperateDevice.OPEN)
-                    {
-                        DoProcess(Poison106Id.POISON_ALARM_106);
-                    }
-                    break;
+                //case PoisonAlarmOp106Type.alarm:
+                //    if (model.Operate == OperateDevice.OPEN)
+                //    {
+                //        DoProcess(Poison106Id.POISON_ALARM_106);
+                //    }
+                //    break;
                
             }
         }
     }
+
+    async void WaitAlarm()
+    {
+        await Task.Delay(3000);//进样结束 3秒后通知硬件报警
+        DoProcess(Poison106Id.POISON_ALARM_106);
+
+        PoisonAlarmOp106Model model = new PoisonAlarmOp106Model
+        {
+            Type = PoisonAlarmOp106Type.alarm,
+            Operate = 1
+        };
+
+        NetManager.GetInstance().SendMsg(ServerType.GuideServer, JsonTool.ToJson(model), NetProtocolCode.POISON_ALARM_OP_106, NetManager.GetInstance().CurDeviceForward);
+    }
+
 
     protected override void JumpToNext()
     {

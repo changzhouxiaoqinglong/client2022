@@ -105,10 +105,10 @@ public class PracticeProcess384Poison : PracticeProcessBase
 
 
                
-				case PoisonAlarmOp384Type.JinYangEnd://进样结束 type改成5
-					Debug.LogWarning("JinYangEnd");
-					DoProcess(Poison384Id.POISON384_JINYANG_End);
-					break;
+				//case PoisonAlarmOp384Type.JinYangEnd://进样结束 type改成5
+				//	Debug.LogWarning("JinYangEnd");
+				//	DoProcess(Poison384Id.POISON384_JINYANG_End);
+				//	break;
 				default:
                     break;
             }
