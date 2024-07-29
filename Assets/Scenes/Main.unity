@@ -467,7 +467,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Actions: {fileID: -944628639613478452, guid: 1de1175f067d6d6419b62edb29f9249a,
+  m_Actions: {fileID: -944628639613478452, guid: 39e9449d5ffcacc4cadacdb17821f27f,
     type: 3}
   m_NotificationBehavior: 2
   m_UIInputModule: {fileID: 0}
@@ -753,9 +753,269 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: db0c8c17-0401-408b-a7f9-bf57704d4756
     m_ActionName: "1ActionMap/\u624B\u5239[/Ethan  Ethan  HID/button3]"
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 465795434}
+        m_TargetAssemblyTypeName: NewInputSystem, Assembly-CSharp
+        m_MethodName: Qidong
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: cf98f71d-5482-4387-913d-93e18c3149fe
+    m_ActionName: "2ActionMap/\u542F\u52A8"
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 0a6c1a57-d084-4a35-b96d-7029a03b652a
+    m_ActionName: "2ActionMap/\u6253\u706B"
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 465795434}
+        m_TargetAssemblyTypeName: NewInputSystem, Assembly-CSharp
+        m_MethodName: Dang1
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 11601795-45bf-4f70-acac-9966556b577d
+    m_ActionName: "2ActionMap/\u4E00\u6863"
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 465795434}
+        m_TargetAssemblyTypeName: NewInputSystem, Assembly-CSharp
+        m_MethodName: Dang3
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: e924bc24-da76-4cae-99f1-8097c94a4780
+    m_ActionName: "2ActionMap/\u4E09\u6863"
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 465795434}
+        m_TargetAssemblyTypeName: NewInputSystem, Assembly-CSharp
+        m_MethodName: Dang5
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 7d7ce0f2-6ef3-464b-beea-52001e0dd21b
+    m_ActionName: "2ActionMap/\u4E94\u6863"
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 465795434}
+        m_TargetAssemblyTypeName: NewInputSystem, Assembly-CSharp
+        m_MethodName: Dang7
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 130e9a95-5d26-4889-92d2-507091d68d4a
+    m_ActionName: "2ActionMap/7\u6863"
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 465795434}
+        m_TargetAssemblyTypeName: NewInputSystem, Assembly-CSharp
+        m_MethodName: DangReverse
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: b1f5a2f9-e985-4274-826e-975b27b51911
+    m_ActionName: "2ActionMap/\u5012\u6321"
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 465795434}
+        m_TargetAssemblyTypeName: NewInputSystem, Assembly-CSharp
+        m_MethodName: papo
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 4df9b56e-b48e-4bd3-8576-308dd06eadb3
+    m_ActionName: "2ActionMap/\u722C\u5761"
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 465795434}
+        m_TargetAssemblyTypeName: NewInputSystem, Assembly-CSharp
+        m_MethodName: ShaChe
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 2df8b3dd-48e1-429d-a290-30e8d32ff5b2
+    m_ActionName: "2ActionMap/\u5239\u8F66"
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 465795434}
+        m_TargetAssemblyTypeName: NewInputSystem, Assembly-CSharp
+        m_MethodName: YouMeng
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 08700fb2-7efc-4f6c-8ecb-bf61c688c4c1
+    m_ActionName: "2ActionMap/\u6CB9\u95E8"
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 465795434}
+        m_TargetAssemblyTypeName: NewInputSystem, Assembly-CSharp
+        m_MethodName: FangXiang
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 0ebbb09f-c505-4995-8c25-4201dfbd787d
+    m_ActionName: "2ActionMap/\u65B9\u5411[/Keyboard/a,/Keyboard/d]"
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 465795434}
+        m_TargetAssemblyTypeName: NewInputSystem, Assembly-CSharp
+        m_MethodName: WASD
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 8a431754-8ba4-42f9-a878-d0b7c18af323
+    m_ActionName: 2ActionMap/WASD[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 465795434}
+        m_TargetAssemblyTypeName: NewInputSystem, Assembly-CSharp
+        m_MethodName: Clutch
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 6f6a22a0-170a-4457-8209-e19f0b2ff176
+    m_ActionName: "2ActionMap/\u79BB\u5408"
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 465795434}
+        m_TargetAssemblyTypeName: NewInputSystem, Assembly-CSharp
+        m_MethodName: LeftBlinker
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: b554a463-f118-4be4-8741-1af8d9e30bcf
+    m_ActionName: "2ActionMap/\u5DE6\u8F6C\u5411\u706F"
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 465795434}
+        m_TargetAssemblyTypeName: NewInputSystem, Assembly-CSharp
+        m_MethodName: RightBlinker
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 7876fa6e-f04a-49ac-b0ea-4fc87446bbdc
+    m_ActionName: "2ActionMap/\u53F3\u8F6C\u5411\u706F"
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 465795434}
+        m_TargetAssemblyTypeName: NewInputSystem, Assembly-CSharp
+        m_MethodName: Horn
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 766be632-fdbb-4ec1-a5dd-8fccc279c165
+    m_ActionName: "2ActionMap/\u5587\u53ED"
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 465795434}
+        m_TargetAssemblyTypeName: NewInputSystem, Assembly-CSharp
+        m_MethodName: HandBrake
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 42d6634c-e82c-46cb-a965-582e188cd204
+    m_ActionName: "2ActionMap/\u624B\u5239"
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
-  m_DefaultActionMap: 1ActionMap
+  m_DefaultActionMap: c342ff23-c48e-4b41-85b6-3a014adf8b95
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
 --- !u!114 &465795436

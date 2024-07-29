@@ -24,8 +24,11 @@ public class PracticeProcessUI : MonoBehaviour
     private Vector3 tipAnimScale = new Vector3(1.3f, 1.3f, 1.3f);
     public Text messagecontent;
     string inittext;
+    //public AudioClip errorclip;
+     AudioSource adsource;
     private void Awake()
-    {       
+    {
+       
         //不需要流程控制提示
         if (!TaskMgr.GetInstance().curTaskCtr.practiceProcessCtr.IsHaveProcess() ||
             NetVarDataMgr.GetInstance()._NetVarData._TaskEnvVarData.CheckType != CheckTypeConst.PRACTICE)
@@ -33,6 +36,7 @@ public class PracticeProcessUI : MonoBehaviour
             gameObject.SetActive(false);
             return;
         }
+        adsource = GetComponent<AudioSource>();
         curTip = transform.Find("curTip").GetComponent<Text>();
         errorTip = transform.Find("errorTip").GetComponent<Text>();
         EventDispatcher.GetInstance().AddEventListener(EventNameList.PRACTICE_PROCESS_TIP, OnGetTipEv);
@@ -103,6 +107,8 @@ public class PracticeProcessUI : MonoBehaviour
         if (param is StringEvParam strParam)
         {
             UIMgr.GetInstance().ShowToast(strParam.value);
+            if(!adsource.isPlaying)
+            adsource.Play();
             SetErrorTip(strParam.value);
         }
     }

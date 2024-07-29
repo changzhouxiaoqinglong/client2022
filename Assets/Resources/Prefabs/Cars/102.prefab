@@ -12803,14 +12803,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4416418277374742923}
-  m_LocalRotation: {x: -0.051804367, y: 0.000011265278, z: 0.000004595611, w: 0.99865735}
+  m_LocalRotation: {x: 0.22495106, y: 0.000008484121, z: -0.0000019587137, w: 0.97437006}
   m_LocalPosition: {x: -0.76654595, y: 1.2453363, z: 2.9950457}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4170262537420473452}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: -5.939, y: 0.001, z: 0}
+  m_LocalEulerAnglesHint: {x: 26, y: 0.001, z: 0}
 --- !u!20 &8299445889581634056
 Camera:
   m_ObjectHideFlags: 0
@@ -12844,7 +12844,7 @@ Camera:
     height: 1
   near clip plane: 0.05
   far clip plane: 1000
-  field of view: 74
+  field of view: 80
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -18604,7 +18604,7 @@ Rigidbody:
   m_Mass: 13800
   m_Drag: 0.02
   m_AngularDrag: 0.01
-  m_CenterOfMass: {x: -0.5111643, y: -6.595004, z: -0.27505958}
+  m_CenterOfMass: {x: -0.16017699, y: 0.23978293, z: -1.4011385}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
   m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
   m_IncludeLayers:

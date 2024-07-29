@@ -1,5 +1,5 @@
 {
-    "name": "NewInputControl",
+    "name": "NewInputControl 1",
     "maps": [
         {
             "name": "1ActionMap",
@@ -156,74 +156,8 @@
                 },
                 {
                     "name": "",
-                    "id": "f5f6617f-d170-4736-89a6-3f239532d4a9",
-                    "path": "<HID::Ethan  Ethan  HID>/button18",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "一档",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "88e27eba-fcd4-4963-b1be-9af218caa91c",
-                    "path": "<HID::YOYO USB Force Feedback Wheel>/button18",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "一档",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "a0137484-de4b-4b95-b8a3-62cd3e7a10e8",
-                    "path": "<HID::Ethan  Ethan  HID>/button19",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "二档",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "4fcdb44f-324e-48e6-885c-a75d7544dd70",
-                    "path": "<HID::YOYO USB Force Feedback Wheel>/button19",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "二档",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "c8b9c982-588c-446f-9918-f75b0a4f4981",
-                    "path": "<HID::Ethan  Ethan  HID>/button20",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "三档",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "93fafd34-c2bd-478e-9b1d-8ab9faa6f103",
-                    "path": "<HID::YOYO USB Force Feedback Wheel>/button20",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "三档",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "8b535e0a-a5c9-4344-a787-09e988171522",
-                    "path": "<HID::Ethan  Ethan  HID>/button21",
+                    "path": "<HID::YOYO USB Force Feedback Wheel>/button21",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -245,7 +179,7 @@
                 {
                     "name": "",
                     "id": "81150b68-28e2-4cde-a174-f207c34d7a0a",
-                    "path": "<HID::Ethan  Ethan  HID>/button22",
+                    "path": "<HID::YOYO USB Force Feedback Wheel>/button22",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -267,7 +201,7 @@
                 {
                     "name": "",
                     "id": "4a4ddff0-a41e-47ee-af9c-56e93e8c2605",
-                    "path": "<HID::Ethan  Ethan  HID>/button23",
+                    "path": "<HID::YOYO USB Force Feedback Wheel>/button23",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -311,18 +245,7 @@
                 {
                     "name": "",
                     "id": "3e8242d1-d9b2-4bff-bd0c-bef9f4c38856",
-                    "path": "<HID::Ethan  Ethan  HID>/stick/up",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "油门",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "1f18cb8b-8f3e-4a34-bf10-612eecf146cf",
-                    "path": "<HID::YOYO USB Force Feedback Wheel>/stick/up",
+                    "path": "<HID::YOYO USB Force Feedback Wheel>/stick/y",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -486,28 +409,6 @@
                 },
                 {
                     "name": "",
-                    "id": "4f3e52d3-7591-4f63-9151-14910d4ec183",
-                    "path": "<HID::Ethan  Ethan  HID>/button9",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "启动",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "c27da3a2-41f1-4107-9dbc-cd576fbe4c34",
-                    "path": "<HID::YOYO USB Force Feedback Wheel>/button9",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "启动",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "8f692461-74f2-44ad-a2d9-ff2625f3e450",
                     "path": "<HID::Ethan  Ethan  HID>/button7",
                     "interactions": "",
@@ -591,6 +492,557 @@
                     "processors": "",
                     "groups": "",
                     "action": "手刹",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "269cfa1a-7f9c-4de0-8314-3d9cfe634f61",
+                    "path": "<HID::YOYO USB Force Feedback Wheel>/button20",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "三档",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "68cda71a-3816-4c43-a295-ab2ae7b9ce07",
+                    "path": "<HID::YOYO USB Force Feedback Wheel>/button18",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "一档",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "f2e209c8-bbec-4870-8f14-e6d08b0290ed",
+                    "path": "<HID::YOYO USB Force Feedback Wheel>/button9",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "启动",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "e2b1049b-cf4b-4f86-a352-51fd361f845f",
+                    "path": "<HID::YOYO USB Force Feedback Wheel>/button19",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "二档",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "2ActionMap",
+            "id": "ad808590-b0f7-4eb8-8b71-ef178adbc969",
+            "actions": [
+                {
+                    "name": "启动",
+                    "type": "Button",
+                    "id": "cf98f71d-5482-4387-913d-93e18c3149fe",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "打火",
+                    "type": "Button",
+                    "id": "0a6c1a57-d084-4a35-b96d-7029a03b652a",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "一档",
+                    "type": "Button",
+                    "id": "11601795-45bf-4f70-acac-9966556b577d",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "三档",
+                    "type": "Button",
+                    "id": "e924bc24-da76-4cae-99f1-8097c94a4780",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "五档",
+                    "type": "Button",
+                    "id": "7d7ce0f2-6ef3-464b-beea-52001e0dd21b",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "7档",
+                    "type": "Button",
+                    "id": "130e9a95-5d26-4889-92d2-507091d68d4a",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "倒挡",
+                    "type": "Button",
+                    "id": "b1f5a2f9-e985-4274-826e-975b27b51911",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "爬坡",
+                    "type": "Button",
+                    "id": "4df9b56e-b48e-4bd3-8576-308dd06eadb3",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "刹车",
+                    "type": "Value",
+                    "id": "2df8b3dd-48e1-429d-a290-30e8d32ff5b2",
+                    "expectedControlType": "Axis",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "油门",
+                    "type": "Value",
+                    "id": "08700fb2-7efc-4f6c-8ecb-bf61c688c4c1",
+                    "expectedControlType": "Axis",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "方向",
+                    "type": "Value",
+                    "id": "0ebbb09f-c505-4995-8c25-4201dfbd787d",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "WASD",
+                    "type": "Value",
+                    "id": "8a431754-8ba4-42f9-a878-d0b7c18af323",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "离合",
+                    "type": "Value",
+                    "id": "6f6a22a0-170a-4457-8209-e19f0b2ff176",
+                    "expectedControlType": "Axis",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "左转向灯",
+                    "type": "Button",
+                    "id": "b554a463-f118-4be4-8741-1af8d9e30bcf",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "右转向灯",
+                    "type": "Button",
+                    "id": "7876fa6e-f04a-49ac-b0ea-4fc87446bbdc",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "喇叭",
+                    "type": "Button",
+                    "id": "766be632-fdbb-4ec1-a5dd-8fccc279c165",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "手刹",
+                    "type": "Button",
+                    "id": "42d6634c-e82c-46cb-a965-582e188cd204",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "9863a1e4-88e4-469e-a015-070823c34c6e",
+                    "path": "<HID::Ethan  Ethan  HID>/button4",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "打火",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "867dc835-d895-4224-ad83-491a6ddf6b75",
+                    "path": "<HID::YOYO USB Force Feedback Wheel>/button21",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "五档",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "b93edc75-30f2-4d09-a16c-7c4f7b4a7b4f",
+                    "path": "<HID::YOYO USB Force Feedback Wheel>/button22",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "倒挡",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "51ec365a-2c2e-4944-974d-d2229915f483",
+                    "path": "<HID::Ethan  Ethan  HID>/stick/down",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "刹车",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "2bb7a9f5-2222-4dcf-8221-e994b226a844",
+                    "path": "<HID::YOYO USB Force Feedback Wheel>/stick/down",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "刹车",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "4663c0e7-4bb5-41c9-b7e2-1f86af618788",
+                    "path": "<HID::YOYO USB Force Feedback Wheel>/stick/y",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "油门",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "b0132072-9a55-4a71-b557-8a6231dd07d6",
+                    "path": "<HID::Ethan  Ethan  HID>/stick",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "方向",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "2D Vector",
+                    "id": "75436e54-55a5-4d4e-9a07-ca3f61b38675",
+                    "path": "2DVector",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "方向",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "up",
+                    "id": "97a1610f-c9f5-4af3-8eee-fccba7cc4368",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "方向",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "down",
+                    "id": "1333c9fa-0258-4d37-9cc1-3bf14a489215",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "方向",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "left",
+                    "id": "0d6e05e3-8521-4edf-95d2-9daad449952e",
+                    "path": "<Keyboard>/a",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "方向",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "right",
+                    "id": "b4e562c9-03ae-433b-bdcc-20ec9189efcb",
+                    "path": "<Keyboard>/d",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "方向",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "e429967e-c973-46fd-a7b2-f7a84e972ed1",
+                    "path": "<HID::YOYO USB Force Feedback Wheel>/stick",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "方向",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "2D Vector",
+                    "id": "85e74a87-be9f-4e36-afb5-ee8b4acd9a49",
+                    "path": "2DVector",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "WASD",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "up",
+                    "id": "3b4dc842-125b-4137-a39f-ba2d25b4aa09",
+                    "path": "<Keyboard>/w",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "WASD",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "down",
+                    "id": "57618ad2-d59a-4885-b291-cc9cc153878e",
+                    "path": "<Keyboard>/s",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "WASD",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "left",
+                    "id": "b36aa6e4-1a2c-4ca2-89f8-c09901aacf27",
+                    "path": "<Keyboard>/a",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "WASD",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "right",
+                    "id": "c912659a-9bef-4d7e-aacc-2978ffb16e2b",
+                    "path": "<Keyboard>/d",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "WASD",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "e730b446-802a-48c9-aa41-fe096635e8ac",
+                    "path": "<HID::Ethan  Ethan  HID>/z",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "离合",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "1ca80247-fbc2-45a2-88eb-1b984cc4b420",
+                    "path": "<HID::YOYO USB Force Feedback Wheel>/z",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "离合",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "64418f0a-abad-4478-9121-3139ca4560f1",
+                    "path": "<HID::Ethan  Ethan  HID>/button7",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "左转向灯",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "7f1c2e5e-41dc-4bee-ae59-372b3b3e8c16",
+                    "path": "<HID::YOYO USB Force Feedback Wheel>/button7",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "左转向灯",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "b996c378-66b8-4a8e-9da3-65166be76cf9",
+                    "path": "<HID::Ethan  Ethan  HID>/button8",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "右转向灯",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "54db7191-2b3b-4c11-b813-fc2828b2e678",
+                    "path": "<HID::YOYO USB Force Feedback Wheel>/button8",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "右转向灯",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "d07d4a07-0658-4fd8-9fe6-d0668e70d9f1",
+                    "path": "<HID::Ethan  Ethan  HID>/button6",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "喇叭",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "bb5cae70-1457-40ab-8764-efdc12b194e7",
+                    "path": "<HID::YOYO USB Force Feedback Wheel>/button6",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "喇叭",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "1223e8ed-a76d-420e-963e-f1398f8e62fa",
+                    "path": "<HID::Ethan  Ethan  HID>/button3",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "手刹",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "1e587b13-3433-40d9-a153-528fb70e5112",
+                    "path": "<HID::YOYO USB Force Feedback Wheel>/button3",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "手刹",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "d385438c-ddc7-4408-a511-59487750420f",
+                    "path": "<HID::YOYO USB Force Feedback Wheel>/button18",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "三档",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "e424d837-53e9-4d5d-a3ca-41445e42be07",
+                    "path": "<HID::YOYO USB Force Feedback Wheel>/button19",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "一档",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "57245934-2c4e-4a23-a401-a198b42df2ee",
+                    "path": "<HID::YOYO USB Force Feedback Wheel>/button9",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "启动",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "78758ddd-24ed-4cbe-bdf3-240f7399c07f",
+                    "path": "<HID::YOYO USB Force Feedback Wheel>/button20",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "7档",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "b8137532-fe7d-4f09-9159-09149b7e55e0",
+                    "path": "<HID::YOYO USB Force Feedback Wheel>/button23",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "爬坡",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
