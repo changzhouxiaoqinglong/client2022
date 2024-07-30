@@ -75,19 +75,22 @@ public class NewInputSystem : MonoSingleTon<NewInputSystem>
     public void Dang1(InputAction.CallbackContext context)
     {
         var v = context.ReadValue<float>();
-		//if (context.started) { Debug.Log(string.Format(" Started:{0}", v)); }
-		//if (context.performed) { Debug.Log(string.Format(" Performed:{0}", v)); }
-		//if (context.canceled) { Debug.Log(string.Format(" Canceled:{0}", v)); }
-		if (context.canceled)
+        //if (context.started) { Debug.Log(string.Format(" Started:{0}", v)); }
+        //if (context.performed) { Debug.Log(string.Format(" Performed:{0}", v)); }
+        //if (context.canceled) { Debug.Log(string.Format(" Canceled:{0}", v)); }
+
+        if (context.canceled)
         {
-          //  Debug.Log("一档off");
+            //  Debug.Log("一档off");
             CustomInput.ShiftLevel = 0;
         }
         else
         {
-           // Debug.Log("一档open");
+            // Debug.Log("一档open");
             CustomInput.ShiftLevel = 1;
         }
+
+
     }
 
     /// <summary>
@@ -120,13 +123,30 @@ public class NewInputSystem : MonoSingleTon<NewInputSystem>
         //if (context.performed) { Debug.Log(string.Format(" Performed:{0}", v)); }
         //if (context.canceled) { Debug.Log(string.Format(" Canceled:{0}", v)); }
 
-        if (context.canceled)
-        {
-            CustomInput.ShiftLevel = 0;
+
+        
+
+        if (AppConfig.MACHINE_ID != 2)
+		{
+            if (context.canceled)
+            {
+                CustomInput.ShiftLevel = 0;
+            }
+            else
+            {
+                CustomInput.ShiftLevel = 3;
+            }
         }
         else
-        {
-            CustomInput.ShiftLevel = 3;
+		{
+            if (context.canceled)
+            {
+                CustomInput.ShiftLevel = 0;
+            }
+            else
+            {
+                CustomInput.ShiftLevel = 2;
+            }
         }
     }
 
@@ -160,13 +180,29 @@ public class NewInputSystem : MonoSingleTon<NewInputSystem>
         //if (context.performed) { Debug.Log(string.Format(" Performed:{0}", v)); }
         //if (context.canceled) { Debug.Log(string.Format(" Canceled:{0}", v)); }
 
-        if (context.canceled)
-        {
-            CustomInput.ShiftLevel = 0;
+       
+
+        if (AppConfig.MACHINE_ID != 2)
+		{
+            if (context.canceled)
+            {
+                CustomInput.ShiftLevel = 0;
+            }
+            else
+            {
+                CustomInput.ShiftLevel = 5;
+            }
         }
         else
-        {
-            CustomInput.ShiftLevel = 5;
+		{
+            if (context.canceled)
+            {
+                CustomInput.ShiftLevel = 0;
+            }
+            else
+            {
+                CustomInput.ShiftLevel = 3;
+            }
         }
     }
 
@@ -198,7 +234,7 @@ public class NewInputSystem : MonoSingleTon<NewInputSystem>
         }
         else
         {
-            CustomInput.ShiftLevel = 7;
+            CustomInput.ShiftLevel = 4;
         }
     }
 
@@ -223,7 +259,7 @@ public class NewInputSystem : MonoSingleTon<NewInputSystem>
   
 
     /// <summary>
-    /// 10档
+    /// 爬坡
     /// </summary>
     public void papo(InputAction.CallbackContext context)
     {
@@ -234,7 +270,7 @@ public class NewInputSystem : MonoSingleTon<NewInputSystem>
         }
         else
         {
-            CustomInput.ShiftLevel = 10;
+            CustomInput.ShiftLevel = 5;
         }
     }
 

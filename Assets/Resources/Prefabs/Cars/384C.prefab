@@ -3131,7 +3131,7 @@ Rigidbody:
   m_Mass: 1380
   m_Drag: 0.02
   m_AngularDrag: 0.01
-  m_CenterOfMass: {x: -0.12825781, y: 0.4810124, z: -0.011791378}
+  m_CenterOfMass: {x: -0.12648669, y: -0.28438568, z: 0.3668719}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
   m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
   m_IncludeLayers:
@@ -12507,8 +12507,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 7844283995131384772}
   distance: 8
-  minDistance: 4
-  maxDistance: 9
+  minDistance: 8
+  maxDistance: 12
   horizontalMouseSensitivity: 0.2
   verticalMouseSensitivity: 0.2
   mouseWheelSensitivity: 0.01
@@ -14556,14 +14556,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8508098422378656444}
-  m_LocalRotation: {x: 0.03747722, y: -1.2212819e-16, z: -0.000000005587935, w: 0.9992975}
-  m_LocalPosition: {x: -0.629, y: 0.588, z: -0.205}
+  m_LocalRotation: {x: 0.08722558, y: -2.7844654e-10, z: -0.0000000055809934, w: 0.9961886}
+  m_LocalPosition: {x: -0.629, y: 0.85, z: -0.205}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8508098421095933443}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 4.296, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 10.008, y: 0, z: 0}
 --- !u!20 &8508098422378656423
 Camera:
   m_ObjectHideFlags: 0

@@ -35,11 +35,10 @@ public class Gauges : MonoBehaviour
             if (analogRpmGauge != null) RpmGauge.text = vehicleController.engine.RPM.ToString("F2");
             if (analogSpeedGauge != null) SpeedGauge.text = vehicleController.GetCurSpeed().ToString("F2");
 
-
             if (analogRpmGauge != null) analogRpmGauge.Value = vehicleController.engine.RPM;
             if (analogSpeedGauge != null) analogSpeedGauge.Value = vehicleController.GetCurSpeed();
             if (digitalGearGauge != null) digitalGearGauge.stringValue = vehicleController.transmission.Gear.ToString();
-
+            //print(vehicleController.transmission.Gear);
             if (leftBlinker != null) leftBlinker.Active = vehicleController.effects.lights.leftBlinkers.On;
             if (rightBlinker != null) rightBlinker.Active = vehicleController.effects.lights.rightBlinkers.On;
             if (lowBeam != null) lowBeam.Active = vehicleController.effects.lights.headLights.On;

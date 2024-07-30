@@ -177,7 +177,15 @@ public class VehicleInputMgr : InputCtrBase
                     {
                         vehicleController.transmission.ShiftInto(5);
                     }
-                    else if (Keyboard.current.digit0Key.wasPressedThisFrame)
+					//else if (Keyboard.current.digit6Key.wasPressedThisFrame)
+					//{
+					//	vehicleController.transmission.ShiftInto(6);
+					//}
+					//else if (Keyboard.current.digit9Key.wasPressedThisFrame)
+					//{                     
+					//    vehicleController.transmission.ShiftInto(10);
+					//}
+					else if (Keyboard.current.digit0Key.wasPressedThisFrame)
                     {
                         vehicleController.transmission.ShiftInto(0);
                     }
@@ -216,7 +224,7 @@ public class VehicleInputMgr : InputCtrBase
             {
                 if (CustomInput.DriveVertical <= 0.05f)
                 {
-                    vehicleController.input.Horizontal = 0;
+               //     vehicleController.input.Horizontal = 0;
                 }
             }
             vehicleController.input.Vertical = CustomInput.DriveVertical;
