@@ -201,7 +201,7 @@ public class NewInputSystem : MonoSingleTon<NewInputSystem>
             }
             else
             {
-                CustomInput.ShiftLevel = 3;
+                CustomInput.ShiftLevel = 4;//现场要换 5-6变成7-8
             }
         }
     }
@@ -234,7 +234,7 @@ public class NewInputSystem : MonoSingleTon<NewInputSystem>
         }
         else
         {
-            CustomInput.ShiftLevel = 4;
+            CustomInput.ShiftLevel = 3;
         }
     }
 

@@ -78,8 +78,8 @@ public class TrainLogHandle
         //操作北斗
         {NetProtocolCode.BEIDOU_OP, typeof(BeiDouOpModel)},
 
-        //操作气象器
-        {NetProtocolCode.METEOR_OP, typeof(MeteorOpModel)},
+        //操作气象器 不要了
+        //{NetProtocolCode.METEOR_OP, typeof(MeteorOpModel)},
 
         //操作车载侦毒器
         {NetProtocolCode.OP_CAR_DETECT_POISON, typeof(CarDetectPoisonOpModel)},

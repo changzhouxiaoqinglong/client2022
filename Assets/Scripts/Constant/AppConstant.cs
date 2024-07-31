@@ -13,17 +13,17 @@ public class AppConstant
     /// <summary>
     /// 辐射剂量率 检测间隔
     /// </summary>
-    public const float RADIOM_CHECK_OFFTIME = 0.5f;
+    public const float RADIOM_CHECK_OFFTIME = 1f;
 
     /// <summary>
     /// 化学 检测间隔
     /// </summary>
-    public const float DRUG_CHECK_OFFTIME = 0.5f;
+    public const float DRUG_CHECK_OFFTIME = 1f;
 
     /// <summary>
     /// 生物信息 检测间隔
     /// </summary>
-    public const float Biology_CHECK_OFFTIME = 0.5f;
+    public const float Biology_CHECK_OFFTIME = 1f;
 
     /// <summary>
     /// 北斗数据上报间隔 s
