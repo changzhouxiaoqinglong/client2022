@@ -3131,7 +3131,7 @@ Rigidbody:
   m_Mass: 1380
   m_Drag: 0.02
   m_AngularDrag: 0.01
-  m_CenterOfMass: {x: -0.12648669, y: -0.28438568, z: 0.3668719}
+  m_CenterOfMass: {x: -0.12825781, y: 0.4810124, z: -0.011791378}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
   m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
   m_IncludeLayers:
@@ -3140,7 +3140,7 @@ Rigidbody:
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_ImplicitCom: 1
+  m_ImplicitCom: 0
   m_ImplicitTensor: 1
   m_UseGravity: 1
   m_IsKinematic: 0

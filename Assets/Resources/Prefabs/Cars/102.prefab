@@ -18590,7 +18590,7 @@ Transform:
   - {fileID: 2661667053344150616}
   - {fileID: 5350308753960671335}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!54 &2571711492042556528
 Rigidbody:
@@ -18603,7 +18603,7 @@ Rigidbody:
   m_Mass: 13000
   m_Drag: 0.1
   m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: -1.5}
+  m_CenterOfMass: {x: 0, y: -2, z: -1.5}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
   m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
   m_IncludeLayers:
