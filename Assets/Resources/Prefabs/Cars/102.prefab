@@ -18590,7 +18590,7 @@ Transform:
   - {fileID: 2661667053344150616}
   - {fileID: 5350308753960671335}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!54 &2571711492042556528
 Rigidbody:
@@ -18603,7 +18603,7 @@ Rigidbody:
   m_Mass: 13000
   m_Drag: 0.1
   m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: -1.5}
+  m_CenterOfMass: {x: 0, y: -4, z: -1.5}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
   m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
   m_IncludeLayers:
@@ -18612,7 +18612,7 @@ Rigidbody:
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_ImplicitCom: 0
+  m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 1
   m_IsKinematic: 0
@@ -18803,7 +18803,7 @@ MonoBehaviour:
     stopOnDisable: 1
     minRPM: 600
     maxRPM: 3800
-    maxPower: 550
+    maxPower: 1050
     maxRpmChange: 2500
     throttleSmoothing: 0.45
     powerCurve:
@@ -18841,11 +18841,11 @@ MonoBehaviour:
     differentialType: 0
     forwardGears:
     - 10
-    - 9
     - 8
-    - 7
-    - 4
-    - 2
+    - 6
+    - 5
+    - 3
+    - 1.2
     reverseGears:
     - -8
     - -5

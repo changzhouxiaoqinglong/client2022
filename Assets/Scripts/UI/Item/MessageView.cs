@@ -90,6 +90,15 @@ public class MessageView : MonoBehaviour
         GetTitleByType(MsgTitleType.TaskDesc).SetText(NetVarDataMgr.GetInstance()._NetVarData._TaskEnvVarData.TaskDesc);
     }
 
+    void OnGetBeiDouData(IEventParam param)
+	{
+        if (param is TcpReceiveEvParam tcpReceiveEvParam)
+        {
+            BeiDouModel model = JsonTool.ToObject<BeiDouModel>(tcpReceiveEvParam.netData.Msg);           
+            basicInfo.Find("currentpos/value").GetComponent<Text>().text = "经度：" + model.Longicude + "，纬度：" + model.Latitude;
+        }
+    }
+
     /// <summary>
     /// 初始化训练流程
     /// </summary>
@@ -97,10 +106,14 @@ public class MessageView : MonoBehaviour
     {
         print("初始化训练流程_CheckType"+ NetVarDataMgr.GetInstance()._NetVarData._TaskEnvVarData.CheckType);
         print("初始化训练流程_TaskType" + NetVarDataMgr.GetInstance()._NetVarData._TaskEnvVarData.TaskType);
-        if(TaskMgr.GetInstance().curTaskData.Type == TaskType.Tactic)
+        if(TaskMgr.GetInstance().curTaskData.Type == TaskType.Tactic)//战术训练
 		{
-            processTitle.transform.parent.gameObject.SetActive(false);      
-            //processTitle.SetText("当前为考核模式不显示具体操作信息");
+            processTitle.transform.parent.gameObject.SetActive(false);
+
+            NetManager.GetInstance().AddNetMsgEventListener(ServerType.GuideServer, NetProtocolCode.BEIDOU_DATA, OnGetBeiDouData);
+
+
+            
             return;
         }
 
@@ -198,6 +211,13 @@ public class MessageView : MonoBehaviour
             if (lation != null)
             {
                 basicInfo.Find("currentpos/value").GetComponent<Text>().text = "经度：" + lation.y + "，纬度：" + lation.x;
+            }
+        }
+        else
+		{
+            if (TaskMgr.GetInstance().curTaskData.Type == TaskType.Tactic)
+            {
+               // basicInfo.Find("currentpos/value").GetComponent<Text>().text = "经度：" + lation.y + "，纬度：" + lation.x;
             }
         }
     }
@@ -368,5 +388,6 @@ public class MessageView : MonoBehaviour
     {
       //  EventDispatcher.GetInstance().RemoveEventListener(EventNameList.CLICK_MSG_TITLE, OnClickTitle);
         EventDispatcher.GetInstance().RemoveEventListener(EventNameList.REF_SHOW_TASK_LOG, RefreshLog);
+        NetManager.GetInstance().RemoveNetMsgEventListener(ServerType.GuideServer, NetProtocolCode.BEIDOU_DATA, OnGetBeiDouData);
     }
 }

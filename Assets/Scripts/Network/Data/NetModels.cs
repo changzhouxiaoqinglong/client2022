@@ -1598,17 +1598,7 @@ public class PoisAlarm102Model : ITaskLogModel
            // case PoisAlarmOpType102.Elec:
             //    return "三防毒报装置：" + (Operate == OperateDevice.OPEN ? "上电" : "离线");
             case PoisAlarmOpType102.OpenClose:
-                switch (Operate)
-                {
-                    case 1:
-                        return "三防毒报装置：开机";
-                    case 2:
-                        return "三防毒报装置：关机";
-                    case 3:
-                        return "三防毒报装置：自检";
-                    default:
-                        return "";
-                }
+                return "三防毒报装置：" + (Operate == OperateDevice.OPEN ? "开机" : "关机");              
             case PoisAlarmOpType102.Alarm:
                 return "三防毒报装置：" + (Operate == OperateDevice.OPEN ? "开始报警" : "停止报警");
             default:
@@ -1712,7 +1702,7 @@ public class PreRadiomOp102Model : ITaskLogModel
     public string GetTaskLog(int seatId)
     {
         switch (Type)
-        {   //王聪取消上电状态
+        {   //取消上电状态
             //case Prre3RadiomOpType102.Elec:
             //    return "三防辐射仪器：" + (Operate == OperateDevice.OPEN ? "上电" : "离线");
             case Prre3RadiomOpType102.OpenClose:

@@ -108,8 +108,10 @@ public class TrainLogHandle
         //102红外遥测模拟器
         {NetProtocolCode.INFARED_TELEMETRY_102,  typeof(InfaredTelemetryOp102Model)},
 
+       
+
         //102红外遥测模拟器参数
-        //{NetProtocolCode.INFARED_TELEMETRY_PARAM_102,  typeof(InfaredTelemetryParamModel)},
+        {NetProtocolCode.INFARED_TELEMETRY_PARAM_102,  typeof(InfaredTelemetryParamModel)},
 
         //102电源
         {NetProtocolCode.POWER_102,  typeof(PowerOp102Model)},
@@ -131,6 +133,9 @@ public class TrainLogHandle
         {NetProtocolCode.RadioStation_OP_106,  typeof(RadioStationOp106Model)},
          //操作106毒剂报警器
         {NetProtocolCode.POISON_ALARM_OP_106, typeof(PoisonAlarmOp106Model)},
+
+         //操作106辐射仪
+        {NetProtocolCode.RADIOME_OP_106,  typeof(RadiomeOp106Model)},
 
         {NetProtocolCode.IT_OP,  typeof(InformationTerminalOpModel)},
         {NetProtocolCode.IT_OP_102,  typeof(InformationTerminalOpModel102)},

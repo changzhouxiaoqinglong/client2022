@@ -51,7 +51,7 @@ public class BeiDou : DeviceBase
                 Date = TaskMgr.GetInstance().curTaskCtr.trainDateMgr.GetCurDateStr(),
             };
             //发给设备
-            NetManager.GetInstance().SendMsg(ServerType.GuideServer, JsonTool.ToJson(model), NetProtocolCode.BEIDOU_DATA, NetManager.GetInstance().CurDeviceForward);
+            NetManager.GetInstance().SendMsg(ServerType.GuideServer, JsonTool.ToJson(model), NetProtocolCode.BEIDOU_DATA, NetManager.GetInstance().SameMachineAllSeats);
         }
     }
 }
