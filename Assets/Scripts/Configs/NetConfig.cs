@@ -36,22 +36,22 @@ public class NetConfig : ConfigBase<NetConfig>
     /// <summary>
     /// 同步驾驶画面Server端监听端口
     /// </summary>
-    public static int FM_SERVER_PORT;
+    public static int FM_SERVER_PORT=3333;
 
     /// <summary>
     /// 同步驾驶画面Client端监听端口
     /// </summary>
-    public static int FM_CLIENT_PORT;
+    public static int FM_CLIENT_PORT = 3334;
 
     /// <summary>
     /// 同步102遥测画面Server端监听端口
     /// </summary>
-    public static int FM_102yaoce_SERVER_PORT;
+    public static int FM_102yaoce_SERVER_PORT = 3337;
 
     /// <summary>
     /// 同步102遥测画面Client端监听端口
     /// </summary>
-    public static int FM_102yaoce_CLIENT_PORT;
+    public static int FM_102yaoce_CLIENT_PORT = 3338;
 
 
     /// <summary>
