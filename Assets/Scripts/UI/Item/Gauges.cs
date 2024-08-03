@@ -31,7 +31,7 @@ public class Gauges : MonoBehaviour
     {
         vehicleController = VehicleInputMgr.GetInstance().VehicleController;
         if (vehicleController != null)
-        {           
+        {
             if (analogRpmGauge != null) RpmGauge.text = vehicleController.engine.RPM.ToString("F2");
             if (analogSpeedGauge != null) SpeedGauge.text = vehicleController.GetCurSpeed().ToString("F2");
 
@@ -76,6 +76,22 @@ public class Gauges : MonoBehaviour
             if (TCS != null) TCS.Active = false;
             if (ABS != null) ABS.Active = false;
             if (checkEngine != null) checkEngine.Active = false;
+        }
+    }
+
+    private void OnGUI()
+    {
+        //return;
+        vehicleController = VehicleInputMgr.GetInstance().VehicleController;
+        GUIStyle labelStyle = new GUIStyle();
+        labelStyle.fontSize = 24; // 设置字体大小为24
+        if (vehicleController != null)
+        {
+            GUI.Label(new Rect(50, 50, 100, 100), vehicleController.transmission.Gear.ToString(), labelStyle);
+        }
+        else
+        {
+
         }
     }
 }

@@ -106,13 +106,13 @@ public class VehicleInputMgr : InputCtrBase
     //挡位
     void Update()
     {
-        
+
         if (vehicleController == null) return;
 
         //未启用
         if (!IsEnabled)
         {
-          //  print("sds");
+            //  print("sds");
             //重置输入值
             vehicleController.input.Horizontal = 0;
             vehicleController.input.Vertical = 0;
@@ -131,12 +131,13 @@ public class VehicleInputMgr : InputCtrBase
                 vehicleController.input.ShiftDown = true;
 
             vehicleController.input.Clutch = CustomInput.ClutchValue;
-           // print(vehicleController.input.Clutch);
+            // print(vehicleController.input.Clutch);
             if (vehicleController.transmission.transmissionType == Transmission.TransmissionType.Manual)//手动挡
             {
                 try
                 {
-                  //  /*
+#if !UNITY_EDITOR
+                    //  /*
                     if (AppConfig.CAR_ID == CarIdConstant.ID_102)
                     {
                         //换挡
@@ -154,7 +155,10 @@ public class VehicleInputMgr : InputCtrBase
                         }
                       //  print("102以外的车 并且踩下离合换挡" + CustomInput.ShiftLevel);
                     }
-                  //  */
+#endif
+
+#if UNITY_EDITOR
+                    //  */
                     //#if DEBUG
                     //挂挡 键盘调试
                     if (Keyboard.current.digit1Key.wasPressedThisFrame)
@@ -163,11 +167,11 @@ public class VehicleInputMgr : InputCtrBase
                     }
                     else if (Keyboard.current.digit2Key.wasPressedThisFrame)
                     {
-                        vehicleController.transmission.ShiftInto(2); 
+                        vehicleController.transmission.ShiftInto(2);
                     }
                     else if (Keyboard.current.digit3Key.wasPressedThisFrame)
                     {
-                        vehicleController.transmission.ShiftInto(3); 
+                        vehicleController.transmission.ShiftInto(3);
                     }
                     else if (Keyboard.current.digit4Key.wasPressedThisFrame)
                     {
@@ -177,15 +181,15 @@ public class VehicleInputMgr : InputCtrBase
                     {
                         vehicleController.transmission.ShiftInto(5);
                     }
-					//else if (Keyboard.current.digit6Key.wasPressedThisFrame)
-					//{
-					//	vehicleController.transmission.ShiftInto(6);
-					//}
-					//else if (Keyboard.current.digit9Key.wasPressedThisFrame)
-					//{                     
-					//    vehicleController.transmission.ShiftInto(10);
-					//}
-					else if (Keyboard.current.digit0Key.wasPressedThisFrame)
+                    //else if (Keyboard.current.digit6Key.wasPressedThisFrame)
+                    //{
+                    //	vehicleController.transmission.ShiftInto(6);
+                    //}
+                    //else if (Keyboard.current.digit9Key.wasPressedThisFrame)
+                    //{                     
+                    //    vehicleController.transmission.ShiftInto(10);
+                    //}
+                    else if (Keyboard.current.digit0Key.wasPressedThisFrame)
                     {
                         vehicleController.transmission.ShiftInto(0);
                     }
@@ -193,7 +197,7 @@ public class VehicleInputMgr : InputCtrBase
                     {
                         vehicleController.transmission.ShiftInto(-1);
                     }
-//#endif
+#endif
                 }
                 catch
                 {
@@ -218,29 +222,29 @@ public class VehicleInputMgr : InputCtrBase
             //    //vertical = accelerator - brake;
             //}
             vehicleController.input.Horizontal = CustomInput.DriveHorizontal;
-          
-           // print(CustomInput.DriveHorizontal);
+
+            // print(CustomInput.DriveHorizontal);
             if (vehicleController.tracks.trackedVehicle)
             {
                 if (CustomInput.DriveVertical <= 0.05f)
                 {
-               //     vehicleController.input.Horizontal = 0;
+                    //     vehicleController.input.Horizontal = 0;
                 }
             }
             vehicleController.input.Vertical = CustomInput.DriveVertical;
-           // print(vehicleController.input.Vertical);
+            // print(vehicleController.input.Vertical);
             //vehicleController.input.Vertical = 111;
-           // print(CustomInput.DriveVertical);
+            // print(CustomInput.DriveVertical);
             // Engine start/stop发动机启动/熄火
             vehicleController.engine.SetRunInputValue(CustomInput.QiDongValue);
-           // print(CustomInput.QiDongValue);   //bug 发动机没启动好像也能开
-           // print(vehicleController.engine.IsRunning);
+            // print(CustomInput.QiDongValue);   //bug 发动机没启动好像也能开
+            // print(vehicleController.engine.IsRunning);
             //if(Input.GetKeyDown(KeyCode.Space))
             //    vehicleController.engine.SetRunInputValue(true);
 
             // Handbrake 手刹
             vehicleController.input.Handbrake = CustomInput.HandBrakeValue;
-           // print(vehicleController.input.Handbrake);
+            // print(vehicleController.input.Handbrake);
             //try
             //{
             //    vehicleController.input.Handbrake = Input.GetAxis("Handbrake");
