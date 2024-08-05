@@ -22,7 +22,7 @@ public class ScenesPoint : MonoBehaviour
     public void CreateAll(Transform[] points,Transform[] lines,Vector2 radio,Vector3 carPos)
     {
         Point3dControl.Instance.CreatePoint(points, radio,carPos);
-        Line3dControl.Instance.CreateLine(lines, radio);
+        Line3dControl.Instance.CreateLine(lines, radio, points,carPos);
         curScene = SceneMgr.GetInstance().curScene as Train3DSceneCtrBase;
     }
 

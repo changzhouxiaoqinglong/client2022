@@ -245,7 +245,7 @@ public class MaxMapControl : MonoBehaviour
     private void CreateItem()
     {
         Vector2 radio = MathsMgr.UiTerrainRadio(terrainSize, uiSize);
-        Debug.Log(transform.Find("Icon").GetComponentsInChildren<Transform>());
+        //Debug.Log(transform.Find("Icon").GetComponentsInChildren<Transform>());
         Transform[] cubeArr = transform.Find("Icon").GetComponentsInChildren<Transform>();
         Transform[] lineArr = transform.Find("Line").GetComponentsInChildren<Transform>();
         ScenesPoint.Instance.CreateAll(cubeArr,lineArr, radio, carPos.anchoredPosition);
