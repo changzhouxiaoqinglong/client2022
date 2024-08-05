@@ -200,7 +200,7 @@ public class PoisonAlarmOpModel : ITaskLogModel
         switch (Type)
         {
             case PoisonAlarmOpType.Intake:
-                return "毒剂报警器 进气帽：" + (Operate == OperateDevice.OPEN ? "打开" : "关闭");
+                return "02B毒剂报警器 进气帽：" + (Operate == OperateDevice.OPEN ? "打开" : "关闭");
             case PoisonAlarmOpType.OpenClose:
                 return "毒剂报警器：" + (Operate == OperateDevice.OPEN ? "开机" : "关机");
             case PoisonAlarmOpType.JinYang:
@@ -2365,7 +2365,7 @@ public class PoisonAlarmOp384Model : ITaskLogModel
             //     return "毒剂报警器：" + (Operate == OperateDevice.OPEN ? "上电" : "离线");
 
             case PoisonAlarmOp384Type.Intake:
-                return "毒剂报警器 进气帽：" + (Operate == OperateDevice.OPEN ? "打开" : "关闭");
+                return "384毒剂报警器 进气帽：" + (Operate == OperateDevice.OPEN ? "打开" : "关闭");
             case PoisonAlarmOp384Type.OpenStatus:
                 return "毒剂报警器：" + (Operate == OperateDevice.OPEN ? "开机" : "关机");
             case PoisonAlarmOp384Type.JinYang:
