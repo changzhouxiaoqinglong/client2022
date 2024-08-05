@@ -315,6 +315,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 044a862efb4844846b02bceeb24ab683, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  interval: 0.5
 --- !u!1 &1164711643488622131
 GameObject:
   m_ObjectHideFlags: 0
@@ -2126,7 +2127,7 @@ Transform:
   m_GameObject: {fileID: 7002904059553853167}
   m_LocalRotation: {x: 0, y: -1, z: 0, w: 0}
   m_LocalPosition: {x: 0, y: 2.45, z: 0}
-  m_LocalScale: {x: 10, y: 0.1, z: 10}
+  m_LocalScale: {x: 7, y: 0.1, z: 7}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7002904060240130888}
@@ -12293,7 +12294,7 @@ Rigidbody:
   m_Mass: 1380
   m_Drag: 0.02
   m_AngularDrag: 0.01
-  m_CenterOfMass: {x: -0.15816897, y: -0.6476554, z: 0.7797573}
+  m_CenterOfMass: {x: -0.16544592, y: -0.1517703, z: 0.5198382}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
   m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
   m_IncludeLayers:

@@ -171,9 +171,13 @@ namespace XFramework.TerrainMoudule
             if (terrain == null)
                 return;
 
-            pos = terrain.transform.TransformPoint(terrain.terrainData.size.x * (xBase * 1.0f / 2048), 0, terrain.terrainData.size.z * (yBase * 1.0f / 2048));
-           
-            
+            var scene = UnityEngine.SceneManagement.SceneManager.GetActiveScene();
+            Logger.LogWarning(scene.name);
+            if(scene.name!= "Plain")
+                pos = terrain.transform.TransformPoint(terrain.terrainData.size.x * (xBase * 1.0f / 2048), 0, terrain.terrainData.size.z * (yBase * 1.0f / 2048));
+           else
+                pos = terrain.transform.TransformPoint(terrain.terrainData.size.x * (xBase * 1.0f / 4096), 0, terrain.terrainData.size.z * (yBase * 1.0f / 4096));
+
 
 
             if (immediate)

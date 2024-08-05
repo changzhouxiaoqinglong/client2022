@@ -73,8 +73,8 @@ public class CraterMgr
         crater.SetPosition(vector3);
         crater.SetRotation(craterData.GetRotation());
         craterList.Add(crater);
-        //Debug.Log("弹坑生成位置：" + vector3);
-        //Debug.Log("弹坑位置：" + crater.transform.position);
+        Debug.Log("弹坑生成位置：" + vector3);
+        Debug.Log("弹坑位置：" + crater.transform.position);
     }
 
     public CraterBase GetQuestionCrater(Vector3 carPos)

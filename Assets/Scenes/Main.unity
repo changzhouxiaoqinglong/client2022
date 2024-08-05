@@ -1015,7 +1015,7 @@ MonoBehaviour:
     m_ActionName: "2ActionMap/\u624B\u5239"
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
-  m_DefaultActionMap: 1ActionMap
+  m_DefaultActionMap: ad808590-b0f7-4eb8-8b71-ef178adbc969
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
 --- !u!114 &465795436
