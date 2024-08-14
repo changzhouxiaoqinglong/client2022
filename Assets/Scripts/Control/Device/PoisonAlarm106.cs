@@ -6,7 +6,7 @@ public class PoisonAlarm106 : PoisonAlarm
 {
     protected override void ReportCurDrugData()
     {
-
+        Debug.LogError("发送106毒剂信息");
         //浓度
         float dentity = HarmAreaMgr.GetPosDrugDentity(car.GetPosition());
         DrugVarData drugVarData = HarmAreaMgr.GetPosDrugData(car.GetPosition());
@@ -22,7 +22,12 @@ public class PoisonAlarm106 : PoisonAlarm
             Type = drugVarData != null ? drugVarData.Type : PoisonType.NO_POISON,
             Dentity = dentity,
         };
-        //发给设备管理软件
-        NetManager.GetInstance().SendMsg(ServerType.GuideServer, JsonTool.ToJson(model), NetProtocolCode.DEFENSE_SEND_DRUG_DATA, NetManager.GetInstance().CurDeviceForward);
+        Debug.LogError("发送106毒剂信息");
+        //发给设备管理软件   之前协议是105  现在改为102协议号了
+        NetManager.GetInstance().SendMsg(ServerType.GuideServer, JsonTool.ToJson(model), NetProtocolCode.SEND_DRUG_DATA, NetManager.GetInstance().CurDeviceForward);
+       // NetManager.GetInstance().SendMsg(ServerType.GuideServer, JsonTool.ToJson(model), NetProtocolCode.SEND_DRUG_DATA, NetManager.GetInstance().SameMachineAllSeats);
+      //  NetManager.GetInstance().SendMsg(ServerType.GuideServer, JsonTool.ToJson(model.reportData), NetProtocolCode.SEND_DRUG_DATA, NetManager.GetInstance().SameMachineAllSeats);
     }
+
+  
 }
