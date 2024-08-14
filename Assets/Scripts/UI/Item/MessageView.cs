@@ -95,7 +95,7 @@ public class MessageView : MonoBehaviour
         if (param is TcpReceiveEvParam tcpReceiveEvParam)
         {
             BeiDouModel model = JsonTool.ToObject<BeiDouModel>(tcpReceiveEvParam.netData.Msg);           
-            basicInfo.Find("currentpos/value").GetComponent<Text>().text = "经度：" + model.Longicude + "，纬度：" + model.Latitude;
+            basicInfo.Find("currentpos/value").GetComponent<Text>().text = "经度：" + model.Longicude + "，纬度：" + model.Latitude+ "，高程："+model.Elevation;
         }
     }
 
@@ -203,14 +203,16 @@ public class MessageView : MonoBehaviour
 
     }
 
-	private void Update()
+	private void LateUpdate()
 	{
         if (SceneMgr.GetInstance().curScene is Train3DSceneCtrBase scene3D)
         {
             Vector3 lation = scene3D.terrainChangeMgr.gisPointMgr.GetGisPos(scene3D.miniMapMgr.MiniMapCamera.GetPoint());
+            //高程
+            float elevat = scene3D.terrainChangeMgr.GetEvelationByPos(scene3D.miniMapMgr.MiniMapCamera.GetPoint());
             if (lation != null)
             {
-                basicInfo.Find("currentpos/value").GetComponent<Text>().text = "经度：" + lation.y + "，纬度：" + lation.x;
+                basicInfo.Find("currentpos/value").GetComponent<Text>().text = "经度：" + lation.y + "，纬度：" + lation.x + "，高程：" + elevat;
             }
         }
         else

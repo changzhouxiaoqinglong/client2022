@@ -30,6 +30,7 @@ public class QstInitJudgePoison : SelectQuestionBase
     /// </summary>
     private QstPoisonParam param;
 
+    public Transform content;
     protected override void Awake()
     {
         base.Awake();
@@ -39,6 +40,12 @@ public class QstInitJudgePoison : SelectQuestionBase
         craterBtn.RegistClick(BigCraterImageShow);
         bigCraterBtn = transform.Find("BigCraterImage").GetComponent<ButtonBase>();
         bigCraterBtn.RegistClick(BigCraterImageHide);
+        content = transform.Find("Scroll View/Viewport/Content");
+       for(int i=0;i<3;i++)
+		{
+            ButtonBase btn = content.GetChild(i).GetComponent<ButtonBase>();
+            btn.RegistClick(BigCraterImageShow);
+        }
     }
 
     protected override void Start()
@@ -54,6 +61,7 @@ public class QstInitJudgePoison : SelectQuestionBase
     /// </summary>
     private void BigCraterImageShow(GameObject obj)
     {
+        bigCraterImage.sprite = obj.GetComponent<Image>().sprite;
         bigCraterImage.gameObject.SetActive(true);
     }
 
@@ -73,8 +81,30 @@ public class QstInitJudgePoison : SelectQuestionBase
         print("初始化图片"+qstConfig.TargetId);
         ExPoisonData data = ExPoisonDataMgr.GetInstance().GetDataById(qstConfig.TargetId);
         string path = data.GetPathByCheckType(param.CheckType);
-        craterImage.sprite = Resources.Load<Sprite>(path);
-        bigCraterImage.sprite = Resources.Load<Sprite>(path);
+        print(path);
+        if(path!=null)
+		{
+            var texs = Resources.LoadAll<Sprite>(path);
+            for (int i = 0; i < 3; i++)
+            {
+                //   print(texs[i]);
+                content.GetChild(i).GetComponent<Image>().sprite = texs[i];
+            }
+        }
+        else//无毒
+		{
+            transform.Find("Scroll View").gameObject.SetActive(false);
+            craterImage.gameObject.SetActive(true);
+            for (int i = 1; i < 3; i++)
+            {
+                //   print(texs[i]);
+               // content.GetChild(i).gameObject.SetActive(false);
+            }
+        }
+        
+
+        //craterImage.sprite = Resources.Load<Sprite>(path);
+        //bigCraterImage.sprite = Resources.Load<Sprite>(path);
     }
 
     private void InitDrugPoisonLog()

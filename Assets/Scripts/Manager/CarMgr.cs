@@ -65,6 +65,7 @@ public class CarMgr
     {
         //参加训练的车人数据
         List<TrainMachineVarData> trainMachines = NetVarDataMgr.GetInstance()._NetVarData.TrainMachineDatas;
+        Debug.Log("参加训练的车人数据"+ trainMachines.Count);
         foreach (var trainMachine in trainMachines)
         {
             CarBase car = cars.Find(_car => _car.MachineId == trainMachine.MachineId);

@@ -357,7 +357,7 @@ public class TrainView : ViewBase<TrainViewModel>
 
    private bool IsQstAnswer()
    {
-       return AppConfig.SEAT_ID == SeatType.INVEST1 && TaskMgr.GetInstance().curTaskData.CheckType == HarmAreaType.DRUG;
+       return AppConfig.SEAT_ID == SeatType.INVEST1 && TaskMgr.GetInstance().curTaskData.CheckType == HarmAreaType.DRUG&& AppConfig.CAR_ID== CarIdConstant.ID_02B;
    }
 
    private bool IsNuclearMeasure()
@@ -838,7 +838,7 @@ public class TrainView : ViewBase<TrainViewModel>
     [AutoBinding(BindConstant.UpOutCarRadiomRate)]
     private void UpdateRadiomRate(float oldValue, float newValue)
     {
-        outRadiomText.text = $"当前徒步侦察探测的剂量率：\n{ newValue } {AppConstant.RADIOM_UNIT}";
+        outRadiomText.text = $"剂量率：{ newValue } {AppConstant.RADIOM_UNIT}";
     }
 
     /// <summary>

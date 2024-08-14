@@ -52,6 +52,7 @@ public class ExPoisonData : ExDataBase
     /// </summary>
     public string GetPathByCheckType(int checkType)
     {
+        return GroundPath;
         switch (checkType)
         {
             case QstPoisonCheckType.GROUND_CHECK_TYPE:

@@ -43,6 +43,7 @@ public class BeiDou : DeviceBase
             Vector3 lation = scene3D.terrainChangeMgr.gisPointMgr.GetGisPos(transform.position);
             //高程
             float elevat = scene3D.terrainChangeMgr.GetEvelationByPos(transform.position);
+            //print(elevat);
             BeiDouModel model = new BeiDouModel()
             {
                 Longicude = lation.x,
