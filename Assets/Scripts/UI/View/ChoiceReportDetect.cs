@@ -88,27 +88,26 @@ public class ChoiceReportDetect : ViewBase<ChoiceConfirmViewModel>
             {
                 case ChoiceReportConstant.CHOICE_REPORT_QIANJIE:
                     reportStr = "时间：" + TaskMgr.GetInstance().curTaskCtr.trainDateMgr.GetCurDateStr() + "\r\n" +
-                            "前界：坐标（5位数直角坐标 / 经纬度座标）\r\n" +
-                            "标志：位置（前界以外多少米，道路右侧或者左侧），标志方法（标志旗、其他标志物）\r\n" +
-                            "辐射剂量率：uGy/h\r\n" +
+                            "前界：经纬度坐标(xxxx)\r\n" +
+                            "标志：位置(xxxx)\r\n" +
+                            "辐射剂量率：(xx)uGy/h\r\n" +
                             "风向：" + GetWindDir() + "    风速：" + GetWindSpeed() + "\r\n" +
                             "温湿度：" + GetWSD();
                     break;
                 case ChoiceReportConstant.CHOICE_REPORT_HOUJIE:
                     reportStr = "时间：" + TaskMgr.GetInstance().curTaskCtr.trainDateMgr.GetCurDateStr() + "\r\n" +
-                            "后界：坐标（5位数直角坐标 / 经纬度座标）\r\n" +
-                            "标志：位置（后界以外多少米，道路右侧或者左侧），标志方法（标志旗、其他标志物）\r\n" +
-                            "辐射剂量率：uGy/h\r\n" +
-                            "道路两边情况：弹坑数量、位置、种类、浓度等\r\n" +
+                            "后界：经纬度坐标(xxxx)\r\n" +
+                            "标志：位置(xxxx)\r\n" +
+                            "辐射剂量率：(xx)uGy/h\r\n" +
                             "风向：" + GetWindDir() + "    风速：" + GetWindSpeed() + "\r\n" +
                             "温湿度：" + GetWSD();
                     break;
                 case ChoiceReportConstant.CHOICE_REPORT_ZONGHE:
                     reportStr = "时间：" + TaskMgr.GetInstance().curTaskCtr.trainDateMgr.GetCurDateStr() + "\r\n" +
-                            "前后界：坐标（5位数直角坐标 / 经纬度座标）\r\n" +
-                            "标志：位置（前置和后界标志位置），标志方法（标志旗、其他标志物）\r\n" +
-                            "辐射剂量率：uGy/h\r\n" +
-                            "道路两边情况：弹坑 / 征候数量、位置、种类、浓度等\r\n" +
+                            "前后界：经纬度坐标(xxxx)\r\n" +
+                            "标志：位置(xxxx)\r\n" +
+                            "辐射剂量率：(xx)uGy/h\r\n" +
+                            "道路两边情况：弹坑 / 征候数量（xx）、位置（xx）、种类（xx）、浓度（xx）等\r\n" +
                             "风向：" + GetWindDir() + "    风速：" + GetWindSpeed() + "\r\n" +
                             "温湿度：" + GetWSD()+ "\r\n" +
                             "突发及处置情况：文档描述\r\n" +
@@ -130,30 +129,30 @@ public class ChoiceReportDetect : ViewBase<ChoiceConfirmViewModel>
             {
                 case ChoiceReportConstant.CHOICE_REPORT_QIANJIE:
                     reportStr = "时间：" + TaskMgr.GetInstance().curTaskCtr.trainDateMgr.GetCurDateStr() + "\r\n" +
-                        "前界：坐标（5位数直角坐标 / 经纬度座标）\r\n" +
-                        "标志：位置（前界以外多少米，道路右侧或者左侧），标志方法（标志旗、其他标志物）\r\n" +
-                        "种类：汉字全称\r\n" +
+                        "前界：经纬度坐标(xxxx)\r\n" +
+                        "标志：位置(xxxx)\r\n" +
+                        "种类：(xx)毒剂\r\n" +
                         "浓度：" + model.Dentity + "微克每升\r\n" +
                         "风向：" + GetWindDir() + "    风速：" + GetWindSpeed() + "\r\n" +
                         "温湿度：" + GetWSD();
                     break;
                 case ChoiceReportConstant.CHOICE_REPORT_HOUJIE:
                     reportStr = "时间：" + TaskMgr.GetInstance().curTaskCtr.trainDateMgr.GetCurDateStr() + "\r\n" +
-                        "后界：坐标（5位数直角坐标 / 经纬度座标）\r\n" +
-                        "标志：位置（后界以外多少米，道路右侧或者左侧），标志方法（标志旗、其他标志物）\r\n" +
-                        "种类：汉字全称\r\n" +
+                        "后界：经纬度坐标(xxxx)\r\n" +
+                        "标志：位置(xxxx)\r\n" +
+                        "种类：(xx)毒剂\r\n" +
                         "浓度："+ model.Dentity +  "微克每升\r\n" +
-                        "道路两边情况：弹坑数量、位置、种类、浓度等\r\n" +
+                        "道路两边情况：弹坑数量（xx）、位置(xx)、种类（xx）、浓度(xx)等\r\n" +
                         "风向：" + GetWindDir() + "    风速：" + GetWindSpeed() + "\r\n" +
                         "温湿度：" + GetWSD();
                     break;
                 case ChoiceReportConstant.CHOICE_REPORT_ZONGHE:
                     reportStr = "时间：" + TaskMgr.GetInstance().curTaskCtr.trainDateMgr.GetCurDateStr() + "\r\n" +
-                        "前后界：坐标（5位数直角坐标 / 经纬度座标）\r\n" +
-                        "标志：位置（前置和后界标志位置），标志方法（标志旗、其他标志物）\r\n" +
-                        "种类：汉字全称\r\n" +
+                        "前后界：经纬度坐标(xxxx)\r\n" +
+                        "标志：位置(xxxx)\r\n" +
+                        "种类：(xx)毒剂\r\n" +
                         "浓度：" + model.Dentity + "微克每升\r\n" +
-                        "道路两边情况：弹坑 / 征候数量、位置、种类、浓度等\r\n" +
+                        "道路两边情况：弹坑数量（xx）、位置(xx)、种类（xx）、浓度(xx)等\r\n" +
                         "风向：" + GetWindDir() + "    风速：" + GetWindSpeed() + "\r\n" +
                         "温湿度：" + GetWSD() + "\r\n" +
                         "突发及处置情况：文档描述\r\n" +
