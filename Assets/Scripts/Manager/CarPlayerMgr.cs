@@ -175,6 +175,9 @@ public class CarPlayerMgr : MonoBehaviour
 
     private bool GetOutPosByRoot(Transform outPosRoot, PlayerCtr playerCtr, out Vector3 pos)
     {
+        pos = outPosRoot.position;
+        return true;
+
         pos = Vector3.zero;
         Vector3 rootPos = outPosRoot.position;
         //随机位置
