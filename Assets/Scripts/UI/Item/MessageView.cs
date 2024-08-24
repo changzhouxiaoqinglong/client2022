@@ -95,7 +95,7 @@ public class MessageView : MonoBehaviour
         if (param is TcpReceiveEvParam tcpReceiveEvParam)
         {
             BeiDouModel model = JsonTool.ToObject<BeiDouModel>(tcpReceiveEvParam.netData.Msg);           
-            basicInfo.Find("currentpos/value").GetComponent<Text>().text = "经度：" + model.Longicude + "，纬度：" + model.Latitude+ "，高程："+model.Elevation;
+            basicInfo.Find("currentpos/value").GetComponent<Text>().text = "经度：" + model.Longicude + "，纬度：" + model.Latitude + "，高程："+model.Elevation.ToString("F2");
         }
     }
 
@@ -212,7 +212,7 @@ public class MessageView : MonoBehaviour
             float elevat = scene3D.terrainChangeMgr.GetEvelationByPos(scene3D.miniMapMgr.MiniMapCamera.GetPoint());
             if (lation != null)
             {
-                basicInfo.Find("currentpos/value").GetComponent<Text>().text = "经度：" + lation.y + "，纬度：" + lation.x + "，高程：" + elevat;
+                basicInfo.Find("currentpos/value").GetComponent<Text>().text = "经度：" + lation.y + "，纬度：" + lation.x + "，高程：" + elevat.ToString("F2");
             }
         }
         else
