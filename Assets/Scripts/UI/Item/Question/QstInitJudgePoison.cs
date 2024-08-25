@@ -93,13 +93,12 @@ public class QstInitJudgePoison : SelectQuestionBase
         }
         else//无毒
 		{
+            //Prefabs/Sprite/PoisonCheckType/ShaLin
+            var tex = Resources.Load<Sprite>("Prefabs/Sprite/PoisonCheckType/WDAir");
+
             transform.Find("Scroll View").gameObject.SetActive(false);
             craterImage.gameObject.SetActive(true);
-            for (int i = 1; i < 3; i++)
-            {
-                //   print(texs[i]);
-               // content.GetChild(i).gameObject.SetActive(false);
-            }
+            craterImage.sprite = tex;
         }
         
 

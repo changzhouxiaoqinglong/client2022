@@ -26,10 +26,11 @@ public class QstExamineMeathed : SelectQuestionBase
             if (qstpoisonParam.DrugType == QstPoisonDrugType.OUT_CAR_DRUG)
             {
                 List<int> list = new List<int>();
-                if(qstConfig.TargetId == PoisonType.VX_POISON)//正确答案和配置不一样 特殊处理了
-                    list.Add(3);
-                else
-                    list.Add(4);
+                list.Add(2);
+                //if (qstConfig.TargetId == PoisonType.VX_POISON)//正确答案和配置不一样 特殊处理了
+                //    list.Add(3);
+                //else
+                //    list.Add(4);
                 isCorrect = base.QuestionJudge(list);
                 QuestionView questionView = (UIMgr.GetInstance().GetViewByType(ViewType.QuestionView) as QuestionView);
                 int curTube = SelectTube(questionView.qstList);
