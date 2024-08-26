@@ -212,7 +212,7 @@ public class MessageView : MonoBehaviour
             float elevat = scene3D.terrainChangeMgr.GetEvelationByPos(scene3D.miniMapMgr.MiniMapCamera.GetPoint());
             if (lation != null)
             {
-                basicInfo.Find("currentpos/value").GetComponent<Text>().text = "经度：" + lation.y + "，纬度：" + lation.x + "，高程：" + elevat.ToString("F2");
+                basicInfo.Find("currentpos/value").GetComponent<Text>().text = "经度：" + lation.x + "，纬度：" + lation.y + "，高程：" + elevat.ToString("F2");
             }
         }
         else
