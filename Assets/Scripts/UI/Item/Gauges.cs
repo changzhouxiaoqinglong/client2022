@@ -81,7 +81,7 @@ public class Gauges : MonoBehaviour
 
     private void OnGUI()
     {
-        //return;
+        return;
         vehicleController = VehicleInputMgr.GetInstance().VehicleController;
         GUIStyle labelStyle = new GUIStyle();
         labelStyle.fontSize = 24; // 设置字体大小为24
