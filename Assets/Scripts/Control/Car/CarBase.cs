@@ -268,11 +268,12 @@ public class CarBase : UnityMono
             if (tcpParam.netData.MachineId == MachineId)
             {
                 //上车
-                playerMgr.InCar(tcpParam.netData.SeatId);
+                bool outRes = playerMgr.InCar(tcpParam.netData.SeatId);
                 //回复上车结果
                 ResBase res = new ResBase()
                 {
-                    Code = NetResCode.RES_SUCCESS,
+                  //  Code = NetResCode.RES_SUCCESS,
+                    Code = outRes ? NetResCode.RES_SUCCESS : NetResCode.RES_FAILED,
                 };
 
                 //发给侦查员1

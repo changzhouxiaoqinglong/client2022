@@ -200,16 +200,25 @@ public class CarPlayerMgr : MonoBehaviour
     /// <summary>
     /// 上车
     /// </summary>
-    public void InCar(int seatId)
+    public bool InCar(int seatId)
     {
         PlayerCtr player = GetPlayerCtrBySeatId(seatId);
         if (player != null)
         {
-            player.InCar();
+            if (player.IsOperate)
+                return false;
+            else
+			{
+                player.InCar();
+                return true;
+            }
+           
         }
         else
         {
+          
             Logger.LogWarning("have no seat can not in car: " + seatId);
+            return false;
         }
     }
 

@@ -121,7 +121,7 @@ public class PlayerCtr : InputCtrBase
     /// <summary>
     /// 是否在操作
     /// </summary>
-    private bool IsOperate = false;
+    public bool IsOperate = false;
 
 
     /// <summary>
@@ -272,14 +272,28 @@ public class PlayerCtr : InputCtrBase
         return transform.position;
     }
 
+    private Coroutine samplingcoroutine;
+    private Coroutine Measurecoroutine;
+    
     /// <summary>
     /// 进车
     /// </summary>
     public void InCar()
     {
         playerAnim.ChangeState((ushort)PlayerAnimType.Sit);
-        if (isEnabled)
+        if (isEnabled)  //采样或测量操作还没结束时人物没有操作权，不能马上上车 
         {
+   //         if(IsOperate)
+			//{
+   //             if(Measurecoroutine!=null)
+   //             StopCoroutine(Measurecoroutine);
+   //             if(samplingcoroutine != null)
+   //             StopCoroutine(samplingcoroutine);
+
+   //             SetEnable();
+              
+   //             IsOperate = false;
+   //         }
             //启用车辆相机
             Car.cameraChanger.SetEnable();
             //启用车辆控制
@@ -501,6 +515,7 @@ public class PlayerCtr : InputCtrBase
         player1.SetActive(true);
         player2.SetActive(false);
         IsOperate = false;
+        Debug.Log("采样完");
         SetEnable();
     }
 
@@ -517,7 +532,7 @@ public class PlayerCtr : InputCtrBase
             return;
         }
         IsOperate = true;
-        StartCoroutine(IMeasureTime());
+        Measurecoroutine = StartCoroutine(IMeasureTime());
     }
 
 
@@ -540,7 +555,7 @@ public class PlayerCtr : InputCtrBase
             qstRequestResult.TriggerType = qst.TriggerType;
             qstRequestResult.TargetId = PoisonType.NO_POISON;
             qstRequestResult.IsOk = true;
-            StartCoroutine(ISamplingTime(qstRequestResult, forwardModels));
+           samplingcoroutine=  StartCoroutine(ISamplingTime(qstRequestResult, forwardModels));
         }
     }
 

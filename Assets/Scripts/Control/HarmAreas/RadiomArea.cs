@@ -77,7 +77,7 @@ public class RadiomArea : HarmAreaBase
         windDir = taskEnvVarData.Wearth.GetWindDir();
         windSp = taskEnvVarData.Wearth.GetWindSp();
         CreatePointRange(transform.position, windDir);
-        //StartCoroutine(ISetRadiomAreaPoison());
+        StartCoroutine(ISetRadiomAreaPoison());
     }
 
     private void Update()
@@ -216,8 +216,12 @@ public class RadiomArea : HarmAreaBase
 
     public override void SetPosition()
     {
-        transform.position = MathsMgr.PointDistance(windDir, 0, transform.position);
+        // transform.position = MathsMgr.PointDistance(windDir, 0, transform.position);
         //transform.position = MathsMgr.PointDistance(windDir, windSp * HarmAreaBaseConstant.SPEED_RADIO, transform.position);
+
+
+        Vector3 pos = MathsMgr.PointDistance(windDir, windSp * HarmAreaBaseConstant.SPEED_RADIO, transform.position);
+        transform.position = new Vector3(pos.x, transform.position.y, pos.z);
         CreatePointRange(transform.position, windDir);
     }
 
@@ -249,7 +253,7 @@ public class RadiomArea : HarmAreaBase
     {
         float radiomDis = RadiomAreaConstanst.RADIOM_SIZE * GetHarmRange();
         
-        print(radiomDis);
+       // print(radiomDis);
        // if (NetVarDataMgr.GetInstance()._NetVarData._TaskEnvVarData.Scene == SceneConstant.HILLS)
         {
             pointList.Clear();
@@ -268,7 +272,7 @@ public class RadiomArea : HarmAreaBase
             pointList.Add(pos3);
 
 
-          //  if (cubelist.Count == 0)
+            if (cubelist.Count == 0)
             {
                 cubelist = new List<Transform>();
                 for (int i = 0; i < 5; i++)
@@ -282,7 +286,7 @@ public class RadiomArea : HarmAreaBase
                 GameObject centerobj = new GameObject(); 
                 center = centerobj.transform;
             }
-          //  else
+            else
             {
                 cubelist[0].transform.position = pos1;
                 cubelist[1].transform.position = pos2;

@@ -121,15 +121,40 @@ public class Line3dControl : MonoBehaviour
         Destroy(linerender);
     }
 
+    float checkTimer = 0;
 
-    /// <summary>
-    /// 创建路径上的点
-    /// </summary>
-    /// <param name="startPos">开始的位置</param>
-    /// <param name="size">线的长度</param>
-    /// <param name="distance">偏航距离</param>
-    /// <param name="angle">偏航角度</param>
-    private void CreateAreaPath(Vector3 startPos,float size,float distance, float angle)
+    private void Update()
+	{
+
+        checkTimer += Time.deltaTime;
+        if (checkTimer >= 0.5f)
+        {
+            checkTimer = 0;
+            if (linerender != null)
+            {
+                LineRenderer render = linerender.GetComponent<LineRenderer>();
+                int count = render.positionCount;
+                float posY2 = (SceneMgr.GetInstance().curScene as Train3DSceneCtrBase).miniMapMgr.MiniMapCamera.transform.position.y - 10;
+                for (int i = 0; i < count; i++)
+                {
+                    Vector3 pos = render.GetPosition(i);
+                    render.SetPosition(i, new Vector3(pos.x, posY2, pos.z));
+                }
+            }
+        }
+
+        
+	}
+
+
+	/// <summary>
+	/// 创建路径上的点
+	/// </summary>
+	/// <param name="startPos">开始的位置</param>
+	/// <param name="size">线的长度</param>
+	/// <param name="distance">偏航距离</param>
+	/// <param name="angle">偏航角度</param>
+	private void CreateAreaPath(Vector3 startPos,float size,float distance, float angle)
     {
         listPoint.Add(MathsMgr.PointDistance(startPos, distance, angle - 90));
         listPoint.Add(MathsMgr.PointDistance(startPos, distance, angle + 90));
