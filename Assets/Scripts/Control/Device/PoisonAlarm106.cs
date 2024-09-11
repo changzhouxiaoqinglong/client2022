@@ -6,17 +6,19 @@ public class PoisonAlarm106 : PoisonAlarm
 {
     protected override void ReportCurDrugData()
     {
+        base.ReportCurDrugData();
+        return;
         //Debug.LogError("发送106毒剂信息");
         //浓度
         float dentity = HarmAreaMgr.GetPosDrugDentity(car.GetPosition());
         DrugVarData drugVarData = HarmAreaMgr.GetPosDrugData(car.GetPosition());
         //if (drugVarData != null)
         //{
-        //    UnityEngine.Debug.LogError("get毒数据浓度为:  " + dentity);
+        //	UnityEngine.Debug.LogError("get毒数据浓度为:  " + dentity+" 类型： "+ drugVarData.Type);
         //}
         //else
-        //    UnityEngine.Debug.LogError("没有毒数据");
-
+        //	UnityEngine.Debug.LogError("没有毒数据");
+       // UnityEngine.Debug.LogError(dentity);
         DefenseReportDrugDataModel model = new DefenseReportDrugDataModel()
         {
             Type = drugVarData != null ? drugVarData.Type : PoisonType.NO_POISON,
