@@ -170,6 +170,16 @@ public class CheckTypeConst
     /// 比武
     /// </summary>
     public const int PK = 3;
+
+    /// <summary>
+    /// 协同侦察
+    /// </summary>
+    public const int ZHENCHA = 4;
+
+    /// <summary>
+    ///协同 值守
+    /// </summary>
+    public const int ZHISHOU = 5;
 }
 
 /// <summary>

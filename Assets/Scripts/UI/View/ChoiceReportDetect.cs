@@ -345,4 +345,11 @@ public class ChoiceReportDetect : ViewBase<ChoiceConfirmViewModel>
         }
            
     }
+
+    protected override void OnDestroy()
+    {
+        base.OnDestroy();
+        NetManager.GetInstance().RemoveNetMsgEventListener(ServerType.GuideServer, NetProtocolCode.SEND_DRUG_DATA, OnGetDrugDataMsg);
+
+    }
 }

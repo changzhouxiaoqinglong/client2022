@@ -14,7 +14,7 @@ public class TaskEnvVarData
     public string TrainUid;
 
     /// <summary>
-    /// 模式 0.单机  1.考核  2.训练
+    /// 模式 0.单机  1.考核  2.训练 3.比武 4协同侦查 5协同值守
     /// </summary>
     public int CheckType;
 

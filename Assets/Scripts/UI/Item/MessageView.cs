@@ -197,6 +197,14 @@ public class MessageView : MonoBehaviour
         {
             transform.Find("biwu").gameObject.SetActive(true);
         }
+        else if (NetVarDataMgr.GetInstance()._NetVarData._TaskEnvVarData.CheckType == CheckTypeConst.ZHENCHA)
+        {
+            transform.Find("zhencha").gameObject.SetActive(true);
+        }
+        else if (NetVarDataMgr.GetInstance()._NetVarData._TaskEnvVarData.CheckType == CheckTypeConst.ZHISHOU)
+        {
+            transform.Find("zhishou").gameObject.SetActive(true);
+        }
 
 
         basicInfo.Find("weather/value").GetComponent<Text>().text = weather.GetDes() + ","+ "温度" +weather.Temperate+","+ "湿度" + weather.Humidity + ","+ GetWindDir()+",风速"+weather.GetWindSp();

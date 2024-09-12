@@ -92,7 +92,7 @@ public class PracticeProcess106Poison : PracticeProcessBase
                         //记下进样时间
                         startJinYangTime = Time.realtimeSinceStartup;
                         DoProcess(Poison106Id.POISON_ALARM_JINYANG_106);
-                        WaitAlarm();
+                      //  WaitAlarm();
                     }
                     //else
                     //{
