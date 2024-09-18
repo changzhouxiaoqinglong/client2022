@@ -18957,7 +18957,7 @@ MonoBehaviour:
       antiRollBarForce: 11000
     powerCoefficient: 1
     brakeCoefficient: 1
-    handbrakeCoefficient: 0
+    handbrakeCoefficient: 1
     differentialStrength: 0
     differentialType: 2
   - leftWheel:
@@ -18977,7 +18977,7 @@ MonoBehaviour:
       antiRollBarForce: 0
     powerCoefficient: 1
     brakeCoefficient: 1
-    handbrakeCoefficient: 0
+    handbrakeCoefficient: 1
     differentialStrength: 0
     differentialType: 2
   - leftWheel:
@@ -18997,7 +18997,7 @@ MonoBehaviour:
       antiRollBarForce: 0
     powerCoefficient: 1
     brakeCoefficient: 1
-    handbrakeCoefficient: 0
+    handbrakeCoefficient: 1
     differentialStrength: 0
     differentialType: 2
   - leftWheel:
@@ -19037,7 +19037,7 @@ MonoBehaviour:
       antiRollBarForce: 0
     powerCoefficient: 1
     brakeCoefficient: 1
-    handbrakeCoefficient: 0
+    handbrakeCoefficient: 1
     differentialStrength: 0
     differentialType: 2
   - leftWheel:

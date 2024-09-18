@@ -197,6 +197,14 @@ public class VehicleInputMgr : InputCtrBase
                     {
                         vehicleController.transmission.ShiftInto(-1);
                     }
+                    else if (Keyboard.current.digit7Key.wasPressedThisFrame)
+                    {
+                        CustomInput.HandBrakeValue = 0;
+                    }
+                    else if (Keyboard.current.digit8Key.wasPressedThisFrame)
+                    {
+                        CustomInput.HandBrakeValue = 1;
+                    }
 #endif
                 }
                 catch
