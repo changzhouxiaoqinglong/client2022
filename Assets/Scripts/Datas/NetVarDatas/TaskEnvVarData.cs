@@ -302,8 +302,8 @@ public class Wearth
     public int WindSp;
 
     public float GetWindSp()
-    {
-        return Mathf.Clamp(WindSp,1, 10);
+    {//王聪改为0
+        return Mathf.Clamp(WindSp,0, 12);
         return WindSp;
         switch (WindSp)
         {
@@ -344,16 +344,22 @@ public class Wearth
            
             case 1:
                 return "晴";
-           
+            case 2:
+                return "小雨";
             case 3:
-                return "雨";
+                return "中雨";
+            case 4:
+                return "大雨";
 
-            case 5:
-                return "雪";
-            case 9:
-                return "雾";
-            case 11:
-                return "沙尘暴";
+            //   case 3:
+            //       return "雨";
+            // 
+               case 5:
+                 return "雪";
+            //   case 9:
+            //    return "雾";
+            //  case 11:
+            //    return "沙尘暴";
             default:
                 return "天气信息异常";
 

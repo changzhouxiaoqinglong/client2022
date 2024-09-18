@@ -20,7 +20,7 @@ public class EndView : ViewBase<EndViewModel>
     {
         if (Record.GetInstance().isUpLoading)
         {
-            UIMgr.GetInstance().ShowToast("正在上传回放视频，请稍后!");
+            UIMgr.GetInstance().ShowToast("正在上传操作数据，请稍后重试!");
             return;
         }
         UIMgr.GetInstance().CloseAllViews();
