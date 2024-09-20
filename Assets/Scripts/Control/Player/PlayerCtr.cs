@@ -525,6 +525,7 @@ public class PlayerCtr : InputCtrBase
     /// </summary>
     private void OnGetMeasureMsg(IEventParam param)
     {
+        if (!Car.IsSelfCar()) return;
         if (transform.parent != outCarRoot) return;
         if(IsOperate)
         {
@@ -538,6 +539,7 @@ public class PlayerCtr : InputCtrBase
 
     private void OnGetSamplingMsg(IEventParam param)
     {
+        if (!Car.IsSelfCar()) return;
         if (transform.parent != outCarRoot) return;
         if (IsOperate)
         {
