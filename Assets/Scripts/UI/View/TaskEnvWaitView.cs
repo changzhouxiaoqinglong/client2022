@@ -118,8 +118,7 @@ public class TaskEnvWaitView : ViewBase<TaskEvWaitViewModel>
 			{
                 foreach(TrainSeatVarData user in machinedata.TrainUserDatas)
 				{
-                    user.MachineId = machinedata.MachineId;
-                    print(user.MachineId);
+                    user.MachineId = machinedata.MachineId;            
                 }
 			}
 

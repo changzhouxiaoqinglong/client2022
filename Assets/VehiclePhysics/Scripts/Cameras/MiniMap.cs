@@ -77,15 +77,15 @@ public class MiniMap : MonoBehaviour
         {
             List<Vector3> tempList = Line3dControl.Instance.GetListPoint();
             if (tempList.Count == 0) return;
-            Vector3 car = scene3D.miniMapMgr.MiniMapCamera.GetPoint();
-            if (MathTool.IsPointInPolygon(car, tempList))
-            {
-                transform.Find("WarningText").gameObject.SetActive(false);
-            }
-            else
-            {
-                transform.Find("WarningText").gameObject.SetActive(true);
-            }
+            //Vector3 car = scene3D.miniMapMgr.MiniMapCamera.GetPoint();
+            //if (MathTool.IsPointInPolygon(car, tempList))
+            //{
+            //    transform.Find("WarningText").gameObject.SetActive(false);
+            //}
+            //else
+            //{
+            //    transform.Find("WarningText").gameObject.SetActive(true);
+            //}
         }
     }
 

@@ -78,7 +78,7 @@ public class Record : MonoSingleTon<Record>
         //上传到服务端的名称 训练id+席位号AppConfig.SeatId
         // string saveName = NetVarDataMgr.GetInstance()._NetVarData._TrainStartModel.TrainID + "-" + AppConfig.SEAT_ID + ".mp4";
 
-        string saveName = NetVarDataMgr.GetInstance()._NetVarData._TrainStartModel.TrainID+ "/" + AppConfig.SEAT_ID;
+        string saveName = NetVarDataMgr.GetInstance()._NetVarData._TrainStartModel.TrainID + "/" + AppConfig .MACHINE_ID+ "/" + AppConfig.SEAT_ID;
         // print(saveName);
         UploadFile(saveName);
     }
