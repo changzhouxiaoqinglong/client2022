@@ -157,7 +157,7 @@ public class VehicleInputMgr : InputCtrBase
                     }
 #endif
 
-//#if UNITY_EDITOR
+#if UNITY_EDITOR
                     //  */
                     //#if DEBUG
                     //挂挡 键盘调试
@@ -205,7 +205,7 @@ public class VehicleInputMgr : InputCtrBase
                     {
                         CustomInput.HandBrakeValue = 1;
                     }
-//#endif
+#endif
                 }
                 catch
                 {
