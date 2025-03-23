@@ -40,6 +40,7 @@ public class QstExamineMeathed : SelectQuestionBase
             else
             {
                 isCorrect = base.QuestionJudge();
+                if(isCorrect)
                 OpenDetPoisonBleedView();
 
             }

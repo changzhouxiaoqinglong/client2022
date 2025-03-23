@@ -73,8 +73,8 @@ public class TcpMessageHandler
             {
                 //包体内容
                 string str = Encoding.UTF8.GetString(datas, headLen, bodyLen);
-                if (str[16] != '0')  //{"ProtocolCode":0      
-                    Logger.LogDebug("tcp receive：" + str);
+              //  if (str[16] != '0')  //{"ProtocolCode":0      
+               //     Logger.LogDebug("tcp receive：" + str);
                
                 try
                 {

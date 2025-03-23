@@ -41,7 +41,7 @@ public class QstInitJudgePoison : SelectQuestionBase
         bigCraterBtn = transform.Find("BigCraterImage").GetComponent<ButtonBase>();
         bigCraterBtn.RegistClick(BigCraterImageHide);
         content = transform.Find("Scroll View/Viewport/Content");
-       for(int i=0;i<9;i++)
+       for(int i=0;i<7;i++)
 		{
             ButtonBase btn = content.GetChild(i).GetComponent<ButtonBase>();
             btn.RegistClick(BigCraterImageShow);
@@ -85,7 +85,7 @@ public class QstInitJudgePoison : SelectQuestionBase
         if(path!=null)
 		{
             var texs = Resources.LoadAll<Sprite>(path);
-            for (int i = 0; i < 9; i++)
+            for (int i = 0; i < 7; i++)
             {
                 //   print(texs[i]);
                 content.GetChild(i).GetComponent<Image>().sprite = texs[i];

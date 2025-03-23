@@ -34,6 +34,7 @@ public class DetPoisonBleedView : ViewBase<DetPoisonBleedViewModel>
     /// <summary>
     /// 时间计时
     /// </summary>
+    [SerializeField]
     private float bleedTime = -1;
 
     /// <summary>
